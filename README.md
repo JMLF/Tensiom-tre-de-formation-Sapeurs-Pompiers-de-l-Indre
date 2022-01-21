@@ -40,3 +40,5 @@ Après analyse de ce qui précède, on peut en déduire deux objectifs principau
 des organes d’entrées sorties (pompe, bouton, brassard, alimentation par piles).
 
 Le dialogue entre les deux appareils doit s’effectuer sans fil.
+
+## Organisation
