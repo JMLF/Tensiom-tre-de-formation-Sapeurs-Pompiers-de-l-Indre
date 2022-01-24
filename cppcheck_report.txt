@@ -1,2 +1,59 @@
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:3:18: warning: Member variable 'CFonctionServer::ids_ecoute' is not initialized in the constructor. [uninitMemberVar]
+CFonctionServer::CFonctionServer()
+                 ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:3:18: warning: Member variable 'CFonctionServer::ids_connect' is not initialized in the constructor. [uninitMemberVar]
+CFonctionServer::CFonctionServer()
+                 ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:3:18: warning: Member variable 'CFonctionServer::ids_connect1' is not initialized in the constructor. [uninitMemberVar]
+CFonctionServer::CFonctionServer()
+                 ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:3:18: warning: Member variable 'CFonctionServer::nb_car_emis' is not initialized in the constructor. [uninitMemberVar]
+CFonctionServer::CFonctionServer()
+                 ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:3:18: warning: Member variable 'CFonctionServer::addr_len' is not initialized in the constructor. [uninitMemberVar]
+CFonctionServer::CFonctionServer()
+                 ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:3:18: warning: Member variable 'CFonctionServer::noctets' is not initialized in the constructor. [uninitMemberVar]
+CFonctionServer::CFonctionServer()
+                 ^
+TF_Tensiomètre/Serveur/CFonctionServer.h:82:7: performance:inconclusive: Technically the member function 'CFonctionServer::FermeturWinSock' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ void FermeturWinSock();
+      ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:134:23: note: Technically the member function 'CFonctionServer::FermeturWinSock' can be static (but you may consider moving to unnamed namespace).
+void CFonctionServer::FermeturWinSock()
+                      ^
+TF_Tensiomètre/Serveur/CFonctionServer.h:82:7: note: Technically the member function 'CFonctionServer::FermeturWinSock' can be static (but you may consider moving to unnamed namespace).
+ void FermeturWinSock();
+      ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:18:3: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+  exit(1);
+  ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:36:3: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+  exit(1);
+  ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:45:3: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+  exit(1);
+  ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:79:7: style: The scope of the variable 'noctets' can be reduced. [variableScope]
+ uint noctets;
+      ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:69:7: style: Unused variable: trame_lect1 [unusedVariable]
+ char trame_lect1[DIMMAX + 1];
+      ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
+ std::string recive1;
+             ^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:134:0: style: The function 'FermeturWinSock' is never used. [unusedFunction]
+
+^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:139:0: style: The function 'fermetureSockEcoute' is never used. [unusedFunction]
+
+^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:120:0: style: The function 'reciving' is never used. [unusedFunction]
+
+^
+TF_Tensiomètre/Serveur/CFonctionServer.cpp:115:0: style: The function 'sending' is never used. [unusedFunction]
+
+^
 nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
 
