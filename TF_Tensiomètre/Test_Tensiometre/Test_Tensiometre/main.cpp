@@ -6,8 +6,8 @@ int main(int argc, char* argv[])
 	
 	if (SDL_Init(SDL_INIT_EVERYTHING) >= 0) //verifie que l'init s'est bien passé 
 	{
-		
-		SDL_Window* window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 729, 1010, SDL_WINDOW_RESIZABLE); //on crée la fenetre qu'on met dans un pointeur 
+	
+		SDL_Window* window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 729, 696, SDL_WINDOW_RESIZABLE); //on crée la fenetre qu'on met dans un pointeur 
 		SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 		
 
