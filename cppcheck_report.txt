@@ -1,2 +1,5 @@
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/main.cpp:21:11: style: Variable 'texture' is assigned a value that is never used. [unreadVariable]
+  texture = SDL_CreateTextureFromSurface(renderer, image);
+          ^
 nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
 
