@@ -129,7 +129,16 @@ void MainWindow::on_btn_transmettre_clicked()
 
 void MainWindow::on_btn_supp_clicked()
 {
-    ui->line_resul->setText("");
+    QString texte = ui->line_resul->text();
+int taille = texte.size();
+
+    if(taille == 0){
+        ui->line_resul->setText("");
+    }
+    else{
+    texte = texte.remove(taille - 1 ,1);
+    ui->line_resul->setText(texte);
+    }
 }
 
 
