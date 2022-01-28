@@ -88,46 +88,43 @@ Telecommande etudiant 1/Client Tcp/ClasseClient.cpp:32:0: style: The function 'f
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:139:0: style: The function 'fermetureSockEcoute' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:30:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:29:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:36:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:35:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:42:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:48:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:48:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:59:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:54:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:70:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:60:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:81:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:66:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:92:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:73:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:104:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:79:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:115:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:85:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:126:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:136:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:148:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:22:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:155:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
 
 ^
-qt_project/qt_telecommande/mainwindow.cpp:130:0: style: The function 'on_btn_supp_clicked' is never used. [unusedFunction]
-
-^
-qt_project/qt_telecommande/mainwindow.cpp:91:0: style: The function 'on_btn_transmettre_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/projet_qt_telecommande/mainwindow.cpp:138:0: style: The function 'on_btn_supp_clicked' is never used. [unusedFunction]
 
 ^
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:120:0: style: The function 'reciving' is never used. [unusedFunction]
