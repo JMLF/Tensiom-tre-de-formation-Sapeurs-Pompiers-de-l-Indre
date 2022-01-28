@@ -16,7 +16,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btn_ok_clicked();
+
 
     void on_btn_0_clicked();
 
@@ -38,12 +38,11 @@ private slots:
 
     void on_btn_9_clicked();
 
-
-    void on_btn_transmettre_clicked();
-
     void on_btn_supp_clicked();
 
     void on_btn_back_clicked();
+
+    void on_btn_next_clicked();
 
 private:
     Ui::MainWindow *ui;

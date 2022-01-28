@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>899</width>
-    <height>537</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,91 +37,6 @@
      </property>
      <property name="text">
       <string>X</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="line_resul">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>110</y>
-       <width>151</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radio_btn_sys">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>20</y>
-       <width>83</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>SYS</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radio_btn_dia">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>50</y>
-       <width>83</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>DIA</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radio_btn_pul">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>80</y>
-       <width>83</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>PUL</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btn_ok">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>250</y>
-       <width>41</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>OK</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_supp">
@@ -267,24 +182,98 @@
       <string>9</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_transmettre">
+    <widget class="QLineEdit" name="line_resul">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>50</y>
-       <width>41</width>
-       <height>24</height>
+       <x>20</x>
+       <y>110</y>
+       <width>150</width>
+       <height>26</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_sys_telecommande">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
      <property name="text">
-      <string>&gt;</string>
+      <string>SYS</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_dia_telecommande">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>70</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>DIA</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_pul_telecommande">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>60</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>PUL</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_next">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>250</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>next</string>
      </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="gBox_recap">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>210</x>
       <y>0</y>
       <width>196</width>
       <height>327</height>
@@ -457,7 +446,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>899</width>
+     <width>800</width>
      <height>22</height>
     </rect>
    </property>
@@ -477,8 +466,8 @@
      <y>52</y>
     </hint>
     <hint type="destinationlabel">
-     <x>97</x>
-     <y>163</y>
+     <x>399</x>
+     <y>299</y>
     </hint>
    </hints>
   </connection>
@@ -489,12 +478,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>270</x>
+     <x>230</x>
      <y>52</y>
     </hint>
     <hint type="destinationlabel">
-     <x>288</x>
-     <y>223</y>
+     <x>399</x>
+     <y>299</y>
     </hint>
    </hints>
   </connection>

@@ -17,7 +17,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -29,11 +28,6 @@ public:
     QWidget *centralwidget;
     QGroupBox *gBox_telecommande;
     QPushButton *btn_close;
-    QLineEdit *line_resul;
-    QRadioButton *radio_btn_sys;
-    QRadioButton *radio_btn_dia;
-    QRadioButton *radio_btn_pul;
-    QPushButton *btn_ok;
     QPushButton *btn_supp;
     QPushButton *btn_8;
     QPushButton *btn_4;
@@ -45,7 +39,11 @@ public:
     QPushButton *btn_7;
     QPushButton *btn_6;
     QPushButton *btn_9;
-    QPushButton *btn_transmettre;
+    QLineEdit *line_resul;
+    QLabel *lbl_sys_telecommande;
+    QLabel *lbl_dia_telecommande;
+    QLabel *lbl_pul_telecommande;
+    QPushButton *btn_next;
     QGroupBox *gBox_recap;
     QPushButton *btn_close_2;
     QLabel *lbl_sys;
@@ -63,7 +61,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(899, 537);
+        MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gBox_telecommande = new QGroupBox(centralwidget);
@@ -72,28 +70,6 @@ public:
         btn_close = new QPushButton(gBox_telecommande);
         btn_close->setObjectName(QString::fromUtf8("btn_close"));
         btn_close->setGeometry(QRect(10, 20, 21, 21));
-        line_resul = new QLineEdit(gBox_telecommande);
-        line_resul->setObjectName(QString::fromUtf8("line_resul"));
-        line_resul->setGeometry(QRect(20, 110, 151, 31));
-        QFont font;
-        font.setPointSize(11);
-        line_resul->setFont(font);
-        radio_btn_sys = new QRadioButton(gBox_telecommande);
-        radio_btn_sys->setObjectName(QString::fromUtf8("radio_btn_sys"));
-        radio_btn_sys->setGeometry(QRect(70, 20, 83, 20));
-        radio_btn_sys->setFont(font);
-        radio_btn_sys->setChecked(true);
-        radio_btn_dia = new QRadioButton(gBox_telecommande);
-        radio_btn_dia->setObjectName(QString::fromUtf8("radio_btn_dia"));
-        radio_btn_dia->setGeometry(QRect(70, 50, 83, 20));
-        radio_btn_dia->setFont(font);
-        radio_btn_pul = new QRadioButton(gBox_telecommande);
-        radio_btn_pul->setObjectName(QString::fromUtf8("radio_btn_pul"));
-        radio_btn_pul->setGeometry(QRect(70, 80, 83, 20));
-        radio_btn_pul->setFont(font);
-        btn_ok = new QPushButton(gBox_telecommande);
-        btn_ok->setObjectName(QString::fromUtf8("btn_ok"));
-        btn_ok->setGeometry(QRect(150, 250, 41, 41));
         btn_supp = new QPushButton(gBox_telecommande);
         btn_supp->setObjectName(QString::fromUtf8("btn_supp"));
         btn_supp->setGeometry(QRect(100, 250, 41, 41));
@@ -127,12 +103,33 @@ public:
         btn_9 = new QPushButton(gBox_telecommande);
         btn_9->setObjectName(QString::fromUtf8("btn_9"));
         btn_9->setGeometry(QRect(50, 250, 41, 41));
-        btn_transmettre = new QPushButton(gBox_telecommande);
-        btn_transmettre->setObjectName(QString::fromUtf8("btn_transmettre"));
-        btn_transmettre->setGeometry(QRect(130, 50, 41, 24));
+        line_resul = new QLineEdit(gBox_telecommande);
+        line_resul->setObjectName(QString::fromUtf8("line_resul"));
+        line_resul->setGeometry(QRect(20, 110, 150, 26));
+        QFont font;
+        font.setPointSize(11);
+        line_resul->setFont(font);
+        lbl_sys_telecommande = new QLabel(gBox_telecommande);
+        lbl_sys_telecommande->setObjectName(QString::fromUtf8("lbl_sys_telecommande"));
+        lbl_sys_telecommande->setGeometry(QRect(10, 70, 41, 21));
+        QFont font1;
+        font1.setPointSize(18);
+        lbl_sys_telecommande->setFont(font1);
+        lbl_dia_telecommande = new QLabel(gBox_telecommande);
+        lbl_dia_telecommande->setObjectName(QString::fromUtf8("lbl_dia_telecommande"));
+        lbl_dia_telecommande->setGeometry(QRect(70, 70, 51, 21));
+        lbl_dia_telecommande->setFont(font1);
+        lbl_pul_telecommande = new QLabel(gBox_telecommande);
+        lbl_pul_telecommande->setObjectName(QString::fromUtf8("lbl_pul_telecommande"));
+        lbl_pul_telecommande->setGeometry(QRect(140, 60, 41, 41));
+        lbl_pul_telecommande->setFont(font1);
+        btn_next = new QPushButton(gBox_telecommande);
+        btn_next->setObjectName(QString::fromUtf8("btn_next"));
+        btn_next->setGeometry(QRect(150, 250, 41, 41));
+        btn_next->setFont(font);
         gBox_recap = new QGroupBox(centralwidget);
         gBox_recap->setObjectName(QString::fromUtf8("gBox_recap"));
-        gBox_recap->setGeometry(QRect(250, 0, 196, 327));
+        gBox_recap->setGeometry(QRect(210, 0, 196, 327));
         btn_close_2 = new QPushButton(gBox_recap);
         btn_close_2->setObjectName(QString::fromUtf8("btn_close_2"));
         btn_close_2->setGeometry(QRect(10, 20, 21, 21));
@@ -171,7 +168,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 899, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -189,10 +186,6 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         gBox_telecommande->setTitle(QCoreApplication::translate("MainWindow", "Telecommande", nullptr));
         btn_close->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
-        radio_btn_sys->setText(QCoreApplication::translate("MainWindow", "SYS", nullptr));
-        radio_btn_dia->setText(QCoreApplication::translate("MainWindow", "DIA", nullptr));
-        radio_btn_pul->setText(QCoreApplication::translate("MainWindow", "PUL", nullptr));
-        btn_ok->setText(QCoreApplication::translate("MainWindow", "OK", nullptr));
         btn_supp->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
         btn_8->setText(QCoreApplication::translate("MainWindow", "8", nullptr));
         btn_4->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
@@ -204,7 +197,10 @@ public:
         btn_7->setText(QCoreApplication::translate("MainWindow", "7", nullptr));
         btn_6->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
         btn_9->setText(QCoreApplication::translate("MainWindow", "9", nullptr));
-        btn_transmettre->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
+        lbl_sys_telecommande->setText(QCoreApplication::translate("MainWindow", "SYS", nullptr));
+        lbl_dia_telecommande->setText(QCoreApplication::translate("MainWindow", "DIA", nullptr));
+        lbl_pul_telecommande->setText(QCoreApplication::translate("MainWindow", "PUL", nullptr));
+        btn_next->setText(QCoreApplication::translate("MainWindow", "next", nullptr));
         gBox_recap->setTitle(QCoreApplication::translate("MainWindow", "R\303\251capitulatif", nullptr));
         btn_close_2->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
         lbl_sys->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
