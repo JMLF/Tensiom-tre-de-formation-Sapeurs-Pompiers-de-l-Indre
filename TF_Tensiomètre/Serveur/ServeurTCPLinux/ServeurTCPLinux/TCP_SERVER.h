@@ -9,7 +9,7 @@
 //include linux, ne compile poas sous winows
 #include <stdio.h>
 #include <stdlib.h>
-//#include <string.h> a verif
+#include <string.h> //pour la fonction bzero mais cette fonction est deprecated doncutiliser plutot memeset
 #include <unistd.h> //linux
 #include <sys/types.h> 
 #include <sys/socket.h> //linux

@@ -43,9 +43,9 @@ std::string TCP_SERVER::READ()
     if (n < 0) 
         std::cout << "ERROR reading from socket" << std::endl;
     
-    std::cout << "Trame recu : " + std::to_string(buffer) << std::endl; //trouver un moyen de passer le buffer en string 
+    std::cout << "Trame recu : " + std::to_string(*buffer) << std::endl; 
 
-    return std::string(std::to_string(buffer));
+    return std::string(std::to_string(*buffer));
 }
 
 void TCP_SERVER::WRITE(std::string message)
