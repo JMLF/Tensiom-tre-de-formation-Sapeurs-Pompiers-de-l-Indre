@@ -7,9 +7,12 @@ int main()
 {
     std::cout << "Demarrage serveur\n";
     TCP_SERVER serv; 
+    std::string trameRecu;
     serv.INIT(); //bloquant donc pas besoin de boucle 
-    std::string trameRecu = serv.READ();
-    std::cout << trameRecu << std::endl;
+    do {
+        trameRecu = serv.READ();
+        std::cout << trameRecu << std::endl;
+    } while (trameRecu != "STOP");
     serv.CLOSE();
     return 0;
 }

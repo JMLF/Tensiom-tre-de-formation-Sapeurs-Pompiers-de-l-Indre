@@ -43,7 +43,7 @@ std::string TCP_SERVER::READ()
     if (n < 0) 
         std::cout << "ERROR reading from socket" << std::endl;
     
-    std::cout << "Trame recu : " + buffer << std::endl; 
+    std::cout << "Trame recu : " << buffer << std::endl; 
 
     return buffer;
 }
