@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
       ui->lbl_dia_telecommande->setGeometry(70,70,51,21);
        ui->lbl_pul_telecommande->setGeometry(70,70,51,21);
 
-
+//_socket.connectToHost(QHostAddress("127.0.0.1"), 4242);
 }
 
 MainWindow::~MainWindow()
@@ -186,9 +186,7 @@ void MainWindow::on_btn_next_clicked()
             ui->gBox_telecommande->hide();
             ui->gBox_recap->show();
             break;
-
 }
-
 }
 
 
