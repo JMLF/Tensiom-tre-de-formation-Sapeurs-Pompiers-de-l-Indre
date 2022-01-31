@@ -7,7 +7,7 @@ TCP_SERVER::TCP_SERVER()
 
 }
 
-TCP_SERVER::INIT()
+void TCP_SERVER::INIT()
 {
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0)
@@ -15,7 +15,7 @@ TCP_SERVER::INIT()
 
     bzero((char*)&serv_addr, sizeof(serv_addr));
     
-    portno = atoi(argv[1]);
+    portno = atoi("12345\0"); //resneigner le port içi 
     
     serv_addr.sin_family = AF_INET;
     
@@ -43,9 +43,9 @@ std::string TCP_SERVER::READ()
     if (n < 0) 
         std::cout << "ERROR reading from socket" << std::endl;
     
-    std::cout << "Trame recu : " + std::to_string(buffer) << std::endl; //trouver un moyen de passer le buffer en string 
+    std::cout << "Trame recu : " + std::to_string(*buffer) << std::endl; 
 
-    return std::string(std::to_string(buffer));
+    return std::string(std::to_string(*buffer));
 }
 
 void TCP_SERVER::WRITE(std::string message)
