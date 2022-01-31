@@ -48,6 +48,7 @@ static lv_obj_t* PUL_labelU;
 static lv_obj_t* Systole_label;
 static lv_obj_t* Diastole_label;
 static lv_obj_t* Pulse_label;
+static lv_obj_t* mbox1;
 
 std::string test("test");
 
@@ -152,6 +153,51 @@ static void event_handlerPulUnite(lv_event_t* e)
         lv_label_set_text(PUL_labelU, buf);
     }
 }
+static void event_cb(lv_event_t* e)
+{
+    lv_obj_t* obj = lv_event_get_current_target(e);
+    LV_LOG_USER("Button %s clicked", lv_msgbox_get_active_btn_text(obj));
+    lv_msgbox_close(mbox1);
+
+}
+static void btn_event_cb(lv_event_t* e)
+{
+    std::string data = "Sys:";
+    data += lv_label_get_text(SYS_labelC);
+    data += lv_label_get_text(SYS_labelD);
+    data += lv_label_get_text(SYS_labelU);
+    data += ":Dia:";
+    data += lv_label_get_text(DIA_labelC);
+    data += lv_label_get_text(DIA_labelD);
+    data += lv_label_get_text(DIA_labelU);
+    data += ":Pul:";
+    data += lv_label_get_text(PUL_labelC);
+    data += lv_label_get_text(PUL_labelD);
+    data += lv_label_get_text(PUL_labelU);
+
+    lv_event_code_t code = lv_event_get_code(e);
+    lv_obj_t* btn = lv_event_get_target(e);
+    if (code == LV_EVENT_CLICKED) {
+        static const char* btns[] = { "Fermer" };
+        if (true == false) {
+            
+             mbox1 = lv_msgbox_create(NULL, "Message envoyer", "", btns, false);
+         
+
+            lv_obj_add_event_cb(mbox1, event_cb, LV_EVENT_VALUE_CHANGED, NULL);
+            lv_obj_center(mbox1);
+        }
+        else {
+            
+
+             mbox1 = lv_msgbox_create(NULL, "Erreur de connexion", "", btns, false);
+            lv_obj_add_event_cb(mbox1, event_cb, LV_EVENT_VALUE_CHANGED, NULL);
+            lv_obj_center(mbox1);
+        }
+
+    }
+}
+
 
 
 int main()
@@ -169,7 +215,7 @@ int main()
     }
 
     lv_win32_add_all_input_devices_to_group(NULL);
-    
+
 
     lv_obj_t* tabview;
     tabview = lv_tabview_create(lv_scr_act(), LV_DIR_TOP, 50);
@@ -348,12 +394,13 @@ int main()
     lv_obj_t* btn = lv_btn_create(tab4);
     lv_obj_align(btn, LV_ALIGN_BOTTOM_MID, 0, 0);
     lv_obj_set_size(btn, 120, 50);
+    lv_obj_add_event_cb(btn, btn_event_cb, LV_EVENT_ALL, NULL);
 
     lv_obj_t* label = lv_label_create(btn);
     lv_label_set_text(label, "send");
     lv_obj_center(label);
 
-    
+
 
 
 
