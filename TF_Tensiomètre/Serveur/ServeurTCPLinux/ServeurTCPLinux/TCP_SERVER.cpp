@@ -32,7 +32,7 @@ void TCP_SERVER::INIT()
     newsockfd = accept(sockfd,(struct sockaddr*)&cli_addr,&clilen);
     if (newsockfd < 0)
         std::cout << "ERROR on accept" << std::endl;
-
+    std::cout << "Une connection est effective" << std::endl;
 }
 
 std::string TCP_SERVER::READ()
@@ -43,9 +43,9 @@ std::string TCP_SERVER::READ()
     if (n < 0) 
         std::cout << "ERROR reading from socket" << std::endl;
     
-    std::cout << "Trame recu : " + std::to_string(*buffer) << std::endl; 
+    std::cout << "Trame recu : " + buffer << std::endl; 
 
-    return std::string(std::to_string(*buffer));
+    return buffer;
 }
 
 void TCP_SERVER::WRITE(std::string message)
