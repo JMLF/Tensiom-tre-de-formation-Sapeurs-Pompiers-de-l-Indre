@@ -70,9 +70,6 @@ TF_Tensiomètre/Serveur/ServeurTCPLinux/ServeurTCPLinux/TCP_SERVER.cpp:59:0: sty
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:134:0: style: The function 'FermeturWinSock' is never used. [unusedFunction]
 
 ^
-TF_Tensiomètre/Serveur/ServeurTCPLinux/ServeurTCPLinux/TCP_SERVER.cpp:10:0: style: The function 'INIT' is never used. [unusedFunction]
-
-^
 TF_Tensiomètre/Serveur/ServeurTCPLinux/ServeurTCPLinux/TCP_SERVER.cpp:38:0: style: The function 'READ' is never used. [unusedFunction]
 
 ^
