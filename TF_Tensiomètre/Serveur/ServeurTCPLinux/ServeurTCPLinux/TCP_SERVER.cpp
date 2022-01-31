@@ -7,7 +7,7 @@ TCP_SERVER::TCP_SERVER()
 
 }
 
-TCP_SERVER::INIT()
+void TCP_SERVER::INIT()
 {
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0)
