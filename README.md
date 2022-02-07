@@ -42,3 +42,11 @@ des organes d’entrées sorties (pompe, bouton, brassard, alimentation par pile
 Le dialogue entre les deux appareils doit s’effectuer sans fil.
 
 ## Organisation
+
+Trois etudiants sur ce projet:
+
++ Un etudiant pour la telecommande sous LittleLVGL
++ Un etudiant pour la telecommande sous QT5
++ Un etudiant pour le tensiomètre sous SDL2
+
+## Avancement 
