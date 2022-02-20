@@ -17,6 +17,7 @@ public:
 
 private slots:
 
+    void ajouterChiffre(QString chiffre);
 
     void on_btn_0_clicked();
 
@@ -38,11 +39,11 @@ private slots:
 
     void on_btn_9_clicked();
 
-    void on_btn_supp_clicked();
+    void on_btn_delete_clicked();
 
-    void on_btn_back_clicked();
+    void on_btn_ok_clicked();
 
-    void on_btn_next_clicked();
+    void on_btn_return_clicked();
 
 private:
     Ui::MainWindow *ui;
