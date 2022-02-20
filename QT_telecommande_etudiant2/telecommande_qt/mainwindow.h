@@ -45,6 +45,12 @@ private slots:
 
     void on_btn_return_clicked();
 
+    void on_btn_next_clicked();
+
+    void on_btn_back_clicked();
+
+    void on_btn_send_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

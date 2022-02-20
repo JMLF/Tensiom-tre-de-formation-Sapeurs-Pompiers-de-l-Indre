@@ -17,7 +17,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
@@ -43,10 +42,12 @@ public:
     QPushButton *btn_ok;
     QPushButton *btn_delete;
     QToolButton *btn_tool;
-    QRadioButton *r_btn_sys;
-    QRadioButton *r_btn_pul;
-    QRadioButton *r_btn_dia;
     QLineEdit *line_edit_value;
+    QPushButton *btn_back;
+    QPushButton *btn_next;
+    QLabel *lbl_telec_pul;
+    QLabel *lbl_telec_dia;
+    QLabel *lbl_telec_sys;
     QGroupBox *gBox_recap;
     QLabel *lbl_num_sys;
     QLabel *lbl_num_dia;
@@ -58,7 +59,9 @@ public:
     QLabel *lbl_mmhg2;
     QPushButton *btn_return;
     QPushButton *btn_send;
+    QPushButton *btn_close_2;
     QGroupBox *gBox_send;
+    QPushButton *btn_close_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -114,71 +117,82 @@ public:
         btn_tool = new QToolButton(gBox_telec);
         btn_tool->setObjectName(QString::fromUtf8("btn_tool"));
         btn_tool->setGeometry(QRect(150, 20, 31, 31));
-        r_btn_sys = new QRadioButton(gBox_telec);
-        r_btn_sys->setObjectName(QString::fromUtf8("r_btn_sys"));
-        r_btn_sys->setGeometry(QRect(10, 70, 51, 20));
-        QFont font;
-        font.setPointSize(12);
-        r_btn_sys->setFont(font);
-        r_btn_sys->setChecked(true);
-        r_btn_pul = new QRadioButton(gBox_telec);
-        r_btn_pul->setObjectName(QString::fromUtf8("r_btn_pul"));
-        r_btn_pul->setGeometry(QRect(130, 70, 51, 20));
-        r_btn_pul->setFont(font);
-        r_btn_dia = new QRadioButton(gBox_telec);
-        r_btn_dia->setObjectName(QString::fromUtf8("r_btn_dia"));
-        r_btn_dia->setGeometry(QRect(70, 70, 51, 20));
-        r_btn_dia->setFont(font);
         line_edit_value = new QLineEdit(gBox_telec);
         line_edit_value->setObjectName(QString::fromUtf8("line_edit_value"));
         line_edit_value->setGeometry(QRect(30, 110, 131, 31));
-        QFont font1;
-        font1.setPointSize(16);
-        line_edit_value->setFont(font1);
+        QFont font;
+        font.setPointSize(16);
+        line_edit_value->setFont(font);
+        btn_back = new QPushButton(gBox_telec);
+        btn_back->setObjectName(QString::fromUtf8("btn_back"));
+        btn_back->setGeometry(QRect(30, 60, 31, 31));
+        btn_next = new QPushButton(gBox_telec);
+        btn_next->setObjectName(QString::fromUtf8("btn_next"));
+        btn_next->setGeometry(QRect(130, 60, 31, 31));
+        lbl_telec_pul = new QLabel(gBox_telec);
+        lbl_telec_pul->setObjectName(QString::fromUtf8("lbl_telec_pul"));
+        lbl_telec_pul->setGeometry(QRect(80, 65, 40, 25));
+        lbl_telec_pul->setFont(font);
+        lbl_telec_dia = new QLabel(gBox_telec);
+        lbl_telec_dia->setObjectName(QString::fromUtf8("lbl_telec_dia"));
+        lbl_telec_dia->setGeometry(QRect(80, 40, 40, 25));
+        lbl_telec_dia->setFont(font);
+        lbl_telec_sys = new QLabel(gBox_telec);
+        lbl_telec_sys->setObjectName(QString::fromUtf8("lbl_telec_sys"));
+        lbl_telec_sys->setGeometry(QRect(80, 15, 40, 25));
+        lbl_telec_sys->setFont(font);
         gBox_recap = new QGroupBox(centralwidget);
         gBox_recap->setObjectName(QString::fromUtf8("gBox_recap"));
         gBox_recap->setGeometry(QRect(210, 0, 196, 327));
         lbl_num_sys = new QLabel(gBox_recap);
         lbl_num_sys->setObjectName(QString::fromUtf8("lbl_num_sys"));
-        lbl_num_sys->setGeometry(QRect(20, 50, 49, 16));
-        lbl_num_sys->setFont(font);
+        lbl_num_sys->setGeometry(QRect(20, 75, 49, 16));
+        QFont font1;
+        font1.setPointSize(12);
+        lbl_num_sys->setFont(font1);
         lbl_num_dia = new QLabel(gBox_recap);
         lbl_num_dia->setObjectName(QString::fromUtf8("lbl_num_dia"));
-        lbl_num_dia->setGeometry(QRect(20, 120, 49, 16));
-        lbl_num_dia->setFont(font);
+        lbl_num_dia->setGeometry(QRect(20, 125, 49, 16));
+        lbl_num_dia->setFont(font1);
         lbl_num_pul = new QLabel(gBox_recap);
         lbl_num_pul->setObjectName(QString::fromUtf8("lbl_num_pul"));
-        lbl_num_pul->setGeometry(QRect(20, 190, 49, 16));
-        lbl_num_pul->setFont(font);
+        lbl_num_pul->setGeometry(QRect(20, 175, 49, 16));
+        lbl_num_pul->setFont(font1);
         lbl_sys = new QLabel(gBox_recap);
         lbl_sys->setObjectName(QString::fromUtf8("lbl_sys"));
-        lbl_sys->setGeometry(QRect(90, 50, 41, 21));
+        lbl_sys->setGeometry(QRect(90, 75, 41, 21));
         QFont font2;
         font2.setPointSize(14);
         lbl_sys->setFont(font2);
         lbl_dia = new QLabel(gBox_recap);
         lbl_dia->setObjectName(QString::fromUtf8("lbl_dia"));
-        lbl_dia->setGeometry(QRect(90, 120, 41, 21));
+        lbl_dia->setGeometry(QRect(90, 125, 41, 21));
         lbl_dia->setFont(font2);
         lbl_pul = new QLabel(gBox_recap);
         lbl_pul->setObjectName(QString::fromUtf8("lbl_pul"));
-        lbl_pul->setGeometry(QRect(90, 190, 41, 21));
+        lbl_pul->setGeometry(QRect(90, 175, 41, 21));
         lbl_pul->setFont(font2);
         lbl_mmhg = new QLabel(gBox_recap);
         lbl_mmhg->setObjectName(QString::fromUtf8("lbl_mmhg"));
-        lbl_mmhg->setGeometry(QRect(125, 60, 49, 16));
+        lbl_mmhg->setGeometry(QRect(125, 85, 49, 16));
         lbl_mmhg2 = new QLabel(gBox_recap);
         lbl_mmhg2->setObjectName(QString::fromUtf8("lbl_mmhg2"));
-        lbl_mmhg2->setGeometry(QRect(125, 130, 49, 16));
+        lbl_mmhg2->setGeometry(QRect(125, 135, 49, 16));
         btn_return = new QPushButton(gBox_recap);
         btn_return->setObjectName(QString::fromUtf8("btn_return"));
         btn_return->setGeometry(QRect(50, 240, 75, 24));
         btn_send = new QPushButton(gBox_recap);
         btn_send->setObjectName(QString::fromUtf8("btn_send"));
         btn_send->setGeometry(QRect(50, 280, 75, 24));
+        btn_close_2 = new QPushButton(gBox_recap);
+        btn_close_2->setObjectName(QString::fromUtf8("btn_close_2"));
+        btn_close_2->setGeometry(QRect(10, 20, 31, 31));
         gBox_send = new QGroupBox(centralwidget);
         gBox_send->setObjectName(QString::fromUtf8("gBox_send"));
         gBox_send->setGeometry(QRect(420, 0, 196, 327));
+        btn_close_3 = new QPushButton(gBox_send);
+        btn_close_3->setObjectName(QString::fromUtf8("btn_close_3"));
+        btn_close_3->setGeometry(QRect(10, 20, 31, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -190,6 +204,8 @@ public:
 
         retranslateUi(MainWindow);
         QObject::connect(btn_close, SIGNAL(clicked()), MainWindow, SLOT(close()));
+        QObject::connect(btn_close_2, SIGNAL(clicked()), MainWindow, SLOT(close()));
+        QObject::connect(btn_close_3, SIGNAL(clicked()), MainWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -212,9 +228,11 @@ public:
         btn_ok->setText(QCoreApplication::translate("MainWindow", "OK", nullptr));
         btn_delete->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
         btn_tool->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
-        r_btn_sys->setText(QCoreApplication::translate("MainWindow", "SYS", nullptr));
-        r_btn_pul->setText(QCoreApplication::translate("MainWindow", "PUL", nullptr));
-        r_btn_dia->setText(QCoreApplication::translate("MainWindow", "DIA", nullptr));
+        btn_back->setText(QCoreApplication::translate("MainWindow", "<", nullptr));
+        btn_next->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
+        lbl_telec_pul->setText(QCoreApplication::translate("MainWindow", "PUL", nullptr));
+        lbl_telec_dia->setText(QCoreApplication::translate("MainWindow", "DIA", nullptr));
+        lbl_telec_sys->setText(QCoreApplication::translate("MainWindow", "SYS", nullptr));
         gBox_recap->setTitle(QCoreApplication::translate("MainWindow", "R\303\251capitulatif", nullptr));
         lbl_num_sys->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         lbl_num_dia->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
@@ -226,7 +244,9 @@ public:
         lbl_mmhg2->setText(QCoreApplication::translate("MainWindow", "mmHg", nullptr));
         btn_return->setText(QCoreApplication::translate("MainWindow", "RETOUR", nullptr));
         btn_send->setText(QCoreApplication::translate("MainWindow", "ENVOYER", nullptr));
+        btn_close_2->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
         gBox_send->setTitle(QCoreApplication::translate("MainWindow", "Envoie", nullptr));
+        btn_close_3->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
     } // retranslateUi
 
 };

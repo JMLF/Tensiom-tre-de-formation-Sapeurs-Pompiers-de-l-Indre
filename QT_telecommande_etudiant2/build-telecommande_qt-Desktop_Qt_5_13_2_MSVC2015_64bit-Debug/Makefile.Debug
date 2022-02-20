@@ -547,10 +547,14 @@ debug\mainwindow.obj: ..\telecommande_qt\mainwindow.cpp ..\telecommande_qt\mainw
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QGroupBox \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qgroupbox.h \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QLCDNumber \
-		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qlcdnumber.h \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QLabel \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qlabel.h \
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QLineEdit \
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qlineedit.h \
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtGui\qtextcursor.h \
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtGui\qtextformat.h \
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtGui\qpen.h \
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtGui\qtextoption.h \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QMenuBar \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qmenubar.h \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qmenu.h \
@@ -566,8 +570,7 @@ debug\mainwindow.obj: ..\telecommande_qt\mainwindow.cpp ..\telecommande_qt\mainw
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QToolButton \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qtoolbutton.h \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QWidget \
-		..\telecommande_qt\client_TCP.h \
-		..\telecommande_qt\Telecommande.h
+		..\telecommande_qt\client_TCP.h
 
 debug\moc_mainwindow.obj: debug\moc_mainwindow.cpp 
 
