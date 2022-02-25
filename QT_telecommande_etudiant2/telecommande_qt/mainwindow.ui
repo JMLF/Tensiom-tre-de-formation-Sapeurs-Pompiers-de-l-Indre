@@ -172,10 +172,10 @@
     <widget class="QPushButton" name="btn_ok">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>270</y>
-       <width>41</width>
-       <height>41</height>
+       <x>160</x>
+       <y>60</y>
+       <width>31</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -453,7 +453,7 @@
     <widget class="QPushButton" name="btn_return">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>60</x>
        <y>240</y>
        <width>75</width>
        <height>24</height>
@@ -466,7 +466,7 @@
     <widget class="QPushButton" name="btn_send">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>60</x>
        <y>280</y>
        <width>75</width>
        <height>24</height>
@@ -513,6 +513,94 @@
      </property>
      <property name="text">
       <string>X</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_answer">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Réponse</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gBox_settings">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>0</y>
+      <width>196</width>
+      <height>327</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Paramètres</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>140</y>
+       <width>181</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Paramètres modifiables</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_close_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_confirm">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>240</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>VALIDER</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_cancel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>280</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ANNULER</string>
      </property>
     </widget>
    </widget>
@@ -571,6 +659,22 @@
    <hints>
     <hint type="sourcelabel">
      <x>445</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>658</x>
+     <y>312</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_close_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>645</x>
      <y>57</y>
     </hint>
     <hint type="destinationlabel">

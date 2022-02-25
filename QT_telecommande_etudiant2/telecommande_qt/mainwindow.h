@@ -51,6 +51,12 @@ private slots:
 
     void on_btn_send_clicked();
 
+    void on_btn_tool_clicked();
+
+    void on_btn_confirm_clicked();
+
+    void on_btn_cancel_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

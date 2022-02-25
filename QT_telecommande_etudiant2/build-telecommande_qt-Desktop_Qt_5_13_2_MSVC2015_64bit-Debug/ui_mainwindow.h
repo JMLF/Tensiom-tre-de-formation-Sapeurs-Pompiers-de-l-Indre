@@ -62,6 +62,12 @@ public:
     QPushButton *btn_close_2;
     QGroupBox *gBox_send;
     QPushButton *btn_close_3;
+    QLabel *lbl_answer;
+    QGroupBox *gBox_settings;
+    QLabel *label;
+    QPushButton *btn_close_4;
+    QPushButton *btn_confirm;
+    QPushButton *btn_cancel;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -110,7 +116,7 @@ public:
         btn_8->setGeometry(QRect(0, 270, 41, 41));
         btn_ok = new QPushButton(gBox_telec);
         btn_ok->setObjectName(QString::fromUtf8("btn_ok"));
-        btn_ok->setGeometry(QRect(150, 270, 41, 41));
+        btn_ok->setGeometry(QRect(160, 60, 31, 31));
         btn_delete = new QPushButton(gBox_telec);
         btn_delete->setObjectName(QString::fromUtf8("btn_delete"));
         btn_delete->setGeometry(QRect(100, 270, 41, 41));
@@ -180,10 +186,10 @@ public:
         lbl_mmhg2->setGeometry(QRect(125, 135, 49, 16));
         btn_return = new QPushButton(gBox_recap);
         btn_return->setObjectName(QString::fromUtf8("btn_return"));
-        btn_return->setGeometry(QRect(50, 240, 75, 24));
+        btn_return->setGeometry(QRect(60, 240, 75, 24));
         btn_send = new QPushButton(gBox_recap);
         btn_send->setObjectName(QString::fromUtf8("btn_send"));
-        btn_send->setGeometry(QRect(50, 280, 75, 24));
+        btn_send->setGeometry(QRect(60, 280, 75, 24));
         btn_close_2 = new QPushButton(gBox_recap);
         btn_close_2->setObjectName(QString::fromUtf8("btn_close_2"));
         btn_close_2->setGeometry(QRect(10, 20, 31, 31));
@@ -193,6 +199,26 @@ public:
         btn_close_3 = new QPushButton(gBox_send);
         btn_close_3->setObjectName(QString::fromUtf8("btn_close_3"));
         btn_close_3->setGeometry(QRect(10, 20, 31, 31));
+        lbl_answer = new QLabel(gBox_send);
+        lbl_answer->setObjectName(QString::fromUtf8("lbl_answer"));
+        lbl_answer->setGeometry(QRect(10, 160, 181, 41));
+        lbl_answer->setFont(font1);
+        gBox_settings = new QGroupBox(centralwidget);
+        gBox_settings->setObjectName(QString::fromUtf8("gBox_settings"));
+        gBox_settings->setGeometry(QRect(620, 0, 196, 327));
+        label = new QLabel(gBox_settings);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(8, 140, 181, 20));
+        label->setFont(font1);
+        btn_close_4 = new QPushButton(gBox_settings);
+        btn_close_4->setObjectName(QString::fromUtf8("btn_close_4"));
+        btn_close_4->setGeometry(QRect(10, 20, 31, 31));
+        btn_confirm = new QPushButton(gBox_settings);
+        btn_confirm->setObjectName(QString::fromUtf8("btn_confirm"));
+        btn_confirm->setGeometry(QRect(60, 240, 75, 24));
+        btn_cancel = new QPushButton(gBox_settings);
+        btn_cancel->setObjectName(QString::fromUtf8("btn_cancel"));
+        btn_cancel->setGeometry(QRect(60, 280, 75, 24));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -206,6 +232,7 @@ public:
         QObject::connect(btn_close, SIGNAL(clicked()), MainWindow, SLOT(close()));
         QObject::connect(btn_close_2, SIGNAL(clicked()), MainWindow, SLOT(close()));
         QObject::connect(btn_close_3, SIGNAL(clicked()), MainWindow, SLOT(close()));
+        QObject::connect(btn_close_4, SIGNAL(clicked()), MainWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -247,6 +274,12 @@ public:
         btn_close_2->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
         gBox_send->setTitle(QCoreApplication::translate("MainWindow", "Envoie", nullptr));
         btn_close_3->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
+        lbl_answer->setText(QCoreApplication::translate("MainWindow", "R\303\251ponse", nullptr));
+        gBox_settings->setTitle(QCoreApplication::translate("MainWindow", "Param\303\250tres", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Param\303\250tres modifiables", nullptr));
+        btn_close_4->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
+        btn_confirm->setText(QCoreApplication::translate("MainWindow", "VALIDER", nullptr));
+        btn_cancel->setText(QCoreApplication::translate("MainWindow", "ANNULER", nullptr));
     } // retranslateUi
 
 };

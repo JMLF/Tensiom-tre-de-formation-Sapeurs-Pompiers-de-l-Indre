@@ -11,10 +11,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->line_edit_value->setMaxLength(3);
     ui->gBox_recap->hide();
     ui->gBox_send->hide();
+    ui->gBox_settings->hide();
 
      ui->lbl_telec_sys->setGeometry(80,65,40,25);
     ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
+     ui->btn_ok->hide();
+     ui->btn_ok->setGeometry(130,60,31,31);
+     ui->btn_back->hide();
 
 }
 
@@ -106,16 +110,19 @@ void MainWindow::on_btn_delete_clicked()
 
 void MainWindow::on_btn_ok_clicked()
 {
-    if(ui->lbl_telec_sys->isHidden() == false)
+   /* if(ui->lbl_telec_sys->isHidden() == false)
             ui->lbl_num_sys->setText(ui->line_edit_value->text());
     else if(ui->lbl_telec_dia->isHidden() == false)
         ui->lbl_num_dia->setText(ui->line_edit_value->text());
-    else
+    else*/
         ui->lbl_num_pul->setText(ui->line_edit_value->text());
-
+    ui->lbl_telec_pul->hide();
+     ui->line_edit_value->setText(ui->lbl_num_sys->text());
+    ui->lbl_telec_sys->show();
     ui->gBox_telec->hide();
     ui->gBox_recap->show();
     ui->gBox_recap->setGeometry(0,0,196,327);
+
 }
 
 
@@ -123,6 +130,9 @@ void MainWindow::on_btn_return_clicked()
 {
     ui->gBox_telec->show();
     ui->gBox_recap->hide();
+    ui->btn_ok->hide();
+    ui->btn_next->show();
+    ui->btn_back->hide();
 }
 
 
@@ -134,41 +144,45 @@ void MainWindow::on_btn_next_clicked()
         ui->lbl_telec_dia->setGeometry(80,65,40,25);
         ui->lbl_telec_dia->show();
         ui->line_edit_value->setText(ui->lbl_num_dia->text());
+        ui->btn_back->show();
     }
 
-   else if(ui->lbl_telec_dia->isHidden() == false){
+   else /*if(ui->lbl_telec_dia->isHidden() == false)*/{
         ui->lbl_num_dia->setText(ui->line_edit_value->text());
         ui->lbl_telec_dia->hide();
         ui->lbl_telec_pul->setGeometry(80,65,40,25);
         ui->lbl_telec_pul->show();
         ui->line_edit_value->setText(ui->lbl_num_pul->text());
+        ui->btn_ok->show();
+        ui->btn_next->hide();
     }
-     else if(ui->lbl_telec_pul->isHidden() == false){
+     /*else if(ui->lbl_telec_pul->isHidden() == false){
         ui->lbl_num_pul->setText(ui->line_edit_value->text());
         ui->lbl_telec_pul->hide();
         ui->lbl_telec_sys->setGeometry(80,65,40,25);
         ui->lbl_telec_sys->show();
         ui->line_edit_value->setText(ui->lbl_num_sys->text());
-    }
+    }*/
 }
 
 
 void MainWindow::on_btn_back_clicked()
 {
-    if(ui->lbl_telec_sys->isHidden() == false){
+   /* if(ui->lbl_telec_sys->isHidden() == false){
         ui->lbl_num_sys->setText(ui->line_edit_value->text());
         ui->lbl_telec_sys->hide();
         ui->lbl_telec_pul->setGeometry(80,65,40,25);
         ui->lbl_telec_pul->show();
         ui->line_edit_value->setText(ui->lbl_num_pul->text());
-    }
+    }*/
 
-   else if(ui->lbl_telec_dia->isHidden() == false){
+  /* else*/ if(ui->lbl_telec_dia->isHidden() == false){
         ui->lbl_num_dia->setText(ui->line_edit_value->text());
         ui->lbl_telec_dia->hide();
         ui->lbl_telec_sys->setGeometry(80,65,40,25);
         ui->lbl_telec_sys->show();
         ui->line_edit_value->setText(ui->lbl_num_sys->text());
+        ui->btn_back->hide();
     }
      else {
         ui->lbl_num_pul->setText(ui->line_edit_value->text());
@@ -176,6 +190,8 @@ void MainWindow::on_btn_back_clicked()
         ui->lbl_telec_dia->setGeometry(80,65,40,25);
         ui->lbl_telec_dia->show();
         ui->line_edit_value->setText(ui->lbl_num_dia->text());
+        ui->btn_ok->hide();
+        ui->btn_next->show();
     }
 }
 
@@ -185,5 +201,27 @@ void MainWindow::on_btn_send_clicked()
     ui->gBox_recap->hide();
     ui->gBox_send->show();
     ui->gBox_send->setGeometry(0,0,196,327);
+}
+
+
+void MainWindow::on_btn_tool_clicked()
+{
+    ui->gBox_telec->hide();
+    ui->gBox_settings->show();
+    ui->gBox_settings->setGeometry(0,0,196,327);
+}
+
+
+void MainWindow::on_btn_confirm_clicked()
+{
+    ui->gBox_telec->show();
+    ui->gBox_settings->hide();
+}
+
+
+void MainWindow::on_btn_cancel_clicked()
+{
+    ui->gBox_telec->show();
+    ui->gBox_settings->hide();
 }
 
