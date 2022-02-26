@@ -57,6 +57,8 @@ private slots:
 
     void on_btn_cancel_clicked();
 
+    void on_btn_error_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -23,6 +23,9 @@
       <height>327</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(101, 124, 255, 69), stop:0.388626 rgba(143, 149, 255, 69), stop:0.42654 rgba(112, 123, 255, 145), stop:0.454976 rgba(23, 81, 255, 208), stop:0.477581 rgba(149, 154, 255, 130), stop:0.516588 rgba(255, 224, 216, 130), stop:0.549763 rgba(255, 74, 45, 255), stop:0.57754 rgba(255, 155, 143, 130), stop:0.611374 rgba(255, 170, 164, 69), stop:1 rgba(255, 159, 159, 69));</string>
+    </property>
     <property name="title">
      <string>Télécommande</string>
     </property>
@@ -34,6 +37,14 @@
        <width>31</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>X</string>
@@ -48,6 +59,14 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>3</string>
      </property>
@@ -60,6 +79,15 @@
        <width>41</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));
+</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -74,6 +102,14 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>1</string>
      </property>
@@ -86,6 +122,14 @@
        <width>41</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>2</string>
@@ -100,6 +144,14 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>7</string>
      </property>
@@ -112,6 +164,14 @@
        <width>41</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>5</string>
@@ -126,6 +186,14 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>6</string>
      </property>
@@ -138,6 +206,14 @@
        <width>41</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>4</string>
@@ -152,6 +228,14 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>9</string>
      </property>
@@ -165,6 +249,14 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>8</string>
      </property>
@@ -172,11 +264,14 @@
     <widget class="QPushButton" name="btn_ok">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>60</y>
+       <x>135</x>
+       <y>100</y>
        <width>31</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>OK</string>
@@ -191,6 +286,14 @@
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>&lt;</string>
      </property>
@@ -204,6 +307,9 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>...</string>
      </property>
@@ -211,9 +317,9 @@
     <widget class="QLineEdit" name="line_edit_value">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>72</x>
        <y>110</y>
-       <width>131</width>
+       <width>50</width>
        <height>31</height>
       </rect>
      </property>
@@ -221,6 +327,12 @@
       <font>
        <pointsize>16</pointsize>
       </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_back">
@@ -232,6 +344,9 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>&lt;</string>
      </property>
@@ -239,11 +354,14 @@
     <widget class="QPushButton" name="btn_next">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>135</x>
        <y>60</y>
        <width>31</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>&gt;</string>
@@ -263,6 +381,9 @@
        <pointsize>16</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>PUL</string>
      </property>
@@ -280,6 +401,9 @@
       <font>
        <pointsize>16</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>DIA</string>
@@ -299,10 +423,33 @@
        <pointsize>16</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>SYS</string>
      </property>
     </widget>
+    <zorder>btn_close</zorder>
+    <zorder>btn_3</zorder>
+    <zorder>btn_1</zorder>
+    <zorder>btn_2</zorder>
+    <zorder>btn_7</zorder>
+    <zorder>btn_5</zorder>
+    <zorder>btn_6</zorder>
+    <zorder>btn_4</zorder>
+    <zorder>btn_9</zorder>
+    <zorder>btn_8</zorder>
+    <zorder>btn_ok</zorder>
+    <zorder>btn_tool</zorder>
+    <zorder>line_edit_value</zorder>
+    <zorder>btn_back</zorder>
+    <zorder>btn_next</zorder>
+    <zorder>lbl_telec_pul</zorder>
+    <zorder>lbl_telec_dia</zorder>
+    <zorder>lbl_telec_sys</zorder>
+    <zorder>btn_delete</zorder>
+    <zorder>btn_0</zorder>
    </widget>
    <widget class="QGroupBox" name="gBox_recap">
     <property name="geometry">
@@ -313,6 +460,9 @@
       <height>327</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(101, 124, 255, 69), stop:0.388626 rgba(143, 149, 255, 69), stop:0.42654 rgba(112, 123, 255, 145), stop:0.454976 rgba(23, 81, 255, 208), stop:0.477581 rgba(149, 154, 255, 130), stop:0.516588 rgba(255, 224, 216, 130), stop:0.549763 rgba(255, 74, 45, 255), stop:0.57754 rgba(255, 155, 143, 130), stop:0.611374 rgba(255, 170, 164, 69), stop:1 rgba(255, 159, 159, 69));</string>
+    </property>
     <property name="title">
      <string>Récapitulatif</string>
     </property>
@@ -322,13 +472,16 @@
        <x>20</x>
        <y>75</y>
        <width>49</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>16</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -340,13 +493,16 @@
        <x>20</x>
        <y>125</y>
        <width>49</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>16</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -358,13 +514,16 @@
        <x>20</x>
        <y>175</y>
        <width>49</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>16</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>0</string>
@@ -375,7 +534,7 @@
       <rect>
        <x>90</x>
        <y>75</y>
-       <width>41</width>
+       <width>39</width>
        <height>21</height>
       </rect>
      </property>
@@ -383,6 +542,9 @@
       <font>
        <pointsize>14</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>SYS </string>
@@ -393,7 +555,7 @@
       <rect>
        <x>90</x>
        <y>125</y>
-       <width>41</width>
+       <width>39</width>
        <height>21</height>
       </rect>
      </property>
@@ -401,6 +563,9 @@
       <font>
        <pointsize>14</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>DIA</string>
@@ -411,7 +576,7 @@
       <rect>
        <x>90</x>
        <y>175</y>
-       <width>41</width>
+       <width>39</width>
        <height>21</height>
       </rect>
      </property>
@@ -419,6 +584,9 @@
       <font>
        <pointsize>14</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>PUL</string>
@@ -433,6 +601,9 @@
        <height>16</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>mmHg</string>
      </property>
@@ -445,6 +616,9 @@
        <width>49</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>mmHg</string>
@@ -459,6 +633,9 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>RETOUR</string>
      </property>
@@ -472,6 +649,9 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>ENVOYER</string>
      </property>
@@ -484,6 +664,14 @@
        <width>31</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>X</string>
@@ -499,6 +687,9 @@
       <height>327</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(101, 124, 255, 69), stop:0.388626 rgba(143, 149, 255, 69), stop:0.42654 rgba(112, 123, 255, 145), stop:0.454976 rgba(23, 81, 255, 208), stop:0.477581 rgba(149, 154, 255, 130), stop:0.516588 rgba(255, 224, 216, 130), stop:0.549763 rgba(255, 74, 45, 255), stop:0.57754 rgba(255, 155, 143, 130), stop:0.611374 rgba(255, 170, 164, 69), stop:1 rgba(255, 159, 159, 69));</string>
+    </property>
     <property name="title">
      <string>Envoie</string>
     </property>
@@ -511,6 +702,14 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>X</string>
      </property>
@@ -518,19 +717,38 @@
     <widget class="QLabel" name="lbl_answer">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>160</y>
-       <width>181</width>
+       <width>201</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>11</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>Réponse</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_error">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>240</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
+     <property name="text">
+      <string>ERREUR</string>
      </property>
     </widget>
    </widget>
@@ -543,22 +761,28 @@
       <height>327</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(101, 124, 255, 69), stop:0.388626 rgba(143, 149, 255, 69), stop:0.42654 rgba(112, 123, 255, 145), stop:0.454976 rgba(23, 81, 255, 208), stop:0.477581 rgba(149, 154, 255, 130), stop:0.516588 rgba(255, 224, 216, 130), stop:0.549763 rgba(255, 74, 45, 255), stop:0.57754 rgba(255, 155, 143, 130), stop:0.611374 rgba(255, 170, 164, 69), stop:1 rgba(255, 159, 159, 69));</string>
+    </property>
     <property name="title">
      <string>Paramètres</string>
     </property>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>8</x>
+       <x>-2</x>
        <y>140</y>
-       <width>181</width>
+       <width>201</width>
        <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>11</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>Paramètres modifiables</string>
@@ -573,6 +797,14 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>X</string>
      </property>
@@ -585,6 +817,9 @@
        <width>75</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
      </property>
      <property name="text">
       <string>VALIDER</string>
@@ -599,8 +834,62 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
      <property name="text">
       <string>ANNULER</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gBox_waiting">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>0</y>
+      <width>196</width>
+      <height>327</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(101, 124, 255, 69), stop:0.388626 rgba(143, 149, 255, 69), stop:0.42654 rgba(112, 123, 255, 145), stop:0.454976 rgba(23, 81, 255, 208), stop:0.477581 rgba(149, 154, 255, 130), stop:0.516588 rgba(255, 224, 216, 130), stop:0.549763 rgba(255, 74, 45, 255), stop:0.57754 rgba(255, 155, 143, 130), stop:0.611374 rgba(255, 170, 164, 69), stop:1 rgba(255, 159, 159, 69));</string>
+    </property>
+    <property name="title">
+     <string>Attente</string>
+    </property>
+    <widget class="QLabel" name="lbl_waiting">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>30</y>
+       <width>181</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0, angle:130.4, stop:0 rgba(0, 203, 255, 0), stop:0.240566 rgba(151, 173, 255, 0), stop:0.292453 rgba(255, 255, 255, 0), stop:0.325472 rgba(0, 38, 255, 0), stop:0.339623 rgba(255, 255, 255, 0), stop:0.349057 rgba(255, 255, 255, 0), stop:0.504717 rgba(255, 0, 0, 0), stop:0.580189 rgba(255, 255, 255, 0), stop:0.625 rgba(255, 255, 255, 0), stop:1 rgba(255, 255, 255, 0));</string>
+     </property>
+     <property name="text">
+      <string>En attente de la connexion 
+ d'un tensiomètre...</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_chiffre">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>70</y>
+       <width>49</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>chiffre</string>
      </property>
     </widget>
    </widget>

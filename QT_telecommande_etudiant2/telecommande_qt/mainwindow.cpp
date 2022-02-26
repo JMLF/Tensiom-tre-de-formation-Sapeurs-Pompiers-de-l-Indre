@@ -2,7 +2,14 @@
 #include "ui_mainwindow.h"
 #include "client_TCP.h"
 
-
+//*************************A faire******///
+/*
+ * Reprendre le client TCP de la telecommande au lycée + par conséquent modifier le bouton envoyer
+ * Faire le bouton erreur pour le placement du brassare
+ * Faire le bouton paramètres
+ * Vérifier que le tensiomètre est bien connecté à la télécommande
+ *
+  */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -17,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
      ui->btn_ok->hide();
-     ui->btn_ok->setGeometry(130,60,31,31);
+     ui->btn_ok->setGeometry(135,60,31,31);
      ui->btn_back->hide();
 
 }
@@ -223,5 +230,11 @@ void MainWindow::on_btn_cancel_clicked()
 {
     ui->gBox_telec->show();
     ui->gBox_settings->hide();
+}
+
+
+void MainWindow::on_btn_error_clicked()
+{
+
 }
 
