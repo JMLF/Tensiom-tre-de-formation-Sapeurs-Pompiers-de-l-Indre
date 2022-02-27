@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "client_TCP.h"
+#include <fstream>
+#include <filesystem>
 
 //*************************A faire******///
 /*
@@ -16,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->line_edit_value->setMaxLength(3);
+    ui->gBox_telec->hide();
     ui->gBox_recap->hide();
     ui->gBox_send->hide();
     ui->gBox_settings->hide();
@@ -23,9 +26,14 @@ MainWindow::MainWindow(QWidget *parent)
      ui->lbl_telec_sys->setGeometry(80,65,40,25);
     ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
+     ui->lbl_waiting->hide();
      ui->btn_ok->hide();
      ui->btn_ok->setGeometry(135,60,31,31);
      ui->btn_back->hide();
+     ui->btn_start->setGeometry(60,150,91,31);
+
+     ui->gBox_waiting->setGeometry(0,0,196,327);
+
 
 }
 
@@ -117,14 +125,9 @@ void MainWindow::on_btn_delete_clicked()
 
 void MainWindow::on_btn_ok_clicked()
 {
-   /* if(ui->lbl_telec_sys->isHidden() == false)
-            ui->lbl_num_sys->setText(ui->line_edit_value->text());
-    else if(ui->lbl_telec_dia->isHidden() == false)
-        ui->lbl_num_dia->setText(ui->line_edit_value->text());
-    else*/
-        ui->lbl_num_pul->setText(ui->line_edit_value->text());
+    ui->lbl_num_pul->setText(ui->line_edit_value->text());
     ui->lbl_telec_pul->hide();
-     ui->line_edit_value->setText(ui->lbl_num_sys->text());
+    ui->line_edit_value->setText(ui->lbl_num_sys->text());
     ui->lbl_telec_sys->show();
     ui->gBox_telec->hide();
     ui->gBox_recap->show();
@@ -154,7 +157,7 @@ void MainWindow::on_btn_next_clicked()
         ui->btn_back->show();
     }
 
-   else /*if(ui->lbl_telec_dia->isHidden() == false)*/{
+   else {
         ui->lbl_num_dia->setText(ui->line_edit_value->text());
         ui->lbl_telec_dia->hide();
         ui->lbl_telec_pul->setGeometry(80,65,40,25);
@@ -163,27 +166,13 @@ void MainWindow::on_btn_next_clicked()
         ui->btn_ok->show();
         ui->btn_next->hide();
     }
-     /*else if(ui->lbl_telec_pul->isHidden() == false){
-        ui->lbl_num_pul->setText(ui->line_edit_value->text());
-        ui->lbl_telec_pul->hide();
-        ui->lbl_telec_sys->setGeometry(80,65,40,25);
-        ui->lbl_telec_sys->show();
-        ui->line_edit_value->setText(ui->lbl_num_sys->text());
-    }*/
+
 }
 
 
 void MainWindow::on_btn_back_clicked()
 {
-   /* if(ui->lbl_telec_sys->isHidden() == false){
-        ui->lbl_num_sys->setText(ui->line_edit_value->text());
-        ui->lbl_telec_sys->hide();
-        ui->lbl_telec_pul->setGeometry(80,65,40,25);
-        ui->lbl_telec_pul->show();
-        ui->line_edit_value->setText(ui->lbl_num_pul->text());
-    }*/
-
-  /* else*/ if(ui->lbl_telec_dia->isHidden() == false){
+   if(ui->lbl_telec_dia->isHidden() == false){
         ui->lbl_num_dia->setText(ui->line_edit_value->text());
         ui->lbl_telec_dia->hide();
         ui->lbl_telec_sys->setGeometry(80,65,40,25);
@@ -235,6 +224,19 @@ void MainWindow::on_btn_cancel_clicked()
 
 void MainWindow::on_btn_error_clicked()
 {
+
+}
+
+
+
+
+void MainWindow::on_btn_start_clicked()
+{
+
+    ui->btn_start->hide();
+    ui->lbl_waiting->show();
+    ui->gBox_waiting->hide();
+    ui->gBox_telec->show();
 
 }
 
