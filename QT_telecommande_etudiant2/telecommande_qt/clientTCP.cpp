@@ -1,6 +1,6 @@
 #include "clientTCP.h"
 
-ClientTCP::ClientTCP(const QString IP,unsigned int port){
+ClientTCP::ClientTCP(QString IP,unsigned int port){
     this->IP = IP;
     this->port = port;
 }
@@ -28,4 +28,11 @@ bool ClientTCP::envoie_trame(const char * trame){
 ClientTCP::~ClientTCP()
 {
 
+}
+
+void ClientTCP::setIP(QString IP){
+    this->IP = IP;
+}
+void ClientTCP::setPort(unsigned int port){
+    this->port = port;
 }

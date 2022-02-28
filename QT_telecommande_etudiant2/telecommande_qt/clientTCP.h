@@ -6,8 +6,10 @@
 class ClientTCP
 {
 public:
-     ClientTCP(const QString IP,unsigned int port);
+     ClientTCP(QString IP,unsigned int port);
      ClientTCP();
+     void setIP(QString IP);
+     void setPort(unsigned int port);
      bool Connexion_server();
      bool envoie_trame(const char * trame);
      void fermer_connexion();

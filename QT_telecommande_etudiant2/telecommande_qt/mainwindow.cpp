@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "clientTCP.h"
 #include <fstream>
 #include <filesystem>
 
@@ -23,13 +22,14 @@ MainWindow::MainWindow(QWidget *parent)
 
      ui->gBox_waiting->setGeometry(0,0,196,327);
 
+    Client.setIP("10.187.52.36");
+    Client.setPort(12345);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::ajouterChiffre(QString chiffre){
 
@@ -217,24 +217,31 @@ void MainWindow::on_btn_send_clicked()
 
     if((sys != 0) && (dia != 0) && (pul != 0)){
     QString trame;
-    trame = "SYS" + ui->lbl_sys->text() + ":" + "DIA" + ui->lbl_dia->text() + ":" + "PUL" + ui->lbl_pul->text();
     const char * trame_char = "";
 
-    ClientTCP client("10.187.52.131", 12345);
+    trame = "SYS" + ui->lbl_num_sys->text() + ":" + "DIA" + ui->lbl_num_dia->text() + ":" + "PUL" + ui->lbl_num_pul->text();
+    std::string trame_string = trame.toStdString();
+    trame_char = trame_string.c_str();
 
-    if(client.Connexion_server() == false){
-        ui->lbl_answer->setText("Erreur connexion serveur...");
+    //ClientTCP client("10.187.52.36", 12345);
+
+    if(Client.Connexion_server() == false){
+        ui->lbl_answer_server->setText("Erreur connexion serveur...");
         ui->lbl_counter->hide();
         ui->btn_error->hide();
     }
-    else if(client.envoie_trame(trame_char) == false)
-         ui->lbl_answer->setText("Erreur envoie trame...");
-    else
-         ui->lbl_answer->setText("Succes envoie trame !");
-
+    else if(Client.envoie_trame(trame_char) == false){
+        ui->lbl_answer_server->setText("Succes connexion serveur !");
+         ui->lbl_answer_trame->setText("Erreur envoie trame...");
     }
     else{
-        ui->lbl_answer->setText("Toutes les valeurs doivent \nêtre différentes de 0");
+        ui->lbl_answer_server->setText("Succes connexion serveur !");
+         ui->lbl_answer_trame->setText("Succes envoie trame !");
+        }
+    }
+    else{
+        ui->lbl_answer_trame->setText("Toutes les valeurs doivent \nêtre différentes de 0");
+        ui->lbl_answer_server->hide();
         ui->lbl_counter->hide();
         ui->btn_error->hide();
     }
@@ -272,13 +279,16 @@ void MainWindow::on_btn_error_clicked()
 
        QString trame;
 
-       ClientTCP client("10.187.52.131", 12345);
-        const char * trame_char = "";
+      // ClientTCP client("10.187.52.36", 12345);
        trame = "E";
-       if(client.envoie_trame(trame_char) == false)
-                ui->lbl_answer->setText("Erreur envoie trame...");
+        const char * trame_char = "";
+        std::string trame_string = trame.toStdString();
+        trame_char = trame_string.c_str();
+
+       if(Client.envoie_trame(trame_char) == false)
+                ui->lbl_answer_trame->setText("Erreur envoie E (error)...");
            else
-                ui->lbl_answer->setText("Succes envoie trame !");
+                ui->lbl_answer_trame->setText("Succes envoie E (error) !");
 }
 
 
@@ -311,5 +321,6 @@ void MainWindow::on_btn_restart_clicked()
     ui->lbl_num_pul->setText("0");
     ui->gBox_telec->show();
     ui->gBox_send->hide();
+
 }
 

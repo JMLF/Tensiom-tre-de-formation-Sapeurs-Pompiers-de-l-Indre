@@ -2,24 +2,24 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <clientTCP.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, ClientTCP
 {
     Q_OBJECT
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    ClientTCP Client;
 
 private slots:
 
     void ajouterChiffre(QString chiffre);
-
-    void Envoie_trame(QString trame);
 
     void on_btn_0_clicked();
 
@@ -69,5 +69,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
 };
 #endif // MAINWINDOW_H

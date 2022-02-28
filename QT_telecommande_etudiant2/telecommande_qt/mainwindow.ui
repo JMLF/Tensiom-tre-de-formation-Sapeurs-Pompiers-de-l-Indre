@@ -723,13 +723,13 @@
       <string>X</string>
      </property>
     </widget>
-    <widget class="QLabel" name="lbl_answer">
+    <widget class="QLabel" name="lbl_answer_trame">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>70</y>
+       <y>130</y>
        <width>201</width>
-       <height>61</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
@@ -741,7 +741,7 @@
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
      </property>
      <property name="text">
-      <string>Réponse</string>
+      <string>Réponse trame</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_return_2">
@@ -826,6 +826,27 @@
      </property>
      <property name="text">
       <string>0</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_answer_server">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>70</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
+     </property>
+     <property name="text">
+      <string>Réponse serveur</string>
      </property>
     </widget>
    </widget>
