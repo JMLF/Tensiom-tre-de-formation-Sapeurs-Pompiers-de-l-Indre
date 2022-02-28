@@ -11,11 +11,9 @@ int main()
 
     const char* chipname = "gpiochip0";
     struct gpiod_chip* chip;
-    struct gpiod_line* lineRed;    // Red LED
-    struct gpiod_line* lineGreen;  // Green LED
     struct gpiod_line* lineYellow; // Yellow LED
     struct gpiod_line* lineButton; // Pushbutton
-    int i, val;
+    int i;
 
     // Open GPIO chip
     chip = gpiod_chip_open_by_name(chipname);
