@@ -8959,6 +8959,18 @@ TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:69:7: style: Unuse
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
  std::string recive1;
              ^
+TF_Tensiomètre/controle_bouton/controle_bouton/controle_bouton.cpp:14:24: style: Unused variable: lineRed [unusedVariable]
+    struct gpiod_line* lineRed;    // Red LED
+                       ^
+TF_Tensiomètre/controle_bouton/controle_bouton/controle_bouton.cpp:15:24: style: Unused variable: lineGreen [unusedVariable]
+    struct gpiod_line* lineGreen;  // Green LED
+                       ^
+TF_Tensiomètre/controle_bouton/controle_bouton/controle_bouton.cpp:18:9: style: Unused variable: i [unusedVariable]
+    int i, val;
+        ^
+TF_Tensiomètre/controle_bouton/controle_bouton/controle_bouton.cpp:18:12: style: Unused variable: val [unusedVariable]
+    int i, val;
+           ^
 Telecommande etudiant 1/Client Tcp/ClasseClient.h:13:1: style: The class 'clientTcp' does not have a constructor although it has private member variables. [noConstructor]
 class clientTcp {
 ^
