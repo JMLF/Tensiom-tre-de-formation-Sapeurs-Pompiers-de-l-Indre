@@ -9865,37 +9865,37 @@ TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/tiff-4.0.9/contrib/mfs/
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/tiff-4.0.9/contrib/mfs/mfs_file.c:367:0: style: The function 'mfs_write' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:43:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:45:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:48:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:50:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:54:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:56:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:60:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:62:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:66:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:68:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:72:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:74:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:78:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:80:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:84:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:86:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:90:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:92:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:96:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:98:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:179:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:181:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:266:0: style: The function 'on_btn_cancel_clicked' is never used. [unusedFunction]
@@ -9904,31 +9904,34 @@ QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:266:0: style: The funct
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:259:0: style: The function 'on_btn_confirm_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:102:0: style: The function 'on_btn_delete_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:326:0: style: The function 'on_btn_confirm_security_clicked' is never used. [unusedFunction]
+
+^
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:104:0: style: The function 'on_btn_delete_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:273:0: style: The function 'on_btn_error_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:151:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:153:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:115:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:117:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:315:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:313:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:308:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:306:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:143:0: style: The function 'on_btn_return_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:145:0: style: The function 'on_btn_return_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:208:0: style: The function 'on_btn_send_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:210:0: style: The function 'on_btn_send_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:297:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:295:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:251:0: style: The function 'on_btn_tool_clicked' is never used. [unusedFunction]
