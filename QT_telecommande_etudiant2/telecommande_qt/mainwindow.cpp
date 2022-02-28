@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->line_edit_value->setMaxLength(3);
+    ui->gBox_waiting->hide();
     ui->gBox_telec->hide();
     ui->gBox_recap->hide();
     ui->gBox_send->hide();
@@ -21,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
      ui->btn_start->setGeometry(60,150,91,31);
 
      ui->gBox_waiting->setGeometry(0,0,196,327);
+     ui->gBox_security->setGeometry(0,0,196,327);
 
     Client.setIP("10.187.52.36");
     Client.setPort(12345);
@@ -223,8 +225,6 @@ void MainWindow::on_btn_send_clicked()
     std::string trame_string = trame.toStdString();
     trame_char = trame_string.c_str();
 
-    //ClientTCP client("10.187.52.36", 12345);
-
     if(Client.Connexion_server() == false){
         ui->lbl_answer_server->setText("Erreur connexion serveur...");
         ui->lbl_counter->hide();
@@ -278,8 +278,6 @@ void MainWindow::on_btn_error_clicked()
     ui->lbl_counter->setText(QString::number(compteur));
 
        QString trame;
-
-      // ClientTCP client("10.187.52.36", 12345);
        trame = "E";
         const char * trame_char = "";
         std::string trame_string = trame.toStdString();
@@ -321,6 +319,30 @@ void MainWindow::on_btn_restart_clicked()
     ui->lbl_num_pul->setText("0");
     ui->gBox_telec->show();
     ui->gBox_send->hide();
+
+}
+
+
+void MainWindow::on_btn_confirm_security_clicked()
+{
+    int valeur_1 = ui->spinBox_1->value();
+    int valeur_2 = ui->spinBox_2->value();
+    int valeur_3 = ui->spinBox_3->value();
+
+    int compteur = ui->lbl_counter_security->text().toInt();
+
+    if((valeur_1 == 5) && (valeur_2 == 4) && (valeur_3 == 1)){
+        ui->gBox_security->hide();
+        ui->gBox_waiting->show();
+    }
+    else
+        compteur++;
+
+ui->lbl_counter_security->setText(QString::number(compteur));
+
+if(compteur == 3)
+    MainWindow::close();
+
 
 }
 

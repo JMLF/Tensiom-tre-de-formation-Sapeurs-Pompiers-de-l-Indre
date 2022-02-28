@@ -67,6 +67,8 @@ private slots:
 
     void on_btn_restart_clicked();
 
+    void on_btn_confirm_security_clicked();
+
 private:
     Ui::MainWindow *ui;
 

@@ -17,6 +17,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
@@ -76,6 +77,12 @@ public:
     QGroupBox *gBox_waiting;
     QLabel *lbl_waiting;
     QPushButton *btn_start;
+    QGroupBox *gBox_security;
+    QSpinBox *spinBox_1;
+    QSpinBox *spinBox_2;
+    QSpinBox *spinBox_3;
+    QPushButton *btn_confirm_security;
+    QLabel *lbl_counter_security;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -350,6 +357,34 @@ public:
         btn_start->setGeometry(QRect(60, 200, 91, 31));
         btn_start->setFont(font3);
         btn_start->setStyleSheet(QString::fromUtf8("background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));"));
+        gBox_security = new QGroupBox(centralwidget);
+        gBox_security->setObjectName(QString::fromUtf8("gBox_security"));
+        gBox_security->setGeometry(QRect(420, 330, 196, 327));
+        gBox_security->setStyleSheet(QString::fromUtf8("background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(101, 124, 255, 69), stop:0.388626 rgba(143, 149, 255, 69), stop:0.42654 rgba(112, 123, 255, 145), stop:0.454976 rgba(23, 81, 255, 208), stop:0.477581 rgba(149, 154, 255, 130), stop:0.516588 rgba(255, 224, 216, 130), stop:0.549763 rgba(255, 74, 45, 255), stop:0.57754 rgba(255, 155, 143, 130), stop:0.611374 rgba(255, 170, 164, 69), stop:1 rgba(255, 159, 159, 69));"));
+        spinBox_1 = new QSpinBox(gBox_security);
+        spinBox_1->setObjectName(QString::fromUtf8("spinBox_1"));
+        spinBox_1->setGeometry(QRect(10, 40, 181, 41));
+        spinBox_1->setFont(font1);
+        spinBox_1->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        spinBox_2 = new QSpinBox(gBox_security);
+        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
+        spinBox_2->setGeometry(QRect(10, 90, 181, 41));
+        spinBox_2->setFont(font1);
+        spinBox_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        spinBox_3 = new QSpinBox(gBox_security);
+        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
+        spinBox_3->setGeometry(QRect(10, 140, 181, 41));
+        spinBox_3->setFont(font1);
+        spinBox_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_confirm_security = new QPushButton(gBox_security);
+        btn_confirm_security->setObjectName(QString::fromUtf8("btn_confirm_security"));
+        btn_confirm_security->setGeometry(QRect(50, 200, 81, 31));
+        btn_confirm_security->setStyleSheet(QString::fromUtf8("background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));"));
+        lbl_counter_security = new QLabel(gBox_security);
+        lbl_counter_security->setObjectName(QString::fromUtf8("lbl_counter_security"));
+        lbl_counter_security->setGeometry(QRect(80, 240, 31, 31));
+        lbl_counter_security->setFont(font1);
+        lbl_counter_security->setStyleSheet(QString::fromUtf8("background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -423,6 +458,9 @@ public:
         lbl_waiting->setText(QCoreApplication::translate("MainWindow", "En attente de la connexion \n"
 " d'un tensiom\303\250tre...", nullptr));
         btn_start->setText(QCoreApplication::translate("MainWindow", "COMMENCER", nullptr));
+        gBox_security->setTitle(QCoreApplication::translate("MainWindow", "S\303\251curit\303\251", nullptr));
+        btn_confirm_security->setText(QCoreApplication::translate("MainWindow", "VALIDER", nullptr));
+        lbl_counter_security->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
     } // retranslateUi
 
 };
