@@ -1,17 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "client_TCP.h"
+#include "clientTCP.h"
 #include <fstream>
 #include <filesystem>
 
-//*************************A faire******///
-/*
- * Reprendre le client TCP de la telecommande au lycée + par conséquent modifier le bouton envoyer
- * Faire le bouton erreur pour le placement du brassare
- * Faire le bouton paramètres
- * Vérifier que le tensiomètre est bien connecté à la télécommande
- *
-  */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -24,16 +16,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->gBox_settings->hide();
 
      ui->lbl_telec_sys->setGeometry(80,65,40,25);
-    ui->lbl_telec_dia->hide();
+     ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
      ui->lbl_waiting->hide();
-     ui->btn_ok->hide();
-     ui->btn_ok->setGeometry(135,60,31,31);
-     ui->btn_back->hide();
      ui->btn_start->setGeometry(60,150,91,31);
 
      ui->gBox_waiting->setGeometry(0,0,196,327);
-
 
 }
 
@@ -51,6 +39,7 @@ void MainWindow::ajouterChiffre(QString chiffre){
       ui->line_edit_value->setText(ui->line_edit_value->text() + chiffre);
 
 }
+
 void MainWindow::on_btn_0_clicked()
 {
     ajouterChiffre("0");
@@ -125,10 +114,25 @@ void MainWindow::on_btn_delete_clicked()
 
 void MainWindow::on_btn_ok_clicked()
 {
-    ui->lbl_num_pul->setText(ui->line_edit_value->text());
+
+    if(ui->lbl_telec_sys->isHidden() == false){
+     ui->lbl_num_sys->setText(ui->line_edit_value->text());
+    ui->lbl_telec_sys->hide();
+    ui->line_edit_value->setText(ui->lbl_num_dia->text());
+    ui->lbl_telec_dia->show();
+    }
+    if(ui->lbl_telec_dia->isHidden() == false){
+     ui->lbl_num_dia->setText(ui->line_edit_value->text());
+    ui->lbl_telec_dia->hide();
+    ui->line_edit_value->setText(ui->lbl_num_pul->text());
+    ui->lbl_telec_pul->show();
+    }
+    if(ui->lbl_telec_pul->isHidden() == false){
+     ui->lbl_num_pul->setText(ui->line_edit_value->text());
     ui->lbl_telec_pul->hide();
     ui->line_edit_value->setText(ui->lbl_num_sys->text());
     ui->lbl_telec_sys->show();
+    }
     ui->gBox_telec->hide();
     ui->gBox_recap->show();
     ui->gBox_recap->setGeometry(0,0,196,327);
@@ -140,9 +144,7 @@ void MainWindow::on_btn_return_clicked()
 {
     ui->gBox_telec->show();
     ui->gBox_recap->hide();
-    ui->btn_ok->hide();
-    ui->btn_next->show();
-    ui->btn_back->hide();
+
 }
 
 
@@ -154,17 +156,21 @@ void MainWindow::on_btn_next_clicked()
         ui->lbl_telec_dia->setGeometry(80,65,40,25);
         ui->lbl_telec_dia->show();
         ui->line_edit_value->setText(ui->lbl_num_dia->text());
-        ui->btn_back->show();
     }
 
-   else {
+   else if(ui->lbl_telec_dia->isHidden() == false){
         ui->lbl_num_dia->setText(ui->line_edit_value->text());
         ui->lbl_telec_dia->hide();
         ui->lbl_telec_pul->setGeometry(80,65,40,25);
         ui->lbl_telec_pul->show();
         ui->line_edit_value->setText(ui->lbl_num_pul->text());
-        ui->btn_ok->show();
-        ui->btn_next->hide();
+    }
+    else{
+        ui->lbl_num_pul->setText(ui->line_edit_value->text());
+        ui->lbl_telec_pul->hide();
+        ui->lbl_telec_sys->setGeometry(80,65,40,25);
+        ui->lbl_telec_sys->show();
+        ui->line_edit_value->setText(ui->lbl_num_sys->text());
     }
 
 }
@@ -178,17 +184,24 @@ void MainWindow::on_btn_back_clicked()
         ui->lbl_telec_sys->setGeometry(80,65,40,25);
         ui->lbl_telec_sys->show();
         ui->line_edit_value->setText(ui->lbl_num_sys->text());
-        ui->btn_back->hide();
+
     }
-     else {
+     else if(ui->lbl_telec_pul->isHidden() == false){
         ui->lbl_num_pul->setText(ui->line_edit_value->text());
         ui->lbl_telec_pul->hide();
         ui->lbl_telec_dia->setGeometry(80,65,40,25);
         ui->lbl_telec_dia->show();
         ui->line_edit_value->setText(ui->lbl_num_dia->text());
-        ui->btn_ok->hide();
-        ui->btn_next->show();
+
     }
+   else {
+       ui->lbl_num_sys->setText(ui->line_edit_value->text());
+       ui->lbl_telec_sys->hide();
+       ui->lbl_telec_pul->setGeometry(80,65,40,25);
+       ui->lbl_telec_pul->show();
+       ui->line_edit_value->setText(ui->lbl_num_pul->text());
+
+   }
 }
 
 
@@ -197,6 +210,34 @@ void MainWindow::on_btn_send_clicked()
     ui->gBox_recap->hide();
     ui->gBox_send->show();
     ui->gBox_send->setGeometry(0,0,196,327);
+
+    int sys = ui->lbl_num_sys->text().toInt();
+    int dia = ui->lbl_num_dia->text().toInt();
+    int pul = ui->lbl_num_pul->text().toInt();
+
+    if((sys != 0) && (dia != 0) && (pul != 0)){
+    QString trame;
+    trame = "SYS" + ui->lbl_sys->text() + ":" + "DIA" + ui->lbl_dia->text() + ":" + "PUL" + ui->lbl_pul->text();
+    const char * trame_char = "";
+
+    ClientTCP client("10.187.52.131", 12345);
+
+    if(client.Connexion_server() == false){
+        ui->lbl_answer->setText("Erreur connexion serveur...");
+        ui->lbl_counter->hide();
+        ui->btn_error->hide();
+    }
+    else if(client.envoie_trame(trame_char) == false)
+         ui->lbl_answer->setText("Erreur envoie trame...");
+    else
+         ui->lbl_answer->setText("Succes envoie trame !");
+
+    }
+    else{
+        ui->lbl_answer->setText("Toutes les valeurs doivent \nêtre différentes de 0");
+        ui->lbl_counter->hide();
+        ui->btn_error->hide();
+    }
 }
 
 
@@ -224,7 +265,20 @@ void MainWindow::on_btn_cancel_clicked()
 
 void MainWindow::on_btn_error_clicked()
 {
+    int compteur = ui->lbl_counter->text().toInt();
+    compteur++;
 
+    ui->lbl_counter->setText(QString::number(compteur));
+
+       QString trame;
+
+       ClientTCP client("10.187.52.131", 12345);
+        const char * trame_char = "";
+       trame = "E";
+       if(client.envoie_trame(trame_char) == false)
+                ui->lbl_answer->setText("Erreur envoie trame...");
+           else
+                ui->lbl_answer->setText("Succes envoie trame !");
 }
 
 
@@ -238,5 +292,24 @@ void MainWindow::on_btn_start_clicked()
     ui->gBox_waiting->hide();
     ui->gBox_telec->show();
 
+}
+
+
+void MainWindow::on_btn_return_2_clicked()
+{
+    ui->gBox_recap->show();
+    ui->gBox_send->hide();
+}
+
+
+void MainWindow::on_btn_restart_clicked()
+{
+
+    ui->line_edit_value->setText("0");
+    ui->lbl_num_sys->setText("0");
+    ui->lbl_num_dia->setText("0");
+    ui->lbl_num_pul->setText("0");
+    ui->gBox_telec->show();
+    ui->gBox_send->hide();
 }
 

@@ -265,6 +265,7 @@ Makefile: ..\telecommande_qt\telecommande_qt.pro D:\qtCreator\5.13.2\msvc2015_64
 		..\telecommande_qt\telecommande_qt.pro \
 		D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Widgets.prl \
 		D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Gui.prl \
+		D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Network.prl \
 		D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Core.prl \
 		D:\qtCreator\5.13.2\msvc2015_64\lib\qtmain.prl
 	$(QMAKE) -o Makefile ..\telecommande_qt\telecommande_qt.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -456,6 +457,7 @@ D:\qtCreator\5.13.2\msvc2015_64\mkspecs\features\lex.prf:
 ..\telecommande_qt\telecommande_qt.pro:
 D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Widgets.prl:
 D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Gui.prl:
+D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Network.prl:
 D:\qtCreator\5.13.2\msvc2015_64\lib\Qt5Core.prl:
 D:\qtCreator\5.13.2\msvc2015_64\lib\qtmain.prl:
 qmake: FORCE

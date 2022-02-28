@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1318</width>
-    <height>626</height>
+    <width>1186</width>
+    <height>715</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -632,6 +632,11 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
      </property>
@@ -643,10 +648,15 @@
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>280</y>
+       <y>270</y>
        <width>75</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
@@ -717,9 +727,9 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>160</y>
+       <y>70</y>
        <width>201</width>
-       <height>41</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
@@ -734,14 +744,61 @@
       <string>Réponse</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="btn_return_2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>230</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
+     </property>
+     <property name="text">
+      <string>RETOUR</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_restart">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>270</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
+     </property>
+     <property name="text">
+      <string>RECOMMENCER</string>
+     </property>
+    </widget>
     <widget class="QPushButton" name="btn_error">
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>240</y>
-       <width>75</width>
-       <height>24</height>
+       <y>190</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
@@ -750,12 +807,33 @@
       <string>ERREUR</string>
      </property>
     </widget>
+    <widget class="QLabel" name="lbl_counter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>195</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="gBox_settings">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>0</y>
+      <x>210</x>
+      <y>330</y>
       <width>196</width>
       <height>327</height>
      </rect>
@@ -817,6 +895,11 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
      </property>
@@ -833,6 +916,11 @@
        <height>24</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
      </property>
@@ -844,8 +932,8 @@
    <widget class="QGroupBox" name="gBox_waiting">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>0</y>
+      <x>0</x>
+      <y>330</y>
       <width>196</width>
       <height>327</height>
      </rect>
@@ -887,6 +975,11 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
      </property>
@@ -901,7 +994,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1318</width>
+     <width>1186</width>
      <height>22</height>
     </rect>
    </property>
