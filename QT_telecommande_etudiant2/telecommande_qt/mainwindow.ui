@@ -1027,9 +1027,9 @@
     <widget class="QSpinBox" name="spinBox_1">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>70</x>
        <y>40</y>
-       <width>181</width>
+       <width>50</width>
        <height>41</height>
       </rect>
      </property>
@@ -1045,9 +1045,9 @@
     <widget class="QSpinBox" name="spinBox_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>70</x>
        <y>90</y>
-       <width>181</width>
+       <width>50</width>
        <height>41</height>
       </rect>
      </property>
@@ -1063,9 +1063,9 @@
     <widget class="QSpinBox" name="spinBox_3">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>70</x>
        <y>140</y>
-       <width>181</width>
+       <width>50</width>
        <height>41</height>
       </rect>
      </property>
@@ -1097,15 +1097,15 @@
     <widget class="QLabel" name="lbl_counter_security">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>0</x>
        <y>240</y>
-       <width>31</width>
-       <height>31</height>
+       <width>191</width>
+       <height>81</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>16</pointsize>
+       <pointsize>11</pointsize>
       </font>
      </property>
      <property name="styleSheet">

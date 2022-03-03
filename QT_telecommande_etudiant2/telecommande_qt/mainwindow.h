@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
 #include <QMainWindow>
 #include <clientTCP.h>
 
@@ -16,6 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     ClientTCP Client;
+
 
 private slots:
 
@@ -68,6 +70,8 @@ private slots:
     void on_btn_restart_clicked();
 
     void on_btn_confirm_security_clicked();
+
+    void on_btn_close_3_clicked();
 
 private:
     Ui::MainWindow *ui;

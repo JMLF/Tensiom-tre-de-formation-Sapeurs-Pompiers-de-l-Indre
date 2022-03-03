@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <fstream>
 #include <filesystem>
+#include <Windows.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -23,8 +24,9 @@ MainWindow::MainWindow(QWidget *parent)
 
      ui->gBox_waiting->setGeometry(0,0,196,327);
      ui->gBox_security->setGeometry(0,0,196,327);
-
-    Client.setIP("10.187.52.36");
+    ui->lbl_counter_security->setGeometry(75,240,20,20);
+    //Client.setIP("10.187.52.36");
+    Client.setIP("192.168.1.10");
     Client.setPort(12345);
 }
 
@@ -221,12 +223,13 @@ void MainWindow::on_btn_send_clicked()
     QString trame;
     const char * trame_char = "";
 
-    trame = "SYS" + ui->lbl_num_sys->text() + ":" + "DIA" + ui->lbl_num_dia->text() + ":" + "PUL" + ui->lbl_num_pul->text();
+    trame = "SYS" + ui->lbl_num_sys->text() + ":" + "DIA" + ui->lbl_num_dia->text() + ":" + "PUL" + ui->lbl_num_pul->text() + ":";
     std::string trame_string = trame.toStdString();
     trame_char = trame_string.c_str();
 
     if(Client.Connexion_server() == false){
         ui->lbl_answer_server->setText("Erreur connexion serveur...");
+        ui->lbl_answer_trame->setText("Erreur envoie trame...");
         ui->lbl_counter->hide();
         ui->btn_error->hide();
     }
@@ -237,6 +240,8 @@ void MainWindow::on_btn_send_clicked()
     else{
         ui->lbl_answer_server->setText("Succes connexion serveur !");
          ui->lbl_answer_trame->setText("Succes envoie trame !");
+         ui->btn_return_2->hide();
+         ui->btn_restart->setGeometry(60,230,81,31);
         }
     }
     else{
@@ -319,6 +324,9 @@ void MainWindow::on_btn_restart_clicked()
     ui->lbl_num_pul->setText("0");
     ui->gBox_telec->show();
     ui->gBox_send->hide();
+    ui->btn_return_2->show();
+    ui->btn_restart->setGeometry(60,270,81,31);
+    Client.fermer_connexion();
 
 }
 
@@ -340,9 +348,27 @@ void MainWindow::on_btn_confirm_security_clicked()
 
 ui->lbl_counter_security->setText(QString::number(compteur));
 
-if(compteur == 3)
-    MainWindow::close();
+if(compteur == 5){
+    ui->lbl_counter_security->setGeometry(10,240,180,81);
+    ui->btn_confirm_security->setEnabled(false);
+    int i = 15;
+
+    while(i > 0){
+
+        ui->lbl_counter_security->setText("Trop de tentatives ! \nAttendre : " + QString::number(i) + " seconde(s)");
+        i = i - 1;
+
+            }
+    compteur = 0;
+     ui->btn_confirm_security->setEnabled(true);
+     ui->lbl_counter_security->setText(QString::number(compteur));
+     ui->lbl_counter_security->setGeometry(75,240,20,20);
+}
+}
 
 
+void MainWindow::on_btn_close_3_clicked()
+{
+    Client.fermer_connexion();
 }
 
