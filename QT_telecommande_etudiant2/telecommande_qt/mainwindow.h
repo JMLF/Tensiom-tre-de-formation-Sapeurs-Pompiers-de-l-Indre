@@ -17,9 +17,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     ClientTCP Client;
-
+    QString code_pin;
 
 private slots:
+
+    void setCodePin(QString code_pin);
+
+    QString getCodePin();
 
     void ajouterChiffre(QString chiffre);
 

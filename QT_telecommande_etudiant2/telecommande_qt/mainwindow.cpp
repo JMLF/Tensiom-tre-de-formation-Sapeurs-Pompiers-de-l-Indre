@@ -3,6 +3,7 @@
 #include <fstream>
 #include <filesystem>
 #include <Windows.h>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,19 +21,41 @@ MainWindow::MainWindow(QWidget *parent)
      ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
      ui->lbl_waiting->hide();
+     ui->lbl_pin->hide();
      ui->btn_start->setGeometry(60,150,91,31);
 
      ui->gBox_waiting->setGeometry(0,0,196,327);
      ui->gBox_security->setGeometry(0,0,196,327);
     ui->lbl_counter_security->setGeometry(75,240,20,20);
-    //Client.setIP("10.187.52.36");
-    Client.setIP("192.168.1.10");
+
+    Client.setIP("10.187.52.36");
     Client.setPort(12345);
+
+    QFile fichier_pin("pin.txt");
+    QString code_pin;
+
+    if (fichier_pin.open(QIODevice::ReadOnly| QIODevice::Text))
+    {
+        QTextStream in(&fichier_pin);
+        while (!in.atEnd()) {
+            code_pin = in.readLine();
+        }
+        fichier_pin.close();
+    }
+    setCodePin(code_pin);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setCodePin(QString code_pin){
+    this->code_pin = code_pin;
+}
+
+QString MainWindow::getCodePin(){
+    return this->code_pin;
 }
 
 void MainWindow::ajouterChiffre(QString chiffre){
@@ -258,13 +281,40 @@ void MainWindow::on_btn_tool_clicked()
     ui->gBox_telec->hide();
     ui->gBox_settings->show();
     ui->gBox_settings->setGeometry(0,0,196,327);
+
 }
 
 
 void MainWindow::on_btn_confirm_clicked()
 {
+    QString PIN = getCodePin();
+
+    if((PIN.at(0) == ui->spinBox_old_pin1->text()) && (PIN.at(1) == ui->spinBox_old_pin2->text()) && (PIN.at(2) == ui->spinBox_old_pin3->text())){
+
+        QFile fichier_pin("pin.txt");
+
+        if (fichier_pin.open(QIODevice::WriteOnly| QIODevice::Text))
+        {
+            QTextStream in(&fichier_pin);
+            in << ui->spinBox_new_pin1->text() + ui->spinBox_new_pin2->text() + ui->spinBox_new_pin3->text();
+            fichier_pin.close();
+        }
+
     ui->gBox_telec->show();
     ui->gBox_settings->hide();
+    ui->lbl_pin->hide();
+
+    ui->spinBox_new_pin1->setValue(0);
+    ui->spinBox_new_pin2->setValue(0);
+    ui->spinBox_new_pin3->setValue(0);
+
+    ui->spinBox_old_pin1->setValue(0);
+    ui->spinBox_old_pin2->setValue(0);
+    ui->spinBox_old_pin3->setValue(0);
+
+    }
+    else
+        ui->lbl_pin->show();
 }
 
 
@@ -333,13 +383,11 @@ void MainWindow::on_btn_restart_clicked()
 
 void MainWindow::on_btn_confirm_security_clicked()
 {
-    int valeur_1 = ui->spinBox_1->value();
-    int valeur_2 = ui->spinBox_2->value();
-    int valeur_3 = ui->spinBox_3->value();
+    QString PIN = getCodePin();
 
     int compteur = ui->lbl_counter_security->text().toInt();
 
-    if((valeur_1 == 5) && (valeur_2 == 4) && (valeur_3 == 1)){
+    if((PIN.at(0) == ui->spinBox_1->text()) && (PIN.at(1) == ui->spinBox_2->text()) && (PIN.at(2) == ui->spinBox_3->text())){
         ui->gBox_security->hide();
         ui->gBox_waiting->show();
     }
