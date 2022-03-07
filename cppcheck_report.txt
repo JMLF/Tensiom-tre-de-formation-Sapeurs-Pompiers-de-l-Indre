@@ -8959,9 +8959,6 @@ TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:69:7: style: Unuse
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
  std::string recive1;
              ^
-TF_Tensiomètre/controle_bouton/controle_bouton/controle_bouton.cpp:33:9: error: syntax error [syntaxError]
-        if ()
-        ^
 Telecommande etudiant 1/Client Tcp/ClasseClient.h:13:1: style: The class 'clientTcp' does not have a constructor although it has private member variables. [noConstructor]
 class clientTcp {
 ^
