@@ -291,7 +291,7 @@ release\moc_mainwindow.cpp: ..\telecommande_qt\mainwindow.h \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtNetwork\qabstractsocket.h \
 		release\moc_predefs.h \
 		D:\qtCreator\5.13.2\msvc2015_64\bin\moc.exe
-	D:\qtCreator\5.13.2\msvc2015_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/utilisateur/OneDrive/Bureau/github/Tensiom-tre-de-formation-Sapeurs-Pompiers-de-l-Indre/QT_telecommande_etudiant2/build-telecommande_qt-Desktop_Qt_5_13_2_MSVC2015_64bit-Debug/release/moc_predefs.h -ID:/qtCreator/5.13.2/msvc2015_64/mkspecs/win32-msvc -IC:/Users/utilisateur/OneDrive/Bureau/github/Tensiom-tre-de-formation-Sapeurs-Pompiers-de-l-Indre/QT_telecommande_etudiant2/telecommande_qt -ID:/qtCreator/5.13.2/msvc2015_64/include -ID:/qtCreator/5.13.2/msvc2015_64/include/QtWidgets -ID:/qtCreator/5.13.2/msvc2015_64/include/QtGui -ID:/qtCreator/5.13.2/msvc2015_64/include/QtANGLE -ID:/qtCreator/5.13.2/msvc2015_64/include/QtNetwork -ID:/qtCreator/5.13.2/msvc2015_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\telecommande_qt\mainwindow.h -o release\moc_mainwindow.cpp
+	D:\qtCreator\5.13.2\msvc2015_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/delclaudh/Desktop/github/Tensiom-tre-de-formation-Sapeurs-Pompiers-de-l-Indre/QT_telecommande_etudiant2/build-telecommande_qt-Desktop_Qt_5_13_2_MSVC2015_64bit-Debug/release/moc_predefs.h -ID:/qtCreator/5.13.2/msvc2015_64/mkspecs/win32-msvc -IC:/Users/delclaudh/Desktop/github/Tensiom-tre-de-formation-Sapeurs-Pompiers-de-l-Indre/QT_telecommande_etudiant2/telecommande_qt -ID:/qtCreator/5.13.2/msvc2015_64/include -ID:/qtCreator/5.13.2/msvc2015_64/include/QtWidgets -ID:/qtCreator/5.13.2/msvc2015_64/include/QtGui -ID:/qtCreator/5.13.2/msvc2015_64/include/QtANGLE -ID:/qtCreator/5.13.2/msvc2015_64/include/QtNetwork -ID:/qtCreator/5.13.2/msvc2015_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt" ..\telecommande_qt\mainwindow.h -o release\moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -657,7 +657,8 @@ release\mainwindow.obj: ..\telecommande_qt\mainwindow.cpp ..\telecommande_qt\mai
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qstatusbar.h \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QToolButton \
 		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\qtoolbutton.h \
-		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QWidget
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtWidgets\QWidget \
+		D:\qtCreator\5.13.2\msvc2015_64\include\QtCore\QFile
 
 release\moc_mainwindow.obj: release\moc_mainwindow.cpp 
 

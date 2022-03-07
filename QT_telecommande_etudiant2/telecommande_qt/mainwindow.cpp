@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
      ui->lbl_telec_pul->hide();
      ui->lbl_waiting->hide();
      ui->lbl_pin->hide();
+     ui->lbl_answer_trame->hide();
      ui->btn_start->setGeometry(60,150,91,31);
 
      ui->gBox_waiting->setGeometry(0,0,196,327);
@@ -246,28 +247,28 @@ void MainWindow::on_btn_send_clicked()
     QString trame;
     const char * trame_char = "";
 
-    trame = "SYS" + ui->lbl_num_sys->text() + ":" + "DIA" + ui->lbl_num_dia->text() + ":" + "PUL" + ui->lbl_num_pul->text() + ":";
+    trame = "SYS" + ui->lbl_num_sys->text() + ":" + "DIA" + ui->lbl_num_dia->text() + ":" + "PUL" + ui->lbl_num_pul->text();
     std::string trame_string = trame.toStdString();
     trame_char = trame_string.c_str();
 
-    if(Client.Connexion_server() == false){
+    Client.Connexion_server();
+    try{
+    Client.envoie_trame(trame_char);
+    ui->lbl_answer_server->setText("Succes connexion serveur !");
+     ui->btn_return_2->hide();
+     ui->btn_restart->setGeometry(60,230,81,31);
+     ui->btn_error->show();
+     ui->lbl_counter->show();
+    }
+    catch(...){
         ui->lbl_answer_server->setText("Erreur connexion serveur...");
-        ui->lbl_answer_trame->setText("Erreur envoie trame...");
         ui->lbl_counter->hide();
         ui->btn_error->hide();
+
     }
-    else if(Client.envoie_trame(trame_char) == false){
-        ui->lbl_answer_server->setText("Succes connexion serveur !");
-         ui->lbl_answer_trame->setText("Erreur envoie trame...");
     }
     else{
-        ui->lbl_answer_server->setText("Succes connexion serveur !");
-         ui->lbl_answer_trame->setText("Succes envoie trame !");
-         ui->btn_return_2->hide();
-         ui->btn_restart->setGeometry(60,230,81,31);
-        }
-    }
-    else{
+         ui->lbl_answer_trame->show();
         ui->lbl_answer_trame->setText("Toutes les valeurs doivent \nêtre différentes de 0");
         ui->lbl_answer_server->hide();
         ui->lbl_counter->hide();
@@ -337,11 +338,13 @@ void MainWindow::on_btn_error_clicked()
         const char * trame_char = "";
         std::string trame_string = trame.toStdString();
         trame_char = trame_string.c_str();
-
-       if(Client.envoie_trame(trame_char) == false)
-                ui->lbl_answer_trame->setText("Erreur envoie E (error)...");
-           else
-                ui->lbl_answer_trame->setText("Succes envoie E (error) !");
+         ui->lbl_answer_trame->show();
+        try {
+            Client.envoie_trame(trame_char);
+             ui->lbl_answer_trame->setText("Succes envoie E (error) !");
+        }  catch (...) {
+            ui->lbl_answer_trame->setText("Erreur envoie E (error)...");
+        }
 }
 
 
@@ -354,6 +357,8 @@ void MainWindow::on_btn_start_clicked()
     ui->lbl_waiting->show();
     ui->gBox_waiting->hide();
     ui->gBox_telec->show();
+
+
 
 }
 
@@ -372,12 +377,12 @@ void MainWindow::on_btn_restart_clicked()
     ui->lbl_num_sys->setText("0");
     ui->lbl_num_dia->setText("0");
     ui->lbl_num_pul->setText("0");
+    ui->lbl_counter->setText("0");
     ui->gBox_telec->show();
     ui->gBox_send->hide();
     ui->btn_return_2->show();
     ui->btn_restart->setGeometry(60,270,81,31);
-    Client.fermer_connexion();
-
+     ui->lbl_answer_trame->hide();
 }
 
 
