@@ -50,7 +50,7 @@ int main()
     gpiod_line_release(sortie22);
     gpiod_line_release(entree5);
 
-    gpiod_chip_release(gpiochip);
+    gpiod_chip_close(gpiochip);
   
     return 0;
     
