@@ -1,6 +1,9 @@
 //https://www.ics.com/blog/gpio-programming-exploring-libgpiod-library
 //ne marche que sous linux
 
+
+//faudra gerer les retour des fonctions pour la gestion d'erreur avec des exception
+
 #include <iostream>
 #include <gpiod.h>
 #include <unistd.h>
@@ -9,33 +12,43 @@ int main()
 {
     std::cout << "Start!\n";
 
-    const char* chipname = "gpiochip0";
-    struct gpiod_chip* chip;
-    struct gpiod_line* lineYellow; // Yellow LED
-    struct gpiod_line* lineButton; // Pushbutton
-    int i;
+    struct  gpiod_chip* gpiochip;
+    struct  gpiod_line* sortie12;
+    struct  gpiod_line* sortie22;
+    struct gpiod_line* entree5;
 
-    // Open GPIO chip
-    chip = gpiod_chip_open_by_name(chipname);
+    gpiod_chip = gpiod_chip_open("/dev/gpiochip0");
 
-    // Open GPIO lines
-    lineYellow = gpiod_chip_get_line(chip, 5);
-    lineButton = gpiod_chip_get_line(chip, 6);
+    sortie12 = gpiod_chip_get_line(gpiod_chip, 12); //line 12
+    sortie22 = gpiod_chip_get_line(gpiod_chip, 22); //line22
+    entree5 = gpiod_chip_get_line(gpiod_chip, 5); //line 5
 
-    // Open LED lines for output
-    gpiod_line_request_output(lineYellow, "example1", 0);
+    gpiod_line_request_output(sortie12, "sortie12", 0); //line,nom,0=normal/1=inversée
+    gpiod_line_request_output(sortie22, "sortie22", 0);
+    
+    gpiod_line_request_input(entree5, "entree5");
 
-    // Open switch line for input
-    gpiod_line_request_input(lineButton, "example1");
+    while (true)
+    {
+        if ()
+        {
 
+        }
+
+    }
+    
+
+    
+    gpiod_line_release(sortie12);
+    gpiod_line_release(sortie22);
+    gpiod_line_release(entree5);
+
+    gpiod_chip_release(gpiochip);
   
-
-    // Release lines and chip
-    gpiod_line_release(lineYellow);
-    gpiod_line_release(lineButton);
-    gpiod_chip_close(chip);
-
     return 0;
+    
+
+
 }
 
 
