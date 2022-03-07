@@ -30,9 +30,16 @@ int main()
 
     while (true)
     {
-        if ()
+        
+        if (gpiod_line_get_value(entree5) != 0)
         {
-
+            gpiod_line_set_value(sortie12, 1);
+            gpiod_line_set_value(sortie22, 0);
+        }
+        else
+        {
+            gpiod_line_set_value(sortie22, 1);
+            gpiod_line_set_value(sortie12, 0);
         }
 
     }
