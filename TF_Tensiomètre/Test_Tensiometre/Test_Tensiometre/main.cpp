@@ -25,9 +25,6 @@ int main(int argc, char* argv[])
 		SDL_Texture* texture; //on creer une texture pour l'image 
 		SDL_Surface* image = NULL; //pour l'image, on crer une surface
 	
-		//chiffre ne marche pas 
-	//	SDL_Texture* texture0; //chiffre 
-	//	SDL_Surface* image0 = NULL; //chiffre
 
 		image = SDL_LoadBMP("assets/background.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
 		if (image == NULL)
@@ -36,9 +33,6 @@ int main(int argc, char* argv[])
 		texture = SDL_CreateTextureFromSurface(renderer, image); 
 		SDL_FreeSurface(image);
 
-	//	image = SDL_LoadBMP("assets/FullChiffre.bmp"); //chiffre
-	//	if (image == NULL)//
-	//		return -1;//
 
 		SDL_QueryTexture(texture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
 
@@ -47,9 +41,6 @@ int main(int argc, char* argv[])
 		m_destinationRectangle.w = m_sourceRectangle.w;
 		m_destinationRectangle.h = m_sourceRectangle.h;
 
-	//	texture0 = SDL_CreateTextureFromSurface(renderer, image0);//chiffre
-	//	SDL_FreeSurface(image0);//chiffre
-	//	SDL_QueryTexture(texture0, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);//chiffre
 
 
 		Uint8 a = 255; //pour les couleurs 
@@ -68,6 +59,18 @@ int main(int argc, char* argv[])
 		SDL_Rect rectangle32{ 359,455,37,60 };
 		SDL_Rect rectangle33{ 398,455,37,60 };
 
+		//importation de la tiled map
+		SDL_Texture* tiledmap;
+		image = SDL_LoadBMP("assets/FullChiffre.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
+		if (image == NULL)
+			return -1;
+
+		tiledmap = SDL_CreateTextureFromSurface(renderer, image);
+		SDL_FreeSurface(image);
+
+		SDL_Rect src{ 0, 0, 0, 0 }; //pour le query texture
+		SDL_QueryTexture(tiledmap, NULL, NULL, &src.w, &src.h);
+		SDL_Rect src2{ 2, 0, 118, 178 }; //on crop dans l'image chargé en texture 
 
 		//boucle 
 		SDL_Event events; //evenement clavier sourit etc
@@ -94,7 +97,9 @@ int main(int argc, char* argv[])
 			
 			SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
 
-			SDL_RenderDrawRect(renderer, &rectangle11);
+			SDL_RenderCopy(renderer, tiledmap, &src2, &rectangle11); //tildemap
+
+			SDL_RenderDrawRect(renderer, &rectangle11); // utiliser la fonction https://wiki.libsdl.org/SDL_RenderDrawRects
 			SDL_RenderDrawRect(renderer, &rectangle12);
 			SDL_RenderDrawRect(renderer, &rectangle13);
 
