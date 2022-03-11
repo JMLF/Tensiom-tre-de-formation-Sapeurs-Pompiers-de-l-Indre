@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 	{
 	
 		//utiliser de pref createWindowAndRenderer
-		SDL_Window* window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 731, 1109, SDL_WINDOW_RESIZABLE); //on crée la fenetre qu'on met dans un pointeur 
+		SDL_Window* window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 450, 535, SDL_WINDOW_RESIZABLE); //on crée la fenetre qu'on met dans un pointeur 
 		SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 		
 
@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 	//	SDL_Texture* texture0; //chiffre 
 	//	SDL_Surface* image0 = NULL; //chiffre
 
-		image = SDL_LoadBMP("assets/tensiometre-ecran-lire1.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
+		image = SDL_LoadBMP("assets/background.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
 		if (image == NULL)
 			return -1;
 
@@ -53,14 +53,8 @@ int main(int argc, char* argv[])
 
 
 		Uint8 a = 255;
-		SDL_GetRenderDrawColor(renderer,0,&a,0,&a);
 
-		SDL_RenderClear(renderer);
 		
-		SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
-	//	SDL_RenderCopy(renderer, texture0, &m_sourceRectangle, &m_destinationRectangle);//chiffre
-
-		SDL_RenderPresent(renderer);
 
 		//boucle 
 		SDL_Event events; //evenement clavier sourit etc
@@ -68,15 +62,27 @@ int main(int argc, char* argv[])
 
 		while (isOpen)
 		{
+			
 			while (SDL_PollEvent(&events))
 			{
 				switch (events.type)
 				{
-				case SDL_QUIT:
+
+				case SDL_QUIT: //croix rouge
 					isOpen = false;
 					break;
+				
 				}
 			}
+			
+			SDL_GetRenderDrawColor(renderer,0,&a,0,&a);
+
+			SDL_RenderClear(renderer);
+			
+			SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
+			
+			SDL_RenderPresent(renderer);
+
 		}
 
 
