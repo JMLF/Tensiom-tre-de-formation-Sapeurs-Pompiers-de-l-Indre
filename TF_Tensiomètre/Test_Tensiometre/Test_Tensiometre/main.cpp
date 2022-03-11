@@ -3,11 +3,11 @@
 //https://openclassrooms.com/forum/sujet/sdl2-et-cours-sur-le-til-mapping
 //https://www.youtube.com/watch?v=FQOiFUl93lI
 //attention a la difference entre sdl et sdl2 
-//
+//https://devopssec.fr/article/bases-fondamentales-de-laffichage-graphique-sdl2 //le meilleur imo
 
 
 #include "SDL.h"
-//#include "../../../../Tensiom-tre-de-formation-Sapeurs-Pompiers-de-l-Indre/SDL2_VS_DEVKIT/include/"
+//ajouter sdl image
 
 int main(int argc, char* argv[])
 {
@@ -52,9 +52,22 @@ int main(int argc, char* argv[])
 	//	SDL_QueryTexture(texture0, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);//chiffre
 
 
-		Uint8 a = 255;
+		Uint8 a = 255; //pour les couleurs 
 
-		
+		//rectangle pour mettre les chiffres 
+		//a mettre dasn un array pour les ajouter tous en meme temps 
+		SDL_Rect rectangle11{ 165,104,85,120 };
+		SDL_Rect rectangle12{ 255,104,85,120 };
+		SDL_Rect rectangle13{ 345,104,90,120 };
+
+		SDL_Rect rectangle21{ 165,280,85,120 };
+		SDL_Rect rectangle22{ 255,280,85,120 };
+		SDL_Rect rectangle23{ 345,280,90,120 };
+
+		SDL_Rect rectangle31{ 320,455,37,60 };
+		SDL_Rect rectangle32{ 359,455,37,60 };
+		SDL_Rect rectangle33{ 398,455,37,60 };
+
 
 		//boucle 
 		SDL_Event events; //evenement clavier sourit etc
@@ -80,6 +93,18 @@ int main(int argc, char* argv[])
 			SDL_RenderClear(renderer);
 			
 			SDL_RenderCopy(renderer, texture, &m_sourceRectangle, &m_destinationRectangle);
+
+			SDL_RenderDrawRect(renderer, &rectangle11);
+			SDL_RenderDrawRect(renderer, &rectangle12);
+			SDL_RenderDrawRect(renderer, &rectangle13);
+
+			SDL_RenderDrawRect(renderer, &rectangle21);
+			SDL_RenderDrawRect(renderer, &rectangle22);
+			SDL_RenderDrawRect(renderer, &rectangle23);
+
+			SDL_RenderDrawRect(renderer, &rectangle31);
+			SDL_RenderDrawRect(renderer, &rectangle32);
+			SDL_RenderDrawRect(renderer, &rectangle33);
 			
 			SDL_RenderPresent(renderer);
 
