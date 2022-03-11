@@ -8959,6 +8959,15 @@ TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:69:7: style: Unuse
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
  std::string recive1;
              ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:50:7: performance:inconclusive: Technically the member function 'controle_affichage::affichage' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ void affichage(int sys, int dia, int bpm);
+      ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:33:26: note: Technically the member function 'controle_affichage::affichage' can be static (but you may consider moving to unnamed namespace).
+void controle_affichage::affichage(int sys, int dia, int bpm)
+                         ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:50:7: note: Technically the member function 'controle_affichage::affichage' can be static (but you may consider moving to unnamed namespace).
+ void affichage(int sys, int dia, int bpm);
+      ^
 Telecommande etudiant 1/Client Tcp/ClasseClient.h:13:1: style: The class 'clientTcp' does not have a constructor although it has private member variables. [noConstructor]
 class clientTcp {
 ^
@@ -9638,6 +9647,12 @@ TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/adler32.c:1
 
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/adler32.c:180:0: style: The function 'adler32_combine64' is never used. [unusedFunction]
+
+^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:33:0: style: The function 'affichage' is never used. [unusedFunction]
+
+^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:12:0: style: The function 'chargement_Textures' is never used. [unusedFunction]
 
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/compress.c:81:0: style: The function 'compressBound' is never used. [unusedFunction]
