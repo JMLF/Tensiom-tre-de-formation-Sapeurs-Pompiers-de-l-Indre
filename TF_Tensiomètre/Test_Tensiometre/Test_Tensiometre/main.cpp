@@ -15,6 +15,7 @@ int main(int argc, char* argv[])
 	if (SDL_Init(SDL_INIT_EVERYTHING) >= 0) //verifie que l'init s'est bien passé 
 	{
 	
+		//utiliser de pref createWindowAndRenderer
 		SDL_Window* window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 731, 1109, SDL_WINDOW_RESIZABLE); //on crée la fenetre qu'on met dans un pointeur 
 		SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 		
@@ -61,8 +62,25 @@ int main(int argc, char* argv[])
 
 		SDL_RenderPresent(renderer);
 
-		SDL_Delay(10000);
+		//boucle 
+		SDL_Event events; //evenement clavier sourit etc
+		bool isOpen = true;
 
+		while (isOpen)
+		{
+			while (SDL_PollEvent(&events))
+			{
+				switch (events.type)
+				{
+				case SDL_QUIT:
+					isOpen = false;
+					break;
+				}
+			}
+		}
+
+
+		SDL_DestroyRenderer(renderer); SDL_DestroyWindow(window);
 		SDL_Quit();
 		return 0;
 	}
