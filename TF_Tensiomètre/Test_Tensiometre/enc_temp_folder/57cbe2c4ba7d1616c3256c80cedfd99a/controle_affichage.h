@@ -2,7 +2,7 @@
 //ifndef pour linux
 
 #include "SDL.h"
-//faire une class mère plus générale ouis faire une classe dérivée pour afficher sys dia bpm directement 
+
 
 
 class controle_affichage
