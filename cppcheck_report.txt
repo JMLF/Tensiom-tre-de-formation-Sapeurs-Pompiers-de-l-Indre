@@ -8959,15 +8959,6 @@ TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:69:7: style: Unuse
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
  std::string recive1;
              ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:50:7: performance:inconclusive: Technically the member function 'controle_affichage::affichage' can be static (but you may consider moving to unnamed namespace). [functionStatic]
- void affichage(int sys, int dia, int bpm);
-      ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:33:26: note: Technically the member function 'controle_affichage::affichage' can be static (but you may consider moving to unnamed namespace).
-void controle_affichage::affichage(int sys, int dia, int bpm)
-                         ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:50:7: note: Technically the member function 'controle_affichage::affichage' can be static (but you may consider moving to unnamed namespace).
- void affichage(int sys, int dia, int bpm);
-      ^
 Telecommande etudiant 1/Client Tcp/ClasseClient.h:13:1: style: The class 'clientTcp' does not have a constructor although it has private member variables. [noConstructor]
 class clientTcp {
 ^
