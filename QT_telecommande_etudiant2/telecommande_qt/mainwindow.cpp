@@ -10,20 +10,31 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    timer_co_serv = new QTimer(this);
+    connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(test_connexion_serv()));
+    timer_co_serv->start(3000);
+
+    timer_verif_co = new QTimer(this);
+    connect(timer_verif_co,SIGNAL(timeout()),this,SLOT(test_co()));
+    timer_verif_co->start(1000);
+
     ui->line_edit_value->setMaxLength(3);
     ui->gBox_waiting->hide();
     ui->gBox_telec->hide();
     ui->gBox_recap->hide();
     ui->gBox_send->hide();
     ui->gBox_settings->hide();
+    ui->gBox_pop_up->hide();
 
      ui->lbl_telec_sys->setGeometry(80,65,40,25);
      ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
-     ui->lbl_waiting->hide();
      ui->lbl_pin->hide();
      ui->lbl_answer_trame->hide();
-     ui->btn_start->setGeometry(60,150,91,31);
+
+     ui->btn_start->setGeometry(60,150,91,41);
+      ui->btn_start->hide();
 
      ui->gBox_waiting->setGeometry(0,0,196,327);
      ui->gBox_security->setGeometry(0,0,196,327);
@@ -51,6 +62,28 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::test_co(){
+    //première connexion
+if(Client.socket.state() == QAbstractSocket::ConnectedState){
+    ui->gBox_pop_up->hide();
+    ui->lbl_waiting->hide();
+    ui->btn_start->show();
+    timer_co_serv->disconnect(timer_co_serv,SIGNAL(timeout()),this,SLOT(test_connexion_serv()));
+     qDebug() << "Connecté";
+     compteur_deco++;
+}
+//déconnexion en cours d'utilisation
+if((Client.socket.state() == QAbstractSocket::UnconnectedState) && (compteur_deco != 0)){
+    timer_co_serv->connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(test_connexion_serv()));
+    ui->gBox_pop_up->setGeometry(0,0,196,327);
+    ui->gBox_pop_up->show();
+    qDebug() << "Déconnecté";
+}
+}
+void MainWindow::test_connexion_serv(){
+    Client.Connexion_server();
+    qDebug() << "Connexion au serveur...";
+}
 void MainWindow::setCodePin(QString code_pin){
     this->code_pin = code_pin;
 }
@@ -251,17 +284,16 @@ void MainWindow::on_btn_send_clicked()
     std::string trame_string = trame.toStdString();
     trame_char = trame_string.c_str();
 
-    Client.Connexion_server();
     try{
     Client.envoie_trame(trame_char);
-    ui->lbl_answer_server->setText("Succes connexion serveur !");
+    ui->lbl_answer_server->setText("Succes connexion \nserveur !");
      ui->btn_return_2->hide();
      ui->btn_restart->setGeometry(60,230,81,31);
      ui->btn_error->show();
      ui->lbl_counter->show();
     }
     catch(...){
-        ui->lbl_answer_server->setText("Erreur connexion serveur...");
+        ui->lbl_answer_server->setText("Erreur connexion \nserveur...");
         ui->lbl_counter->hide();
         ui->btn_error->hide();
 
@@ -316,6 +348,7 @@ void MainWindow::on_btn_confirm_clicked()
     }
     else
         ui->lbl_pin->show();
+
 }
 
 
@@ -352,14 +385,8 @@ void MainWindow::on_btn_error_clicked()
 
 void MainWindow::on_btn_start_clicked()
 {
-
-    ui->btn_start->hide();
-    ui->lbl_waiting->show();
     ui->gBox_waiting->hide();
     ui->gBox_telec->show();
-
-
-
 }
 
 
@@ -402,26 +429,10 @@ void MainWindow::on_btn_confirm_security_clicked()
 ui->lbl_counter_security->setText(QString::number(compteur));
 
 if(compteur == 5){
-    ui->lbl_counter_security->setGeometry(10,240,180,81);
-    ui->btn_confirm_security->setEnabled(false);
-    int i = 15;
 
-    while(i > 0){
-
-        ui->lbl_counter_security->setText("Trop de tentatives ! \nAttendre : " + QString::number(i) + " seconde(s)");
-        i = i - 1;
-
-            }
     compteur = 0;
      ui->btn_confirm_security->setEnabled(true);
      ui->lbl_counter_security->setText(QString::number(compteur));
      ui->lbl_counter_security->setGeometry(75,240,20,20);
 }
 }
-
-
-void MainWindow::on_btn_close_3_clicked()
-{
-    Client.fermer_connexion();
-}
-

@@ -25,7 +25,7 @@ void ClientTCP::envoie_trame(const char * trame){
 
         socket.write(trame);
         if(socket.state() == QAbstractSocket::UnconnectedState){
-        throw -1;
+        throw -3;
         }
 }
 
