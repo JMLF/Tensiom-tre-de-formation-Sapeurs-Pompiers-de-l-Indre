@@ -9049,13 +9049,31 @@ TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:69:7: style: Unuse
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
  std::string recive1;
              ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::sockfd' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::newsockfd' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::portno' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::buffer' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::n' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:51:36: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
+void TCP_SERVER::WRITE(std::string message)
+                                   ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:41:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
 int controle_affichage::calcul_pos_tile(int chiffre)
                         ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:40:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:41:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:117:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
@@ -9139,6 +9157,9 @@ TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:271:8: 
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:276:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/main.cpp:43:7: style: Unused variable: constantes [unusedVariable]
+  int constantes;
+      ^
 Telecommande etudiant 1/Client Tcp/ClasseClient.h:13:1: style: The class 'clientTcp' does not have a constructor although it has private member variables. [noConstructor]
 class clientTcp {
 ^
@@ -9818,6 +9839,9 @@ TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/adler32.c:1
 
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/adler32.c:180:0: style: The function 'adler32_combine64' is never used. [unusedFunction]
+
+^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:46:0: style: The function 'affichage' is never used. [unusedFunction]
 
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/compress.c:81:0: style: The function 'compressBound' is never used. [unusedFunction]
