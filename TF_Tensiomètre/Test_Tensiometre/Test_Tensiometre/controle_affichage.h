@@ -37,7 +37,7 @@ protected:
 
 	Uint8 a = 255; //pour les couleurs 
 
-	
+	int calcul_pos_tile(int chiffre);
 
 public: 
 

@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 
 		sdl.chargement_Textures();
 
-		sdl.affichage(0, 0, 0);
+		
 
 		
 		while (sdl.isOpen == true)
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 				}
 			}
 			
-			
+			sdl.affichage(99, 7, 9);
 
 		}
 		
