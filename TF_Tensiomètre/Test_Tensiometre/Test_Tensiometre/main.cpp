@@ -19,11 +19,15 @@ int main(int argc, char* argv[])
 		sdl.chargement_Textures();
 
 		
-
+		int a = 0, b = 0, c = 0;
 		
 		while (sdl.isOpen == true)
 		{
 			
+			a++;
+			b++;
+			c++;
+
 			while (SDL_PollEvent(&sdl.events))
 			{
 				switch (sdl.events.type)
@@ -36,8 +40,8 @@ int main(int argc, char* argv[])
 				}
 			}
 			
-			sdl.affichage(99, 7, 9);
-
+			sdl.affichage(a, b, c);
+			SDL_Delay(50);
 		}
 		
 		
