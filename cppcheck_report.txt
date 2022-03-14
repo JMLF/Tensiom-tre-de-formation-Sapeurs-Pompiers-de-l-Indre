@@ -10,6 +10,96 @@ QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:14:5: warning: Class 'M
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:14:5: warning: Class 'MainWindow' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
     timer_co_serv = new QTimer(this);
     ^
+TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ int calcul_pos_tile(int chiffre);
+     ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+int controle_affichage::calcul_pos_tile(int chiffre)
+                        ^
+TF_Tensiomètre/SDL class/controle_affichage.h:40:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+ int calcul_pos_tile(int chiffre);
+     ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:117:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:114:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:117:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:133:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:128:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:133:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:140:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:135:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:140:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:185:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:182:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:185:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:201:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:196:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:201:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:208:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:203:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:208:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:253:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:250:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:253:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:269:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:264:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:269:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:276:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:271:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:276:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/IMG.c:134:18: style: The scope of the variable 'surf' can be reduced. [variableScope]
     SDL_Surface *surf;
                  ^
