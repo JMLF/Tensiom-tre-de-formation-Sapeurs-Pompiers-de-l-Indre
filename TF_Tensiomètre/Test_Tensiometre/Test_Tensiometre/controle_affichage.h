@@ -1,7 +1,8 @@
-#pragma once
-//ifndef pour linux
+#ifndef _controleAffichage_
+#define _controleAffichage_
 
-#include "SDL.h"
+
+#include "SDL2/SDL.h"
 //faire une class mère plus générale ouis faire une classe dérivée pour afficher sys dia bpm directement 
 
 
@@ -59,3 +60,4 @@ public:
 
 };
 
+#endif _controleAffichage_
