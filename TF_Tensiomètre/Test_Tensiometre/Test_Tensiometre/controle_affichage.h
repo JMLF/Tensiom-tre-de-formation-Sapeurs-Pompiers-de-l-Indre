@@ -20,8 +20,8 @@ protected:
 	SDL_Texture* background = nullptr;
 	SDL_Texture* tiledmap = nullptr;
 
-	SDL_Rect m_sourceRectangle{ 0,0,0,0 }; //background
-	SDL_Rect m_destinationRectangle{ 0,0,0,0 };
+	SDL_Rect m_sourceRectangle; //background
+	SDL_Rect m_destinationRectangle; 
 
 	SDL_Rect rectangle11{ 165,104,85,120 };
 	SDL_Rect rectangle12{ 255,104,85,120 };

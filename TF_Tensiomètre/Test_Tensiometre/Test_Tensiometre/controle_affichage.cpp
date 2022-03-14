@@ -13,14 +13,14 @@ void controle_affichage::chargement_Textures()
 {
 	surface = SDL_LoadBMP("assets/background.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
 	if (surface == NULL)
-		//throw exception
+		throw ("Prob");
 
 	background = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
 
 	surface = SDL_LoadBMP("assets/FullChiffre.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
 	if (surface == NULL)
-		//throw except
+		throw ("prob");
 
 	tiledmap = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
@@ -32,7 +32,12 @@ void controle_affichage::chargement_Textures()
 
 void controle_affichage::affichage(int sys, int dia, int bpm)
 {
-
+	
+	m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
+	m_destinationRectangle.y = m_sourceRectangle.y = 0;
+	m_destinationRectangle.w = m_sourceRectangle.w = 450;
+	m_destinationRectangle.h = m_sourceRectangle.h = 532;
+	
 
 	SDL_Rect src2{ 2, 0, 118, 178 }; //on crop dans l'image chargé en texture 
 
@@ -54,7 +59,7 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	SDL_RenderCopy(renderer, tiledmap, &src2, &rectangle32); //tildemap
 	SDL_RenderCopy(renderer, tiledmap, &src2, &rectangle33); //tildemap
 
-	/*
+	
 	SDL_RenderDrawRect(renderer, &rectangle11); // utiliser la fonction https://wiki.libsdl.org/SDL_RenderDrawRects
 	SDL_RenderDrawRect(renderer, &rectangle12);
 	SDL_RenderDrawRect(renderer, &rectangle13);
@@ -66,7 +71,7 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	SDL_RenderDrawRect(renderer, &rectangle31);
 	SDL_RenderDrawRect(renderer, &rectangle32);
 	SDL_RenderDrawRect(renderer, &rectangle33);
-	*/
+	
 
 	SDL_RenderPresent(renderer);
 
