@@ -4,6 +4,7 @@
 
 #include <QMainWindow>
 #include <clientTCP.h>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,8 +19,15 @@ public:
     ~MainWindow();
     ClientTCP Client;
     QString code_pin;
+    QTimer *timer_co_serv;
+    QTimer *timer_verif_co;
+    char compteur_deco = 0;
 
 private slots:
+
+    void test_co();
+
+    void test_connexion_serv();
 
     void setCodePin(QString code_pin);
 
@@ -74,8 +82,6 @@ private slots:
     void on_btn_restart_clicked();
 
     void on_btn_confirm_security_clicked();
-
-    void on_btn_close_3_clicked();
 
 private:
     Ui::MainWindow *ui;
