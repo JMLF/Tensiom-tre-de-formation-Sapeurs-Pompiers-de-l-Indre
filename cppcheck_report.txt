@@ -4,12 +4,102 @@ ClientTCP::ClientTCP(QString IP,unsigned int port){
 QT_telecommande_etudiant2/telecommande_qt/clientTCP.cpp:9:12: warning: Member variable 'ClientTCP::trame' is not initialized in the constructor. [uninitMemberVar]
 ClientTCP::ClientTCP(){
            ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:10:7: warning: Class 'MainWindow' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
-    , ui(new Ui::MainWindow)
-      ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:10:7: warning: Class 'MainWindow' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
-    , ui(new Ui::MainWindow)
-      ^
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:14:5: warning: Class 'MainWindow' does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s). [noCopyConstructor]
+    timer_co_serv = new QTimer(this);
+    ^
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:14:5: warning: Class 'MainWindow' does not have a operator= which is recommended since it has dynamic memory/resource allocation(s). [noOperatorEq]
+    timer_co_serv = new QTimer(this);
+    ^
+TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ int calcul_pos_tile(int chiffre);
+     ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+int controle_affichage::calcul_pos_tile(int chiffre)
+                        ^
+TF_Tensiomètre/SDL class/controle_affichage.h:40:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+ int calcul_pos_tile(int chiffre);
+     ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:117:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:114:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:117:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:133:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:128:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:133:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:140:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:135:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:140:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:185:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:182:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:185:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:201:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:196:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:201:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:208:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:203:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:208:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:253:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:250:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:253:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:269:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:264:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:269:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:276:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:271:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/SDL class/controle_affichage.cpp:276:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/IMG.c:134:18: style: The scope of the variable 'surf' can be reduced. [variableScope]
     SDL_Surface *surf;
                  ^
@@ -8959,13 +9049,31 @@ TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:69:7: style: Unuse
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
  std::string recive1;
              ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::sockfd' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::newsockfd' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::portno' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::buffer' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:3:13: warning: Member variable 'TCP_SERVER::n' is not initialized in the constructor. [uninitMemberVar]
+TCP_SERVER::TCP_SERVER()
+            ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:51:36: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
+void TCP_SERVER::WRITE(std::string message)
+                                   ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:41:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
 int controle_affichage::calcul_pos_tile(int chiffre)
                         ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:40:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:41:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:117:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
@@ -9049,6 +9157,9 @@ TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:271:8: 
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:276:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/main.cpp:43:7: style: Unused variable: constantes [unusedVariable]
+  int constantes;
+      ^
 Telecommande etudiant 1/Client Tcp/ClasseClient.h:13:1: style: The class 'clientTcp' does not have a constructor although it has private member variables. [noConstructor]
 class clientTcp {
 ^
@@ -9078,6 +9189,15 @@ class gzofstream : public std::ostream
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/contrib/iostream/zfstream.h:80:1: note: The one definition rule is violated, different classes/structs have the same name 'gzofstream'
 class gzofstream : public gzfilestream_common, public ostream {
+^
+TF_Tensiomètre/SDL class/controle_affichage.h:8:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
+class controle_affichage
+^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:9:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
+class controle_affichage
+^
+TF_Tensiomètre/SDL class/controle_affichage.h:8:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
+class controle_affichage
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/libpng-1.6.37/contrib/pngminus/pnm2png.c:526:18: error: Null pointer dereference: pnm_file [ctunullpointer]
     ret = fgetc (pnm_file);
@@ -9811,6 +9931,9 @@ Telecommande etudiant 1/Client Tcp/ClasseClient.cpp:26:0: style: The function 'e
 Telecommande etudiant 1/Client Tcp/ClasseClient.cpp:32:0: style: The function 'fermer' is never used. [unusedFunction]
 
 ^
+QT_telecommande_etudiant2/telecommande_qt/clientTCP.cpp:20:0: style: The function 'fermer_connexion' is never used. [unusedFunction]
+
+^
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:139:0: style: The function 'fermetureSockEcoute' is never used. [unusedFunction]
 
 ^
@@ -9949,79 +10072,76 @@ TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/tiff-4.0.9/contrib/mfs/
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/tiff-4.0.9/contrib/mfs/mfs_file.c:367:0: style: The function 'mfs_write' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:71:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:104:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:76:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:109:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:82:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:115:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:88:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:121:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:94:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:127:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:100:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:133:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:106:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:139:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:112:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:145:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:118:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:151:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:124:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:157:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:207:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:240:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:322:0: style: The function 'on_btn_cancel_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:355:0: style: The function 'on_btn_cancel_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:423:0: style: The function 'on_btn_close_3_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:321:0: style: The function 'on_btn_confirm_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:289:0: style: The function 'on_btn_confirm_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:416:0: style: The function 'on_btn_confirm_security_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:389:0: style: The function 'on_btn_confirm_security_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:163:0: style: The function 'on_btn_delete_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:130:0: style: The function 'on_btn_delete_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:362:0: style: The function 'on_btn_error_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:329:0: style: The function 'on_btn_error_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:212:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:179:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:176:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:143:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:400:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:373:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:393:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:366:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:204:0: style: The function 'on_btn_return_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:171:0: style: The function 'on_btn_return_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:269:0: style: The function 'on_btn_send_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:236:0: style: The function 'on_btn_send_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:386:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:353:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
-
-^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:280:0: style: The function 'on_btn_tool_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:312:0: style: The function 'on_btn_tool_clicked' is never used. [unusedFunction]
 
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/libpng-1.6.37/contrib/mips-msa/linux.c:28:0: style: The function 'png_have_msa' is never used. [unusedFunction]

@@ -50,3 +50,4 @@ Trois etudiants sur ce projet:
 + Un etudiant pour le tensiomètre sous SDL2
 
 ## Avancement 
+![alt text](https://github.com/JMLF/Tensiom-tre-de-formation-Sapeurs-Pompiers-de-l-Indre/blob/main/TF_Tensiom%C3%A8tre/assets/tensiometre-ecran-lire1.bmp)
