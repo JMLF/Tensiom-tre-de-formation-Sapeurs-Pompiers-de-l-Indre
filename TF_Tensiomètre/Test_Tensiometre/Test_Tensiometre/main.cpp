@@ -1,4 +1,4 @@
-//build line: g++ -Wall -c "%e" "%e" "controle_affichage.h" "controle_affichage.cpp" "TCP_SERVER.h" "TCP_SERVER.cpp" -lSDL2
+//build line: g++ -Wall -o "%e" "%f" "controle_affichage.h" "controle_affichage.cpp" "TCP_SERVER.h" "TCP_SERVER.cpp" -lSDL2
 
 
 //include linux
@@ -18,11 +18,11 @@ int main(int argc, char* argv[])
 		struct  gpiod_line* sortie22;
 		struct gpiod_line* entree5;
 
-		gpiod_chip = gpiod_chip_open("/dev/gpiochip0");
+		gpiochip = gpiod_chip_open("/dev/gpiochip0");
 
-		sortie12 = gpiod_chip_get_line(gpiod_chip, 12); //line 12
-		sortie22 = gpiod_chip_get_line(gpiod_chip, 22); //line22
-		entree5 = gpiod_chip_get_line(gpiod_chip, 5); //line 5
+		sortie12 = gpiod_chip_get_line(gpiochip, 12); //line 12
+		sortie22 = gpiod_chip_get_line(gpiochip, 22); //line22
+		entree5 = gpiod_chip_get_line(gpiochip, 5); //line 5
 
 		gpiod_line_request_output(sortie12, "sortie12", 0); //line,nom,0=normal/1=inversée
 		gpiod_line_request_output(sortie22, "sortie22", 0);
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 
 		server.INIT();
 
-		std::string reception = server.READ();
+		std::string reception = server.READ(); //bloquant
 
 		controle_affichage sdl;
 
@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
 				}
 			}
 			
-			//sdl.affichage(a, b, c);
+			sdl.affichage(9, 9, 9);
 			SDL_Delay(50);
 		}
 		
