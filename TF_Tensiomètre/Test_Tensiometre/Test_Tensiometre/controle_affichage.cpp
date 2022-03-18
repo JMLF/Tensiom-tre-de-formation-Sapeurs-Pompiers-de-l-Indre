@@ -16,7 +16,7 @@ int controle_affichage::calcul_pos_tile(int chiffre)
 
 controle_affichage::controle_affichage()
 {
-	window = SDL_CreateWindow("Tensiometre", 0, 0, 450, 535, SDL_WINDOW_FULLSCREEN); //dimension a adapter et mettre flag fullscreen sans bordure
+	window = SDL_CreateWindow("Tensiometre", 0, 0, 450, 535, SDL_WINDOW_OPENGL); //dimension a adapter et mettre flag fullscreen sans bordure
 	renderer = SDL_CreateRenderer(window, -1, 0);
 };
 
