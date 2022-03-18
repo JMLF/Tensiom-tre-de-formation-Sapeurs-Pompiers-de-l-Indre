@@ -9190,6 +9190,15 @@ class gzofstream : public std::ostream
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/contrib/iostream/zfstream.h:80:1: note: The one definition rule is violated, different classes/structs have the same name 'gzofstream'
 class gzofstream : public gzfilestream_common, public ostream {
 ^
+TF_Tensiomètre/SDL class/controle_affichage.h:8:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
+class controle_affichage
+^
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:9:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
+class controle_affichage
+^
+TF_Tensiomètre/SDL class/controle_affichage.h:8:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
+class controle_affichage
+^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/libpng-1.6.37/contrib/pngminus/pnm2png.c:526:18: error: Null pointer dereference: pnm_file [ctunullpointer]
     ret = fgetc (pnm_file);
                  ^
@@ -9839,9 +9848,6 @@ TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/adler32.c:1
 
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/adler32.c:180:0: style: The function 'adler32_combine64' is never used. [unusedFunction]
-
-^
-TF_Tensiomètre/SDL class/controle_affichage.cpp:46:0: style: The function 'affichage' is never used. [unusedFunction]
 
 ^
 TF_Tensiomètre/SDL2_VS_DEVKIT/SDL2_image-2.0.5/external/zlib-1.2.11/compress.c:81:0: style: The function 'compressBound' is never used. [unusedFunction]
