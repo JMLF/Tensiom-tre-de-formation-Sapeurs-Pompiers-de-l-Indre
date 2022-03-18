@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 
 		server.INIT();
 
-		std::string reception = server.READ(); //bloquant
+		//std::string reception = server.READ(); //bloquant
 
 		controle_affichage sdl;
 
