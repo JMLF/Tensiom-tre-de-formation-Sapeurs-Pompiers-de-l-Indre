@@ -17,11 +17,6 @@ class MainWindow : public QMainWindow, ClientTCP
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    ClientTCP Client;
-    QString code_pin;
-    QTimer *timer_co_serv;
-    QTimer *timer_verif_co;
-    char compteur_deco = 0;
 
 private slots:
 
@@ -33,7 +28,7 @@ private slots:
 
     QString getCodePin();
 
-    void ajouterChiffre(QString chiffre);
+    void addNumber(QString number);
 
     void on_btn_0_clicked();
 
@@ -85,6 +80,13 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QString code_pin;
+    QTimer *timer_co_serv;
+    QTimer *timer_verif_co;
+    char compteur_deco = 0;
+    int x_ecran = 480;
+    int y_ecran = 800;
+     ClientTCP Client;
 
 };
 #endif // MAINWINDOW_H
