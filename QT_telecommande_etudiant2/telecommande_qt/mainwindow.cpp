@@ -19,17 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
     timer_verif_co->start(1000);
 
     ui->line_edit_value->setMaxLength(3);
-    ui->spinBox_1->setMaximum(9);
-    ui->spinBox_2->setMaximum(9);
-    ui->spinBox_3->setMaximum(9);
-
-    ui->spinBox_new_pin1->setMaximum(9);
-    ui->spinBox_new_pin2->setMaximum(9);
-    ui->spinBox_new_pin3->setMaximum(9);
-
-    ui->spinBox_old_pin1->setMaximum(9);
-    ui->spinBox_old_pin2->setMaximum(9);
-    ui->spinBox_old_pin3->setMaximum(9);
+    ui->line_edit_pin_security->setMaxLength(3);
+    ui->line_edit_pin->setMaxLength(3);
 
     ui->gBox_waiting->hide();
     ui->gBox_telec->hide();
@@ -41,7 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
      ui->lbl_telec_sys->setGeometry(200,140,100,100);
      ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
-     ui->lbl_pin->hide();
      ui->lbl_answer_trame->hide();
      ui->lbl_pin_security->hide();
 
@@ -50,10 +40,12 @@ MainWindow::MainWindow(QWidget *parent)
 
      ui->gBox_waiting->setGeometry(0,0,x_ecran,y_ecran);
      ui->gBox_security->setGeometry(0,0,x_ecran,y_ecran);
+     ui->gBox_keyboard->setGeometry(0,380,480,420);
 
     Client.setIP("10.187.52.36");
     Client.setPort(12345);
 
+    //Pour pouvoir stocker le code pin du fichier .txt dans la variable
     QString path = "../telecommande_qt/pin.txt";
     QFile fichier_pin(path);
     QString code_pin;
@@ -107,11 +99,17 @@ QString MainWindow::getCodePin(){
 
 void MainWindow::addNumber(QString number){
 
-    if(ui->line_edit_value->text() == "0")
+    if(ui->gBox_security->isVisible() == true){
+      ui->line_edit_pin_security->setText(ui->line_edit_pin_security->text() + number);
+    }
+    else if(ui->gBox_telec->isVisible() == true){
+        if(ui->line_edit_value->text() == "0")
         ui->line_edit_value->setText(number);
+     else
+          ui->line_edit_value->setText(ui->line_edit_value->text() + number);
+        }
     else
-      ui->line_edit_value->setText(ui->line_edit_value->text() + number);
-
+        ui->line_edit_pin->setText(ui->line_edit_pin->text() + number);
 }
 
 void MainWindow::on_btn_0_clicked()
@@ -176,12 +174,26 @@ void MainWindow::on_btn_9_clicked()
 void MainWindow::on_btn_delete_clicked()
 {
     QString Valeur;
-    Valeur = ui->line_edit_value->text();
+    int taille = 0;
 
-    int taille = Valeur.size();
-
-    if(taille != 0)
-        ui->line_edit_value->setText(Valeur.remove(taille - 1,1));
+    if(ui->gBox_security->isVisible() == true){
+        Valeur = ui->line_edit_pin_security->text();
+        taille = Valeur.size();
+        if(taille != 0)
+            ui->line_edit_pin_security->setText(Valeur.remove(taille - 1,1));
+    }
+    else if(ui->gBox_telec->isVisible() == true){
+        Valeur = ui->line_edit_value->text();
+        taille = Valeur.size();
+        if(taille != 0)
+            ui->line_edit_value->setText(Valeur.remove(taille - 1,1));
+        }
+    else{
+        Valeur = ui->line_edit_pin->text();
+        taille = Valeur.size();
+        if(taille != 0)
+            ui->line_edit_pin->setText(Valeur.remove(taille - 1,1));
+    }
 
 }
 
@@ -210,6 +222,7 @@ void MainWindow::on_btn_ok_clicked()
     ui->gBox_telec->hide();
     ui->gBox_recap->show();
     ui->gBox_recap->setGeometry(0,0,x_ecran,y_ecran);
+    ui->gBox_keyboard->hide();
 
 }
 
@@ -218,6 +231,7 @@ void MainWindow::on_btn_return_clicked()
 {
     ui->gBox_telec->show();
     ui->gBox_recap->hide();
+    ui->gBox_keyboard->show();
 
 }
 
@@ -276,6 +290,7 @@ void MainWindow::on_btn_back_clicked()
        ui->line_edit_value->setText(ui->lbl_num_pul->text());
 
    }
+
 }
 
 
@@ -284,7 +299,6 @@ void MainWindow::on_btn_send_clicked()
     ui->gBox_recap->hide();
     ui->gBox_send->show();
     ui->gBox_send->setGeometry(0,0,x_ecran,y_ecran);
-
     int sys = ui->lbl_num_sys->text().toInt();
     int dia = ui->lbl_num_dia->text().toInt();
     int pul = ui->lbl_num_pul->text().toInt();
@@ -327,54 +341,35 @@ void MainWindow::on_btn_tool_clicked()
     ui->gBox_telec->hide();
     ui->gBox_settings->show();
     ui->gBox_settings->setGeometry(0,0,x_ecran,y_ecran);
-
 }
 
 
 void MainWindow::on_btn_confirm_clicked()
 {
-    QString PIN = getCodePin();
+    QString nouveau_pin;
 
-    if((PIN.at(0) == ui->spinBox_old_pin1->text()) && (PIN.at(1) == ui->spinBox_old_pin2->text()) && (PIN.at(2) == ui->spinBox_old_pin3->text())){
+    nouveau_pin = ui->line_edit_pin->text();
 
-        QFile fichier_pin("pin.txt");
+        QFile fichier_pin("../telecommande_qt/pin.txt");
 
         if (fichier_pin.open(QIODevice::WriteOnly| QIODevice::Text))
         {
             QTextStream in(&fichier_pin);
-            in << ui->spinBox_new_pin1->text() + ui->spinBox_new_pin2->text() + ui->spinBox_new_pin3->text();
+            in << nouveau_pin;
             fichier_pin.close();
         }
 
     ui->gBox_telec->show();
     ui->gBox_settings->hide();
-    ui->lbl_pin->hide();
 
-    ui->spinBox_new_pin1->setValue(0);
-    ui->spinBox_new_pin2->setValue(0);
-    ui->spinBox_new_pin3->setValue(0);
-
-    ui->spinBox_old_pin1->setValue(0);
-    ui->spinBox_old_pin2->setValue(0);
-    ui->spinBox_old_pin3->setValue(0);
-
-    }
-    else
-        ui->lbl_pin->show();
 
 }
 
 
 void MainWindow::on_btn_cancel_clicked()
 {
-    ui->spinBox_new_pin1->setValue(0);
-    ui->spinBox_new_pin2->setValue(0);
-    ui->spinBox_new_pin3->setValue(0);
 
-    ui->spinBox_old_pin1->setValue(0);
-    ui->spinBox_old_pin1->setValue(0);
-    ui->spinBox_old_pin1->setValue(0);
-
+    ui->line_edit_pin->setText("");
     ui->gBox_telec->show();
     ui->gBox_settings->hide();
 }
@@ -408,6 +403,8 @@ void MainWindow::on_btn_start_clicked()
 {
     ui->gBox_waiting->hide();
     ui->gBox_telec->show();
+    ui->gBox_keyboard->show();
+
 }
 
 
@@ -431,16 +428,20 @@ void MainWindow::on_btn_restart_clicked()
     ui->btn_return_2->show();
     //ui->btn_restart->setGeometry(180,590,130,70);
      ui->lbl_answer_trame->hide();
+     ui->gBox_keyboard->show();
 }
 
 
 void MainWindow::on_btn_confirm_security_clicked()
 {
     QString PIN = getCodePin();
+    QString PIN_enter = ui->line_edit_pin_security->text();
 
-    if((PIN.at(0) == ui->spinBox_1->text()) && (PIN.at(1) == ui->spinBox_2->text()) && (PIN.at(2) == ui->spinBox_3->text())){
+    if(PIN == PIN_enter){
         ui->gBox_security->hide();
         ui->gBox_waiting->show();
+        ui->gBox_keyboard->hide();
+
     }
     else
         ui->lbl_pin_security->show();
