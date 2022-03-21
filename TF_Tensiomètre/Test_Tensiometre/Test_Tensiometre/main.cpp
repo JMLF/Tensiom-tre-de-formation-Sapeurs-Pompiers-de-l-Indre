@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 		
 		while (sdl.isOpen == true)
 		{
-			
+			std::cout << "lancement affichage"
 			
 
 			while (SDL_PollEvent(&sdl.events))
