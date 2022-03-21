@@ -19,12 +19,12 @@ controle_affichage::controle_affichage()
 	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 480, 320, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL); //dimension a adapter + flag a expliquer 
 	if (window == nullptr)
 	{
-		std::cout << "prob window";
+		std::cout << "prob window" << std::endl;
 	}
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); //ajouter flag d'acceleration materielle 
 	if (renderer == nullptr)
 	{
-		std::cout << "prob renderer"; 
+		std::cout << "prob renderer" << std::endl; 
 	}
 };
 
