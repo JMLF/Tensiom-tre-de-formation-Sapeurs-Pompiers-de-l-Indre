@@ -1,4 +1,4 @@
-//build line: g++ -Wall -o "%e" "%f" "controle_affichage.h" "controle_affichage.cpp" "TCP_SERVER.h" "TCP_SERVER.cpp" -lSDL2
+//build line: g++ -Wall -o "%e" "%f" "controle_affichage.h" "controle_affichage.cpp" "TCP_SERVER.h" "TCP_SERVER.cpp" -lSDL2 -lgpiod
 
 
 //include linux
