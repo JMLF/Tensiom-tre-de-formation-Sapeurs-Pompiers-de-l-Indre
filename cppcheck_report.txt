@@ -9067,13 +9067,13 @@ TCP_SERVER::TCP_SERVER()
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/TCP_SERVER.cpp:51:36: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
 void TCP_SERVER::WRITE(std::string message)
                                    ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:41:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:42:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
 int controle_affichage::calcul_pos_tile(int chiffre)
                         ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:41:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:42:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:125:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
@@ -9193,7 +9193,7 @@ class gzofstream : public gzfilestream_common, public ostream {
 TF_Tensiomètre/SDL class/controle_affichage.h:8:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
 class controle_affichage
 ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:9:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
 class controle_affichage
 ^
 TF_Tensiomètre/SDL class/controle_affichage.h:8:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
