@@ -12,8 +12,8 @@ public slots:
      void setIP(QString IP);
      void setPort(unsigned int port);
      void Connexion_server();
-     void envoie_trame(const char * trame);
-     void fermer_connexion();
+     void send_trame(const char * trame);
+     void close_connexion();
     ~ClientTCP();
 private:
          QString IP;

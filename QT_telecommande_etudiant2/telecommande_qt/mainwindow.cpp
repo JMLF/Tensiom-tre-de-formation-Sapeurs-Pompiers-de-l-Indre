@@ -63,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    Client.fermer_connexion();
+    Client.close_connexion();
     delete ui;
 }
 
@@ -82,6 +82,7 @@ if((Client.socket.state() == QAbstractSocket::UnconnectedState) && (compteur_dec
     timer_co_serv->connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(test_connexion_serv()));
     ui->gBox_pop_up->setGeometry(0,0,480,800);
     ui->gBox_pop_up->show();
+    ui->gBox_keyboard->hide();
     qDebug() << "Déconnecté";
 }
 }
@@ -232,6 +233,8 @@ void MainWindow::on_btn_return_clicked()
     ui->gBox_telec->show();
     ui->gBox_recap->hide();
     ui->gBox_keyboard->show();
+    ui->lbl_answer_server->show();
+    ui->lbl_answer_trame->hide();
 
 }
 
@@ -312,7 +315,7 @@ void MainWindow::on_btn_send_clicked()
     trame_char = trame_string.c_str();
 
     try{
-    Client.envoie_trame(trame_char);
+    Client.send_trame(trame_char);
     ui->lbl_answer_server->setText("Succes !");
      ui->btn_return_2->hide();
      ui->btn_restart->setGeometry(180,590,130,70);
@@ -389,7 +392,7 @@ void MainWindow::on_btn_error_clicked()
         trame_char = trame_string.c_str();
          ui->lbl_answer_trame->show();
         try {
-            Client.envoie_trame(trame_char);
+            Client.send_trame(trame_char);
              ui->lbl_answer_trame->setText("Succes envoie E (error) !");
         }  catch (...) {
             ui->lbl_answer_trame->setText("Erreur envoie E (error)...");
@@ -427,8 +430,9 @@ void MainWindow::on_btn_restart_clicked()
     ui->gBox_send->hide();
     ui->btn_return_2->show();
     //ui->btn_restart->setGeometry(180,590,130,70);
-     ui->lbl_answer_trame->hide();
      ui->gBox_keyboard->show();
+     ui->lbl_answer_server->show();
+     ui->lbl_answer_trame->hide();
 }
 
 
@@ -443,6 +447,8 @@ void MainWindow::on_btn_confirm_security_clicked()
         ui->gBox_keyboard->hide();
 
     }
-    else
+    else{
         ui->lbl_pin_security->show();
+        ui->line_edit_pin_security->setText("");
+    }
 }
