@@ -16,12 +16,12 @@ int controle_affichage::calcul_pos_tile(int chiffre)
 
 controle_affichage::controle_affichage()
 {
-	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 480, 320, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL); //dimension a adapter + flag a expliquer 
+	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 480, 320, SDL_WINDOW_RESIZABLE); //dimension a adapter + flag a expliquer 
 	if (window == nullptr)
 	{
 		std::cout << "prob window" << std::endl;
 	}
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); //ajouter flag d'acceleration materielle 
+	renderer = SDL_CreateRenderer(window, -1, 0); //ajouter flag d'acceleration materielle 
 	if (renderer == nullptr)
 	{
 		std::cout << "prob renderer" << std::endl; 
@@ -56,8 +56,8 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	
 	m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
 	m_destinationRectangle.y = m_sourceRectangle.y = 0;
-	m_destinationRectangle.w = m_sourceRectangle.w = 450;
-	m_destinationRectangle.h = m_sourceRectangle.h = 532;
+	m_destinationRectangle.w = m_sourceRectangle.w = 320;
+	m_destinationRectangle.h = m_sourceRectangle.h = 480;
 	
 
 	 
