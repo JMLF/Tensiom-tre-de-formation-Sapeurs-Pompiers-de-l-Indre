@@ -17,11 +17,11 @@ void ClientTCP::Connexion_server(){
         socket.connectToHost(IP,port);
 }
 
-void ClientTCP::fermer_connexion(){
+void ClientTCP::close_connexion(){
     socket.close();
 }
 
-void ClientTCP::envoie_trame(const char * trame){
+void ClientTCP::send_trame(const char * trame){
 
         socket.write(trame);
         if(socket.state() == QAbstractSocket::UnconnectedState){
