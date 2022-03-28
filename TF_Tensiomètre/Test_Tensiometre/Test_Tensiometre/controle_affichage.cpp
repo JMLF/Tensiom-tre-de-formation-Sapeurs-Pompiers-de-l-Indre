@@ -16,12 +16,12 @@ int controle_affichage::calcul_pos_tile(int chiffre)
 
 controle_affichage::controle_affichage()
 {
-	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 480, 320, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL); //dimension a adapter + flag a expliquer 
+	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 550, SDL_WINDOW_RESIZABLE); //dimension a adapter + flag a expliquer 
 	if (window == nullptr)
 	{
 		std::cout << "prob window" << std::endl;
 	}
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); //ajouter flag d'acceleration materielle 
+	renderer = SDL_CreateRenderer(window, -1, 0); //ajouter flag d'acceleration materielle 
 	if (renderer == nullptr)
 	{
 		std::cout << "prob renderer" << std::endl; 
@@ -56,8 +56,8 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	
 	m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
 	m_destinationRectangle.y = m_sourceRectangle.y = 0;
-	m_destinationRectangle.w = m_sourceRectangle.w = 450;
-	m_destinationRectangle.h = m_sourceRectangle.h = 532;
+	m_destinationRectangle.w = m_sourceRectangle.w = 500;
+	m_destinationRectangle.h = m_sourceRectangle.h = 550;
 	
 
 	 
@@ -67,8 +67,8 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	SDL_RenderClear(renderer);
 
 	SDL_RenderCopy(renderer, background, &m_sourceRectangle, &m_destinationRectangle);
-
-	/*
+	
+	
 	SDL_RenderDrawRect(renderer, &rectangle11); // utiliser la fonction https://wiki.libsdl.org/SDL_RenderDrawRects
 	SDL_RenderDrawRect(renderer, &rectangle12);
 	SDL_RenderDrawRect(renderer, &rectangle13);
@@ -80,7 +80,7 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	SDL_RenderDrawRect(renderer, &rectangle31);
 	SDL_RenderDrawRect(renderer, &rectangle32);
 	SDL_RenderDrawRect(renderer, &rectangle33);
-	*/
+	
 
 	SDL_Rect src2{ 2, 0, 118, 178 }; //on crop dans l'image chargé en texture / ce qu'il faut modifier pour afficher des chiffres differents // =0 ici
 	
@@ -290,7 +290,7 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	}
 
 	a = 0;
-
+	
 	SDL_RenderPresent(renderer); //rend l'image
 
 

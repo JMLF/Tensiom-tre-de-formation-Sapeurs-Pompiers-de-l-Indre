@@ -2,7 +2,7 @@
 #define _controleAffichage_
 
 
-#include "SDL2/SDL.h"
+#include "SDL.h"
 #include <iostream>
 //faire une class mère plus générale ouis faire une classe dérivée pour afficher sys dia bpm directement 
 
