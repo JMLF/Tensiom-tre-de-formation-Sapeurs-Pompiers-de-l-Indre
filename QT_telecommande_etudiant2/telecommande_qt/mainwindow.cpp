@@ -310,7 +310,7 @@ void MainWindow::on_btn_send_clicked()
     QString trame;
     const char * trame_char = "";
 
-    trame = "SYS" + ui->lbl_num_sys->text() + ":" + "DIA" + ui->lbl_num_dia->text() + ":" + "PUL" + ui->lbl_num_pul->text();
+    trame = ui->lbl_num_sys->text() + ":" + ui->lbl_num_dia->text() + ":" + ui->lbl_num_pul->text(); //Protocole de dialogue :  valeur_sys:valeur_dia:valeur_pul
     std::string trame_string = trame.toStdString();
     trame_char = trame_string.c_str();
 
