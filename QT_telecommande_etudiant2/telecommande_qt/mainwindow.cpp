@@ -10,18 +10,42 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //Definition de l'intervalle de valeurs pour les barres de progression
+    ui->progressBar_waiting->setMinimum(0);
+    ui->progressBar_waiting->setMaximum(100);
+    ui->progressBar_waiting->setValue(0);
+
+    ui->progressBar_co_lost->setMinimum(0);
+    ui->progressBar_co_lost->setMaximum(100);
+    ui->progressBar_co_lost->setValue(0);
+
+    //création de 3 timer auxquels on associra des méthodes...
     timer_co_serv = new QTimer(this);
-    connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(test_connexion_serv()));
+    timer_verif_co = new QTimer(this);
+    timer_progressBar = new QTimer(this);
+
+    //...pour quel la valeur de la barre de progression change
+    connect(timer_progressBar,SIGNAL(timeout()),this,SLOT(updateProgressBar()));
+
+    //...un pour essayer de se connecter au serveur
+    connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(co_serv()));
+    //...qui retente toutes les 3 secondes
     timer_co_serv->start(3000);
 
-    timer_verif_co = new QTimer(this);
+    //...un pour tester la connexion
     connect(timer_verif_co,SIGNAL(timeout()),this,SLOT(test_co()));
+
+    //...qui test toutes les secondes
     timer_verif_co->start(1000);
 
+    //Les valeurs sont composées de 3 chiffres max.
     ui->line_edit_value->setMaxLength(3);
     ui->line_edit_pin_security->setMaxLength(3);
     ui->line_edit_pin->setMaxLength(3);
 
+    ui->line_edit_value->setText("0");
+
+    //Cache toutes les box sauf celle pour saisie du code PIN
     ui->gBox_waiting->hide();
     ui->gBox_telec->hide();
     ui->gBox_recap->hide();
@@ -29,24 +53,28 @@ MainWindow::MainWindow(QWidget *parent)
     ui->gBox_settings->hide();
     ui->gBox_pop_up->hide();
 
+     //Pour saisir la Systole en premier
      ui->lbl_telec_sys->setGeometry(200,140,100,100);
      ui->lbl_telec_dia->hide();
      ui->lbl_telec_pul->hide();
+
      ui->lbl_answer_trame->hide();
      ui->lbl_pin_security->hide();
 
      ui->btn_start->setGeometry(180,350,150,90);
-      ui->btn_start->hide();
+     ui->btn_start->hide();
 
      ui->gBox_waiting->setGeometry(0,0,x_ecran,y_ecran);
      ui->gBox_security->setGeometry(0,0,x_ecran,y_ecran);
      ui->gBox_keyboard->setGeometry(0,380,480,420);
 
-    Client.setIP("10.187.52.36");
+     //Met l'IP et le port du tensiomètre/serveur
+    //Client.setIP("192.168.4.2");
+     Client.setIP("10.187.52.36");
     Client.setPort(12345);
 
-    //Pour pouvoir stocker le code pin du fichier .txt dans la variable
-    QString path = "../telecommande_qt/pin.txt";
+    //Pour pouvoir stocker le code pin du fichier .txt dans une variable
+    QString path = "pin.txt";
     QFile fichier_pin(path);
     QString code_pin;
 
@@ -69,24 +97,29 @@ MainWindow::~MainWindow()
 
 void MainWindow::test_co(){
     //première connexion
-if(Client.socket.state() == QAbstractSocket::ConnectedState){
+if(Client.socket.state() == QAbstractSocket::ConnectedState){ //regarde l'état de la socket
     ui->gBox_pop_up->hide();
     ui->lbl_waiting->hide();
+    ui->progressBar_waiting->hide();
     ui->btn_start->show();
-    timer_co_serv->disconnect(timer_co_serv,SIGNAL(timeout()),this,SLOT(test_connexion_serv()));
+    timer_co_serv->disconnect();//Arret du timer de connexion au serveur
+    timer_progressBar->disconnect();//Arret du timer pour la progressbar_waiting
      qDebug() << "Connecté";
-     compteur_deco++;
+     compteur_deco++; //Pour savoir si ça c'est connecté au moins 1 fois
+     if(ui->gBox_telec->isVisible() == true)
+         ui->gBox_keyboard->show();
 }
 //déconnexion en cours d'utilisation
-if((Client.socket.state() == QAbstractSocket::UnconnectedState) && (compteur_deco != 0)){
-    timer_co_serv->connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(test_connexion_serv()));
+if((Client.socket.state() == QAbstractSocket::UnconnectedState) && (compteur_deco != 0)){ 
+    connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(co_serv())); //relance du timer de connexion au serveur
+    connect(timer_progressBar,SIGNAL(timeout()),this,SLOT(updateProgressBar())); //lancement du timer toute les 50 ms pour la progressbar_co_lost
     ui->gBox_pop_up->setGeometry(0,0,480,800);
     ui->gBox_pop_up->show();
     ui->gBox_keyboard->hide();
     qDebug() << "Déconnecté";
 }
 }
-void MainWindow::test_connexion_serv(){
+void MainWindow::co_serv(){
     Client.Connexion_server();
     qDebug() << "Connexion au serveur...";
 }
@@ -100,11 +133,13 @@ QString MainWindow::getCodePin(){
 
 void MainWindow::addNumber(QString number){
 
+    //Pour la valeur du code PIN
     if(ui->gBox_security->isVisible() == true){
       ui->line_edit_pin_security->setText(ui->line_edit_pin_security->text() + number);
     }
+    //Pour la valeur des constantes
     else if(ui->gBox_telec->isVisible() == true){
-        if(ui->line_edit_value->text() == "0")
+        if(ui->line_edit_value->text() == "0") //Permet de remplacer le 0 si c'est le chiffre de la line edit (Évite de devoir faire backspace)
         ui->line_edit_value->setText(number);
      else
           ui->line_edit_value->setText(ui->line_edit_value->text() + number);
@@ -177,19 +212,23 @@ void MainWindow::on_btn_delete_clicked()
     QString Valeur;
     int taille = 0;
 
+    //Pour le code PIN
     if(ui->gBox_security->isVisible() == true){
         Valeur = ui->line_edit_pin_security->text();
         taille = Valeur.size();
         if(taille != 0)
-            ui->line_edit_pin_security->setText(Valeur.remove(taille - 1,1));
+            ui->line_edit_pin_security->setText(Valeur.remove(taille - 1,1)); //Permet d'enlever le dernier chiffre, prend en paramètre la position à
+                                                                              //laquelle on a envie de commencer et le nombre de caractère qu'on veut supprimer
     }
+    //Pour les constantes
     else if(ui->gBox_telec->isVisible() == true){
         Valeur = ui->line_edit_value->text();
         taille = Valeur.size();
         if(taille != 0)
             ui->line_edit_value->setText(Valeur.remove(taille - 1,1));
         }
-    else{
+    else //Pour le nouveau code PIN
+    {
         Valeur = ui->line_edit_pin->text();
         taille = Valeur.size();
         if(taille != 0)
@@ -201,7 +240,7 @@ void MainWindow::on_btn_delete_clicked()
 
 void MainWindow::on_btn_ok_clicked()
 {
-
+    //Si l'utilisateur n'appuie pas sur tout les boutons 'next' permet quand même de transmettre la valeur sur laquelle il se trouve
     if(ui->lbl_telec_sys->isHidden() == false){
      ui->lbl_num_sys->setText(ui->line_edit_value->text());
     ui->lbl_telec_sys->hide();
@@ -241,6 +280,7 @@ void MainWindow::on_btn_return_clicked()
 
 void MainWindow::on_btn_next_clicked()
 {
+    //Synchronise les valeurs des constantes entre la page de saisie et la page récap.
     if(ui->lbl_telec_sys->isHidden() == false){
         ui->lbl_num_sys->setText(ui->line_edit_value->text());
         ui->lbl_telec_sys->hide();
@@ -269,6 +309,7 @@ void MainWindow::on_btn_next_clicked()
 
 void MainWindow::on_btn_back_clicked()
 {
+    //Synchronise les valeurs des constantes entre la page de saisie et la page récap.
    if(ui->lbl_telec_dia->isHidden() == false){
         ui->lbl_num_dia->setText(ui->line_edit_value->text());
         ui->lbl_telec_dia->hide();
@@ -302,19 +343,15 @@ void MainWindow::on_btn_send_clicked()
     ui->gBox_recap->hide();
     ui->gBox_send->show();
     ui->gBox_send->setGeometry(0,0,x_ecran,y_ecran);
-    int sys = ui->lbl_num_sys->text().toInt();
-    int dia = ui->lbl_num_dia->text().toInt();
-    int pul = ui->lbl_num_pul->text().toInt();
 
-    if((sys != 0) && (dia != 0) && (pul != 0)){
     QString trame;
     const char * trame_char = "";
 
     trame = ui->lbl_num_sys->text() + ":" + ui->lbl_num_dia->text() + ":" + ui->lbl_num_pul->text(); //Protocole de dialogue :  valeur_sys:valeur_dia:valeur_pul
-    std::string trame_string = trame.toStdString();
-    trame_char = trame_string.c_str();
+    std::string trame_string = trame.toStdString(); //convertit QString en string
+    trame_char = trame_string.c_str(); //convertit string en const char (le format qui convient pour être envoyé)
 
-    try{
+    try{ //try catch à la place des booléens pour la gestion d'erreurs
     Client.send_trame(trame_char);
     ui->lbl_answer_server->setText("Succes !");
      ui->btn_return_2->hide();
@@ -327,14 +364,6 @@ void MainWindow::on_btn_send_clicked()
         ui->lbl_counter->hide();
         ui->btn_error->hide();
 
-    }
-    }
-    else{
-         ui->lbl_answer_trame->show();
-        ui->lbl_answer_trame->setText("Toutes les valeurs doivent \nêtre différentes de 0");
-        ui->lbl_answer_server->hide();
-        ui->lbl_counter->hide();
-        ui->btn_error->hide();
     }
 }
 
@@ -353,7 +382,7 @@ void MainWindow::on_btn_confirm_clicked()
 
     nouveau_pin = ui->line_edit_pin->text();
 
-        QFile fichier_pin("../telecommande_qt/pin.txt");
+        QFile fichier_pin("pin.txt");
 
         if (fichier_pin.open(QIODevice::WriteOnly| QIODevice::Text))
         {
@@ -445,10 +474,26 @@ void MainWindow::on_btn_confirm_security_clicked()
         ui->gBox_security->hide();
         ui->gBox_waiting->show();
         ui->gBox_keyboard->hide();
-
+        timer_progressBar->start(50); //lancement du timer toute les 50 ms pour la progressbar_waiting
     }
     else{
         ui->lbl_pin_security->show();
         ui->line_edit_pin_security->setText("");
+    }
+}
+
+void MainWindow::updateProgressBar(){
+
+    //Si c'est la barre de progression de la page d'attente est visible
+    if(ui->progressBar_waiting->isVisible() == true){
+    ui->progressBar_waiting->setValue(ui->progressBar_waiting->value() + 1);
+    if(ui->progressBar_waiting->value() == 100)
+        ui->progressBar_waiting->setValue(0);
+    }
+    //...ou celle de la perte de connexion
+    else{
+        ui->progressBar_co_lost->setValue(ui->progressBar_co_lost->value() + 1);
+        if(ui->progressBar_co_lost->value() == 100)
+            ui->progressBar_co_lost->setValue(0);
     }
 }

@@ -723,23 +723,22 @@
     <widget class="QLabel" name="lbl_waiting">
      <property name="geometry">
       <rect>
-       <x>8</x>
-       <y>120</y>
-       <width>471</width>
-       <height>441</height>
+       <x>130</x>
+       <y>370</y>
+       <width>221</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>26</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
      </property>
      <property name="text">
-      <string>En attente de la connexion 
- d'un tensiomètre...</string>
+      <string>Attente d'un tensiomètre</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btn_start">
@@ -761,6 +760,22 @@
      </property>
      <property name="text">
       <string>COMMENCER</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar_waiting">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>330</y>
+       <width>291</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
@@ -876,23 +891,38 @@
     <widget class="QLabel" name="lbl_pop_up">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>90</y>
-       <width>471</width>
-       <height>501</height>
+       <x>90</x>
+       <y>370</y>
+       <width>281</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>26</pointsize>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
      </property>
      <property name="text">
-      <string>Perte de connexion 
-au tensiomètre...</string>
+      <string>Connexion tensiomètre perdue</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar_co_lost">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>330</y>
+       <width>291</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>

@@ -6,7 +6,6 @@
 #include <clientTCP.h>
 #include <QTimer>
 
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -21,9 +20,11 @@ public:
 
 private slots:
 
+    void updateProgressBar();
+
     void test_co();
 
-    void test_connexion_serv();
+    void co_serv();
 
     void setCodePin(QString code_pin);
 
@@ -84,6 +85,7 @@ private:
     QString code_pin;
     QTimer *timer_co_serv;
     QTimer *timer_verif_co;
+    QTimer *timer_progressBar;
     char compteur_deco = 0;
     int x_ecran = 480;
     int y_ecran = 800;
