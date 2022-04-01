@@ -13,6 +13,8 @@
 
 int main(int argc, char* argv[])
 {
+
+	/*
 		struct  gpiod_chip* gpiochip;
 		struct  gpiod_line* sortie12;
 		struct  gpiod_line* sortie22;
@@ -45,41 +47,27 @@ int main(int argc, char* argv[])
 		//std::string reception = server.READ(); //bloquant
 		
 
-
+		*/
 
 		controle_affichage sdl;
 
 		sdl.chargement_Textures();
 
 		
-		int constantes;
+		int constantes(0);
 		
 		while (sdl.isOpen == true)
 		{
-		
-			
-
-			while (SDL_PollEvent(&sdl.events))
-			{
-				switch (sdl.events.type)
-				{
-
-				case SDL_QUIT: //croix rouge
-					sdl.isOpen = false;
-					break;
-				
-				}
-			}
-			
-			sdl.affichage(9, 9, 9);
-			SDL_Delay(50);
+			constantes++;
+			sdl.affichage(constantes, constantes, constantes);
+			SDL_Delay(200);
 		}
 		
-		gpiod_line_release(sortie12);
-		gpiod_line_release(sortie22);
-		gpiod_line_release(entree5);
+		//gpiod_line_release(sortie12);
+		//gpiod_line_release(sortie22);
+		//gpiod_line_release(entree5);
 
-		gpiod_chip_close(gpiochip);
+		//gpiod_chip_close(gpiochip);
 		sdl.~controle_affichage();
 		return 0;
 	

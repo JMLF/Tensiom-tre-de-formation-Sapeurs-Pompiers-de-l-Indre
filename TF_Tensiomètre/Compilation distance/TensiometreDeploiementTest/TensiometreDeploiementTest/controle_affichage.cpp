@@ -16,7 +16,7 @@ int controle_affichage::calcul_pos_tile(int chiffre)
 
 controle_affichage::controle_affichage()
 {
-	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 480, 320, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL); //dimension a adapter + flag a expliquer 
+	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 320, 480, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL); //dimension a adapter + flag a expliquer 
 	if (window == nullptr)
 		std::cout << "prob window" << std::endl;
 	
@@ -40,7 +40,8 @@ void controle_affichage::chargement_Textures()
 	SDL_FreeSurface(surface);
 
 	surface = SDL_LoadBMP("/home/pi/projects/TensiometreDeploiementTest/assets/FullChiffre.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
-	if (surface == NULL)
+	if (surface == nullptr)
+		std::cout << "pas de fichier" << std::endl;
 		//throw ("prob");
 
 	tiledmap = SDL_CreateTextureFromSurface(renderer, surface);
@@ -54,10 +55,10 @@ void controle_affichage::chargement_Textures()
 void controle_affichage::affichage(int sys, int dia, int bpm)
 {
 	
-	m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
-	m_destinationRectangle.y = m_sourceRectangle.y = 0;
-	m_destinationRectangle.w = m_sourceRectangle.w = 450;
-	m_destinationRectangle.h = m_sourceRectangle.h = 532;
+	//m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
+	//m_destinationRectangle.y = m_sourceRectangle.y = 0;
+	//m_destinationRectangle.w = m_sourceRectangle.w = 450;
+	//m_destinationRectangle.h = m_sourceRectangle.h = 532;
 	
 
 	 
@@ -66,9 +67,10 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 
 	SDL_RenderClear(renderer);
 
-	SDL_RenderCopy(renderer, background, &m_sourceRectangle, &m_destinationRectangle);
+	SDL_RenderCopy(renderer, background, NULL, &rectangleBack);
+	//SDL_RenderCopy(renderer, background, &m_sourceRectangle, &m_destinationRectangle);
 
-	/*
+	
 	SDL_RenderDrawRect(renderer, &rectangle11); // utiliser la fonction https://wiki.libsdl.org/SDL_RenderDrawRects
 	SDL_RenderDrawRect(renderer, &rectangle12);
 	SDL_RenderDrawRect(renderer, &rectangle13);
@@ -80,7 +82,7 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 	SDL_RenderDrawRect(renderer, &rectangle31);
 	SDL_RenderDrawRect(renderer, &rectangle32);
 	SDL_RenderDrawRect(renderer, &rectangle33);
-	*/
+	
 
 	SDL_Rect src2{ 2, 0, 118, 178 }; //on crop dans l'image chargé en texture / ce qu'il faut modifier pour afficher des chiffres differents // =0 ici
 	
