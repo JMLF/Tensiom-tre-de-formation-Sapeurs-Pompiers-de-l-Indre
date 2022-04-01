@@ -38,29 +38,35 @@ int main(int argc, char* argv[])
 		
 
 		gpiod_line_request_input(entree5, "entree5");
-	
+	*/
 
-		TCP_SERVER server;
+		
 
 		//server.INIT();
 
 		//std::string reception = server.READ(); //bloquant
 		
 
-		*/
-
+		
+		TCP_SERVER server;
 		controle_affichage sdl;
 
 		sdl.chargement_Textures();
-
+		server.INIT(); //bloquant
 		
 		int constantes(0);
 		
 		while (sdl.isOpen == true)
 		{
-			constantes++;
+			
+			
 			sdl.affichage(constantes, constantes, constantes);
-			SDL_Delay(200);
+			
+			std::string reception = server.READ(); //bloquant
+			constantes = stoi(reception);
+
+
+			SDL_Delay(50);
 		}
 		
 		//gpiod_line_release(sortie12);
