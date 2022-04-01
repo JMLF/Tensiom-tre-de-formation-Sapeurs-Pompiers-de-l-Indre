@@ -1,16 +1,18 @@
 ﻿#pragma once
 
 #include "lvgl/lvgl.h"
+#include "lvgl/examples/lv_examples.h"
+#include "lvgl/demos/lv_demos.h"
+#include "lv_drivers/win32drv/win32drv.h"
 
 
-//#include "../../../../../Client Tcp/ClasseClient.h"
-//#include "sys/types.h>"
-//#include <sys/socket.h> // socket, recv, send
-//#include <netinet/in.h> // sockaddr_in, htonl
-//#include <arpa/inet.h>  // inet_addr
-//#include <unistd.h>     // close
-//#include <cstdlib>
+#include "sys/types.h>"
+#include <sys/socket.h> // socket, recv, send
+#include <netinet/in.h> // sockaddr_in, htonl
+#include <arpa/inet.h>  // inet_addr
+#include <unistd.h>     // close
 
+#include<iostream>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -60,6 +62,6 @@ void initialisation();
 static void event_mboxPin(lv_event_t* e);
 
 
-bool connexion(std::string IpServeur, unsigned int port);
-bool envoyer(std::string data);
+bool connexion(char* IpServeur, unsigned int port);
+bool envoyer(char* data);
 void fermer();

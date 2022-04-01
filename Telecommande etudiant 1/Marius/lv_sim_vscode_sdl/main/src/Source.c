@@ -70,7 +70,8 @@ void my_timer(lv_timer_t* timer) {
 }
 void my_timer_Ping(lv_timer_t* timer) {
     if (Bconnexion == false) {
-        Bconnexion = connexion("10.187.52.43", 12345);
+        char ip[] = "10.187.52.43";
+        Bconnexion = connexion(ip, 12345);
  }
 
     
@@ -480,8 +481,8 @@ static void btn_event_send_ERREUR(lv_event_t* e)
         if (true == false) {
 
             mboxErreur = lv_msgbox_create(NULL, "Erreur envoyer", "", btns, false);
-
-            envoyer("E");
+            char message[] = "E";
+            envoyer(message);
             lv_obj_add_event_cb(mboxErreur, event_cbErreur, LV_EVENT_VALUE_CHANGED, NULL);
             lv_obj_center(mboxErreur);
         }
@@ -902,7 +903,22 @@ static void btn_event_cb(lv_event_t* e)
 
     lv_event_code_t code = lv_event_get_code(e);
     lv_obj_t* btn = lv_event_get_target(e);
-    if (code == LV_EVENT_CLICKED) {
+    if (code == LV_EVENT_CLICKED) {///////////////////////////////////////////////////////////////////////////////////////////////
+        char* DATA;
+      
+        
+        strcat(DATA, lv_label_get_text(SYS_labelC));
+        strcat(DATA, lv_label_get_text(SYS_labelD));
+        strcat(DATA, lv_label_get_text(SYS_labelU));
+        strcat(DATA, ":");
+        strcat(DATA, lv_label_get_text(DIA_labelC));
+        strcat(DATA, lv_label_get_text(DIA_labelD));
+        strcat(DATA, lv_label_get_text(DIA_labelU));
+        strcat(DATA, ":");
+        strcat(DATA, lv_label_get_text(PUL_labelC));
+        strcat(DATA, lv_label_get_text(PUL_labelD));
+        strcat(DATA, lv_label_get_text(PUL_labelU));
+        
 
         
         
@@ -912,7 +928,7 @@ static void btn_event_cb(lv_event_t* e)
             
 
             mbox1 = lv_msgbox_create(NULL, "Message envoyer", "", btns, false);
-            //envoyer(data);
+            envoyer(DATA);
 
             lv_obj_add_event_cb(mbox1, event_cb, LV_EVENT_VALUE_CHANGED, NULL);
             lv_obj_center(mbox1);
@@ -982,7 +998,7 @@ static void btn_event_btnSecurite(lv_event_t* e)
 
         }
         else {
-            mboxPin = lv_msgbox_create(NULL, "Veuiller Reassyer", "", btns, false);
+            mboxPin = lv_msgbox_create(NULL, "Veuiller Reasseyer", "", btns, false);
             lv_obj_add_event_cb(mboxPin, event_mboxPin, LV_EVENT_VALUE_CHANGED, NULL);
             lv_obj_center(mboxPin);
         }
@@ -1039,7 +1055,7 @@ static void event_ChangerPin(lv_event_t* e) {
 }
 
 
-bool connexion(std::string IpServeur, unsigned int port)
+bool connexion(char* IpServeur, unsigned int port)
 {
 
     ids_client = socket(AF_INET, SOCK_STREAM, 0);
@@ -1052,7 +1068,7 @@ bool connexion(std::string IpServeur, unsigned int port)
 
     adr_serveur.sin_family = AF_INET; // Domaine d'@
     adr_serveur.sin_port = htons(port);// N° du port
-    adr_serveur.sin_addr.s_addr = inet_addr(IpServeur.c_str());
+    adr_serveur.sin_addr.s_addr = inet_addr(IpServeur);
     // @IP du serveur                                                                       	   int res_connexion = connect(ids_client,
     int res_connexion = connect(ids_client, (struct sockaddr*)&adr_serveur, sizeof(adr_serveur));
     if (res_connexion < 0)
@@ -1062,9 +1078,9 @@ bool connexion(std::string IpServeur, unsigned int port)
     return true;
 }
 
-bool envoyer(std::string data)
+bool envoyer(char* data)
 {
-    if (!send(ids_client, data.c_str(), data.size(), 0)) return false;
+    if (!send(ids_client, data, sizeof(data), 0)) return false;
     return true;
 }
 
