@@ -70,7 +70,7 @@ void my_timer(lv_timer_t* timer) {
 }
 void my_timer_Ping(lv_timer_t* timer) {
     if (Bconnexion == false) {
-       // Bconnexion = connexion("10.187.52.43", 12345);
+        Bconnexion = connexion("10.187.52.43", 12345);
  }
 
     
@@ -453,7 +453,7 @@ void MenuPage() {
     lv_label_set_text(lbl, LV_SYMBOL_PLAY "  DataPage  " LV_SYMBOL_PLAY);
     lv_obj_align_to(lbl, btn, LV_ALIGN_CENTER, 0, 0);
     lv_obj_add_event_cb(btn, ModeDataPage, LV_EVENT_ALL, NULL);
-    //lv_obj_align_to(btn, arc, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
+    
 
     btn = lv_btn_create(winMenu);
     lv_obj_set_size(btn, 50, 50);
@@ -481,7 +481,7 @@ static void btn_event_send_ERREUR(lv_event_t* e)
 
             mboxErreur = lv_msgbox_create(NULL, "Erreur envoyer", "", btns, false);
 
-            //envoyer("E");
+            envoyer("E");
             lv_obj_add_event_cb(mboxErreur, event_cbErreur, LV_EVENT_VALUE_CHANGED, NULL);
             lv_obj_center(mboxErreur);
         }
@@ -797,7 +797,6 @@ static void event_handlerSysCentaine(lv_event_t* e)
     if (code == LV_EVENT_VALUE_CHANGED) {
         char buf[32];
         lv_roller_get_selected_str(obj, buf, sizeof(buf));
-        //    LV_LOG_USER("Selected value: %s", buf);
         lv_label_set_text(SYS_labelC, buf);
         SYS[0] = buf[0];
     }
@@ -809,7 +808,6 @@ static void event_handlerSysDizaine(lv_event_t* e)
     if (code == LV_EVENT_VALUE_CHANGED) {
         char buf[32];
         lv_roller_get_selected_str(obj, buf, sizeof(buf));
-        //    LV_LOG_USER("Selected value: %s", buf);
         lv_label_set_text(SYS_labelD, buf);
         SYS[1] = buf[0];
     }
@@ -821,7 +819,6 @@ static void event_handlerSysUnite(lv_event_t* e)
     if (code == LV_EVENT_VALUE_CHANGED) {
         char buf[32];
         lv_roller_get_selected_str(obj, buf, sizeof(buf));
-        //    LV_LOG_USER("Selected value: %s", buf);
         lv_label_set_text(SYS_labelU, buf);
         SYS[2] = buf[0];
     }
@@ -833,7 +830,6 @@ static void event_handlerDyaCentaine(lv_event_t* e)
     if (code == LV_EVENT_VALUE_CHANGED) {
         char buf[32];
         lv_roller_get_selected_str(obj, buf, sizeof(buf));
-        //    LV_LOG_USER("Selected value: %s", buf);
         lv_label_set_text(DIA_labelC, buf);
         DIA[0] = buf[0];
     }
@@ -845,7 +841,6 @@ static void event_handlerDyaDizaine(lv_event_t* e)
     if (code == LV_EVENT_VALUE_CHANGED) {
         char buf[32];
         lv_roller_get_selected_str(obj, buf, sizeof(buf));
-        //   LV_LOG_USER("Selected value: %s", buf);
         lv_label_set_text(DIA_labelD, buf);
         DIA[1] = buf[0];
     }
@@ -857,7 +852,6 @@ static void event_handlerDyaUnite(lv_event_t* e)
     if (code == LV_EVENT_VALUE_CHANGED) {
         char buf[32];
         lv_roller_get_selected_str(obj, buf, sizeof(buf));
-        //   LV_LOG_USER("Selected value: %s", buf);
         lv_label_set_text(DIA_labelU, buf);
         DIA[2] = buf[0];
     }
@@ -869,7 +863,6 @@ static void event_handlerPulCentaine(lv_event_t* e)
     if (code == LV_EVENT_VALUE_CHANGED) {
         char buf[32];
         lv_roller_get_selected_str(obj, buf, sizeof(buf));
-        //   LV_LOG_USER("Selected value: %s", buf);
         lv_label_set_text(PUL_labelC, buf);
         PUL[0] = buf[0];
     }
@@ -989,9 +982,9 @@ static void btn_event_btnSecurite(lv_event_t* e)
 
         }
         else {
-          //  mboxPin = lv_msgbox_create(NULL, "Veuiller Reassyer", "", btns, false);
-          //  lv_obj_add_event_cb(mboxPin, event_mboxPin, LV_EVENT_VALUE_CHANGED, NULL);
-          //  lv_obj_center(mboxPin);
+            mboxPin = lv_msgbox_create(NULL, "Veuiller Reassyer", "", btns, false);
+            lv_obj_add_event_cb(mboxPin, event_mboxPin, LV_EVENT_VALUE_CHANGED, NULL);
+            lv_obj_center(mboxPin);
         }
     }
 }
@@ -1045,24 +1038,8 @@ static void event_ChangerPin(lv_event_t* e) {
     }
 }
 
-//std::string exec(const char* cmd) {
-//    char buffer[128];
-//    std::string result = "";
-//    FILE* pipe = _popen(cmd, "r");
-//    if (!pipe) throw std::runtime_error("popen() failed!");
-//    try {
-//        while (fgets(buffer, sizeof buffer, pipe) != NULL) {
-//            result += buffer;
-//        }
-//    }
-//    catch (...) {
-//        _pclose(pipe);
-//        throw;
-//    }
-//    _pclose(pipe);
-//    return result;
-//}
-/*bool clientTcp::connexion(std::string IpServeur, unsigned int port)
+
+bool connexion(std::string IpServeur, unsigned int port)
 {
 
     ids_client = socket(AF_INET, SOCK_STREAM, 0);
@@ -1070,7 +1047,7 @@ static void event_ChangerPin(lv_event_t* e) {
     {
         return false;
     }
-    this->ids_client = ids_client;
+   ids_client = ids_client;
 
 
     adr_serveur.sin_family = AF_INET; // Domaine d'@
@@ -1084,14 +1061,14 @@ static void event_ChangerPin(lv_event_t* e) {
     }
     return true;
 }
-*/
-//bool clientTcp::envoyer(std::string data)
-//{
-   // if (!send(ids_client, data.c_str(), data.size(), 0)) return false;
-   // return true;
-//}
 
-//void clientTcp::fermer()
-//{
-    //close(ids_client);
-//}
+bool envoyer(std::string data)
+{
+    if (!send(ids_client, data.c_str(), data.size(), 0)) return false;
+    return true;
+}
+
+void fermer()
+{
+    close(ids_client);
+}
