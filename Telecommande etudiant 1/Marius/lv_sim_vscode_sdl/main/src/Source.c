@@ -1,4 +1,4 @@
-﻿#include"Fonction.h"
+#include"Fonction.h"
 
 
 static lv_obj_t* SYS_labelC;
