@@ -989,9 +989,9 @@ static void btn_event_btnSecurite(lv_event_t* e)
 
         }
         else {
-            mboxPin = lv_msgbox_create(NULL, "Veuiller Reassyer", "", btns, false);
-            lv_obj_add_event_cb(mboxPin, event_mboxPin, LV_EVENT_VALUE_CHANGED, NULL);
-            lv_obj_center(mboxPin);
+          //  mboxPin = lv_msgbox_create(NULL, "Veuiller Reassyer", "", btns, false);
+          //  lv_obj_add_event_cb(mboxPin, event_mboxPin, LV_EVENT_VALUE_CHANGED, NULL);
+          //  lv_obj_center(mboxPin);
         }
     }
 }
