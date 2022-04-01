@@ -21,30 +21,24 @@ int main(int argc, char* argv[])
 		struct gpiod_line* entree5;
 
 		
-
 		gpiochip = gpiod_chip_open("/dev/gpiochip0");
 
 		
-
 		sortie12 = gpiod_chip_get_line(gpiochip, 12); //line 12
 		sortie22 = gpiod_chip_get_line(gpiochip, 22); //line22
 		entree5 = gpiod_chip_get_line(gpiochip, 5); //line 5
-
 	
 
 		gpiod_line_request_output(sortie12, "sortie12", 0); //line,nom,0=normal/1=inversée
 		gpiod_line_request_output(sortie22, "sortie22", 0);
 
 		
-
 		gpiod_line_request_input(entree5, "entree5");
 	*/
 
 		
 
-		//server.INIT();
-
-		//std::string reception = server.READ(); //bloquant
+	
 		
 
 		
@@ -54,17 +48,21 @@ int main(int argc, char* argv[])
 		sdl.chargement_Textures();
 		server.INIT(); //bloquant
 		
-		int constantes(0);
+		int constante1(0);
+		int constante2(0);
+		int constante3(0);
+		std::string reception;
 		
 		while (sdl.isOpen == true)
 		{
 			
 			
-			sdl.affichage(constantes, constantes, constantes);
+			sdl.affichage(constante1, constante2, constante3);
 			
-			std::string reception = server.READ(); //bloquant
-			constantes = stoi(reception);
-
+			reception = server.READ(); //bloquant
+			constante1 = stoi(reception.substr(0, 3));
+			constante2 = stoi(reception.substr(4, 3));
+			constante3 = stoi(reception.substr(8, 3));
 
 			SDL_Delay(50);
 		}
