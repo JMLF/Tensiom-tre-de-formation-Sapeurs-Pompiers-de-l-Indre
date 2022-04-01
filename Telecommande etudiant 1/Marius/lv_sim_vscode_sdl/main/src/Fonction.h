@@ -60,6 +60,6 @@ void initialisation();
 static void event_mboxPin(lv_event_t* e);
 
 
-//bool connexion(std::string IpServeur, unsigned int port);
-//bool envoyer(std::string data);
-//void fermer();
+bool connexion(std::string IpServeur, unsigned int port);
+bool envoyer(std::string data);
+void fermer();
