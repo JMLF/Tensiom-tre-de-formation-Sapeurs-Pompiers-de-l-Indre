@@ -11893,40 +11893,70 @@ Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lvgl/tests/lv_test_fonts/font_3
 Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lvgl/tests/lv_test_main.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 209 configurations. Use --force to check all configurations. [toomanyconfigs]
 
 ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:1050:15: warning: Redundant assignment of 'ids_client' to itself. [selfAssignment]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:1066:15: warning: Redundant assignment of 'ids_client' to itself. [selfAssignment]
    ids_client = ids_client;
               ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:959:24: style: The scope of the variable 'btns' can be reduced. [variableScope]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:975:24: style: The scope of the variable 'btns' can be reduced. [variableScope]
     static const char* btns[] = { "Fermer","" };
                        ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:82:27: style: Variable 'timerPing' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:910:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(SYS_labelC));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:911:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(SYS_labelD));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:912:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(SYS_labelU));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:913:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, ":");
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:914:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(DIA_labelC));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:915:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(DIA_labelD));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:916:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(DIA_labelU));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:917:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, ":");
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:918:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(PUL_labelC));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:919:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(PUL_labelD));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:920:16: error: Uninitialized variable: DATA [uninitvar]
+        strcat(DATA, lv_label_get_text(PUL_labelU));
+               ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:931:21: error: Uninitialized variable: DATA [uninitvar]
+            envoyer(DATA);
+                    ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:83:27: style: Variable 'timerPing' is assigned a value that is never used. [unreadVariable]
     lv_timer_t* timerPing = lv_timer_create(my_timer_Ping, 5000, NULL);
                           ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:88:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:89:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:98:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:99:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:108:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:109:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:406:19: style: Variable 'obj' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:407:19: style: Variable 'obj' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* obj = lv_event_get_current_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:477:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:478:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:894:19: style: Variable 'obj' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:895:19: style: Variable 'obj' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* obj = lv_event_get_current_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:904:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
-    lv_obj_t* btn = lv_event_get_target(e);
-                  ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:934:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
-    lv_obj_t* btn = lv_event_get_target(e);
-                  ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:942:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:905:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
 Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:950:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
@@ -11935,10 +11965,16 @@ Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:950:19: style
 Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:958:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:994:19: style: Variable 'obj' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:966:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+    lv_obj_t* btn = lv_event_get_target(e);
+                  ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:974:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+    lv_obj_t* btn = lv_event_get_target(e);
+                  ^
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:1010:19: style: Variable 'obj' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* obj = lv_event_get_current_target(e);
                   ^
-Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:1004:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
+Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/main/src/Source.c:1020:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:10:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
