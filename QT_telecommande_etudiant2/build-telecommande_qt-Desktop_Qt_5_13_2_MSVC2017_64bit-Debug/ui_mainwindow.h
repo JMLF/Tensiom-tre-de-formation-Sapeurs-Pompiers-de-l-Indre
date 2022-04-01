@@ -16,6 +16,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolButton>
@@ -64,6 +65,7 @@ public:
     QGroupBox *gBox_waiting;
     QLabel *lbl_waiting;
     QPushButton *btn_start;
+    QProgressBar *progressBar_waiting;
     QGroupBox *gBox_security;
     QPushButton *btn_confirm_security;
     QLabel *lbl_pin_security;
@@ -71,6 +73,7 @@ public:
     QLabel *label;
     QGroupBox *gBox_pop_up;
     QLabel *lbl_pop_up;
+    QProgressBar *progressBar_co_lost;
     QGroupBox *gBox_keyboard;
     QPushButton *btn_3;
     QPushButton *btn_7;
@@ -279,16 +282,19 @@ public:
         gBox_waiting->setStyleSheet(QString::fromUtf8("background-color: rgb(245, 245, 245);"));
         lbl_waiting = new QLabel(gBox_waiting);
         lbl_waiting->setObjectName(QString::fromUtf8("lbl_waiting"));
-        lbl_waiting->setGeometry(QRect(8, 120, 471, 441));
-        QFont font7;
-        font7.setPointSize(26);
-        lbl_waiting->setFont(font7);
+        lbl_waiting->setGeometry(QRect(130, 370, 221, 41));
+        lbl_waiting->setFont(font6);
         lbl_waiting->setStyleSheet(QString::fromUtf8("background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));"));
         btn_start = new QPushButton(gBox_waiting);
         btn_start->setObjectName(QString::fromUtf8("btn_start"));
         btn_start->setGeometry(QRect(180, 680, 150, 90));
         btn_start->setFont(font6);
         btn_start->setStyleSheet(QString::fromUtf8("background-color: rgb(85, 170, 255);"));
+        progressBar_waiting = new QProgressBar(gBox_waiting);
+        progressBar_waiting->setObjectName(QString::fromUtf8("progressBar_waiting"));
+        progressBar_waiting->setGeometry(QRect(80, 330, 291, 41));
+        progressBar_waiting->setValue(24);
+        progressBar_waiting->setTextVisible(false);
         gBox_security = new QGroupBox(centralwidget);
         gBox_security->setObjectName(QString::fromUtf8("gBox_security"));
         gBox_security->setGeometry(QRect(0, 810, 480, 800));
@@ -306,9 +312,9 @@ public:
         line_edit_pin_security = new QLineEdit(gBox_security);
         line_edit_pin_security->setObjectName(QString::fromUtf8("line_edit_pin_security"));
         line_edit_pin_security->setGeometry(QRect(170, 100, 131, 61));
-        QFont font8;
-        font8.setPointSize(48);
-        line_edit_pin_security->setFont(font8);
+        QFont font7;
+        font7.setPointSize(48);
+        line_edit_pin_security->setFont(font7);
         line_edit_pin_security->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         label = new QLabel(gBox_security);
         label->setObjectName(QString::fromUtf8("label"));
@@ -320,9 +326,14 @@ public:
         gBox_pop_up->setStyleSheet(QString::fromUtf8("background-color: rgb(245, 245, 245);"));
         lbl_pop_up = new QLabel(gBox_pop_up);
         lbl_pop_up->setObjectName(QString::fromUtf8("lbl_pop_up"));
-        lbl_pop_up->setGeometry(QRect(10, 90, 471, 501));
-        lbl_pop_up->setFont(font7);
+        lbl_pop_up->setGeometry(QRect(90, 370, 281, 51));
+        lbl_pop_up->setFont(font6);
         lbl_pop_up->setStyleSheet(QString::fromUtf8("background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));"));
+        progressBar_co_lost = new QProgressBar(gBox_pop_up);
+        progressBar_co_lost->setObjectName(QString::fromUtf8("progressBar_co_lost"));
+        progressBar_co_lost->setGeometry(QRect(80, 330, 291, 41));
+        progressBar_co_lost->setValue(24);
+        progressBar_co_lost->setTextVisible(false);
         gBox_keyboard = new QGroupBox(centralwidget);
         gBox_keyboard->setObjectName(QString::fromUtf8("gBox_keyboard"));
         gBox_keyboard->setGeometry(QRect(1960, 380, 480, 420));
@@ -436,16 +447,14 @@ public:
         btn_cancel->setText(QCoreApplication::translate("MainWindow", "ANNULER", nullptr));
         lbl_new_pin->setText(QCoreApplication::translate("MainWindow", "Nouveau code PIN", nullptr));
         gBox_waiting->setTitle(QCoreApplication::translate("MainWindow", "Attente", nullptr));
-        lbl_waiting->setText(QCoreApplication::translate("MainWindow", "En attente de la connexion \n"
-" d'un tensiom\303\250tre...", nullptr));
+        lbl_waiting->setText(QCoreApplication::translate("MainWindow", "Attente d'un tensiom\303\250tre", nullptr));
         btn_start->setText(QCoreApplication::translate("MainWindow", "COMMENCER", nullptr));
         gBox_security->setTitle(QCoreApplication::translate("MainWindow", "S\303\251curit\303\251", nullptr));
         btn_confirm_security->setText(QCoreApplication::translate("MainWindow", "VALIDER", nullptr));
         lbl_pin_security->setText(QCoreApplication::translate("MainWindow", "ERR : code PIN", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "PIN ", nullptr));
         gBox_pop_up->setTitle(QCoreApplication::translate("MainWindow", "D\303\251connexion", nullptr));
-        lbl_pop_up->setText(QCoreApplication::translate("MainWindow", "Perte de connexion \n"
-"au tensiom\303\250tre...", nullptr));
+        lbl_pop_up->setText(QCoreApplication::translate("MainWindow", "Connexion tensiom\303\250tre perdue", nullptr));
         gBox_keyboard->setTitle(QCoreApplication::translate("MainWindow", "Clavier", nullptr));
         btn_3->setText(QCoreApplication::translate("MainWindow", "3", nullptr));
         btn_7->setText(QCoreApplication::translate("MainWindow", "7", nullptr));
