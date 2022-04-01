@@ -9160,13 +9160,13 @@ TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:69:7: style: Unuse
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:71:14: style: Unused variable: recive1 [unusedVariable]
  std::string recive1;
              ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:42:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:44:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
 int controle_affichage::calcul_pos_tile(int chiffre)
                         ^
-TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:42:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:44:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.cpp:125:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
