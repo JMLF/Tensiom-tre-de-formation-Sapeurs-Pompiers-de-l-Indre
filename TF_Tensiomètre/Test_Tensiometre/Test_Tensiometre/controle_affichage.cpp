@@ -16,7 +16,7 @@ int controle_affichage::calcul_pos_tile(int chiffre)
 
 controle_affichage::controle_affichage()
 {
-	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 550, SDL_WINDOW_RESIZABLE); //dimension a adapter + flag a expliquer 
+	window = SDL_CreateWindow("Tensiometre", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 320, 480, SDL_WINDOW_RESIZABLE); //dimension a adapter + flag a expliquer 
 	if (window == nullptr)
 	{
 		std::cout << "prob window" << std::endl;
@@ -54,10 +54,10 @@ void controle_affichage::chargement_Textures()
 void controle_affichage::affichage(int sys, int dia, int bpm)
 {
 	
-	m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
-	m_destinationRectangle.y = m_sourceRectangle.y = 0;
-	m_destinationRectangle.w = m_sourceRectangle.w = 500;
-	m_destinationRectangle.h = m_sourceRectangle.h = 550;
+	//m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
+	//m_destinationRectangle.y = m_sourceRectangle.y = 0;
+	//m_destinationRectangle.w = m_sourceRectangle.w = 500;
+	//m_destinationRectangle.h = m_sourceRectangle.h = 550;
 	
 
 	 
@@ -66,8 +66,8 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 
 	SDL_RenderClear(renderer);
 
-	SDL_RenderCopy(renderer, background, &m_sourceRectangle, &m_destinationRectangle);
-	
+	//SDL_RenderCopy(renderer, background, &m_sourceRectangle, &m_destinationRectangle);
+	SDL_RenderCopy(renderer, background, NULL, &rectangleBack);
 	
 	SDL_RenderDrawRect(renderer, &rectangle11); // utiliser la fonction https://wiki.libsdl.org/SDL_RenderDrawRects
 	SDL_RenderDrawRect(renderer, &rectangle12);
