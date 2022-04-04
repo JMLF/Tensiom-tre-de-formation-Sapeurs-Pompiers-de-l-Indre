@@ -7099,19 +7099,19 @@ QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:204:0: style: The funct
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:310:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:401:0: style: The function 'on_btn_cancel_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:400:0: style: The function 'on_btn_cancel_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:379:0: style: The function 'on_btn_confirm_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:468:0: style: The function 'on_btn_confirm_security_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:467:0: style: The function 'on_btn_confirm_security_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:210:0: style: The function 'on_btn_delete_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:410:0: style: The function 'on_btn_error_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:409:0: style: The function 'on_btn_error_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:281:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
@@ -7120,10 +7120,10 @@ QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:281:0: style: The funct
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:241:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:450:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:449:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:443:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:442:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:270:0: style: The function 'on_btn_return_clicked' is never used. [unusedFunction]
@@ -7132,7 +7132,7 @@ QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:270:0: style: The funct
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:341:0: style: The function 'on_btn_send_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:434:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:433:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
 
 ^
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:371:0: style: The function 'on_btn_tool_clicked' is never used. [unusedFunction]
