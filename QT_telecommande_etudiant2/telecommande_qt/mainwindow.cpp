@@ -378,16 +378,15 @@ void MainWindow::on_btn_tool_clicked()
 
 void MainWindow::on_btn_confirm_clicked()
 {
-    QString nouveau_pin;
-
-    nouveau_pin = ui->line_edit_pin->text();
+    QString nouveau_pin = ui->line_edit_pin->text();
 
         QFile fichier_pin("pin.txt");
+        int new_pin = nouveau_pin.toInt()^525; //Fait un OU exclusif pour encoder le nouveau PIN
 
         if (fichier_pin.open(QIODevice::WriteOnly| QIODevice::Text))
         {
             QTextStream in(&fichier_pin);
-            in << nouveau_pin;
+            in << new_pin;
             fichier_pin.close();
         }
 
@@ -468,9 +467,10 @@ void MainWindow::on_btn_restart_clicked()
 void MainWindow::on_btn_confirm_security_clicked()
 {
     QString PIN = getCodePin();
-    QString PIN_enter = ui->line_edit_pin_security->text();
+    int PIN_enter = ui->line_edit_pin_security->text().toInt();
+    int PIN1A4 = PIN.toInt()^525; //De nouveau un OU exclusif '^' pour décoder le code PIN
 
-    if(PIN == PIN_enter){
+    if(PIN1A4 == PIN_enter){
         ui->gBox_security->hide();
         ui->gBox_waiting->show();
         ui->gBox_keyboard->hide();
