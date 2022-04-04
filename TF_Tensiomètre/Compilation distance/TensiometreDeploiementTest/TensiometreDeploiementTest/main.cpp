@@ -1,5 +1,5 @@
 //build line: g++ -Wall -o "%e" "%f" "controle_affichage.h" "controle_affichage.cpp" "TCP_SERVER.h" "TCP_SERVER.cpp" -lSDL2 -lgpiod
-
+//toute gestion d'erreur a refaire
 
 //include linux
 #include "controle_affichage.h"
@@ -60,11 +60,15 @@ int main(int argc, char* argv[])
 			sdl.affichage(constante1, constante2, constante3);
 			
 			reception = server.READ(); //bloquant
+			
+			if (reception.length() < 2) //dans le cas ou on recoit "E"
+				sdl.affichage(999, 999, 999);
+			
 			constante1 = stoi(reception.substr(0, 3));
 			constante2 = stoi(reception.substr(4, 3));
 			constante3 = stoi(reception.substr(8, 3));
 
-			SDL_Delay(50);
+			SDL_Delay(10); //delay pas utile 
 		}
 		
 		//gpiod_line_release(sortie12);

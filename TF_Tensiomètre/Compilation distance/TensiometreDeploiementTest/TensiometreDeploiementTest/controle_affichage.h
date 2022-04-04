@@ -1,3 +1,4 @@
+
 #ifndef _controleAffichage_
 #define _controleAffichage_
 
@@ -7,25 +8,26 @@
 //faire une class mère plus générale ouis faire une classe dérivée pour afficher sys dia bpm directement 
 
 
+/// <summary>
+/// 
+/// </summary>
 class controle_affichage
 {
 	
-
 protected: 
 
-	SDL_Window* window = nullptr; 
+	SDL_Window* window = nullptr;  ///<
 
-	SDL_Renderer* renderer = nullptr;
+	SDL_Renderer* renderer = nullptr; ///<
 
-	SDL_Surface* surface = nullptr;
+	SDL_Surface* surface = nullptr; ///<
 
-	SDL_Texture* background = nullptr;
-	SDL_Texture* tiledmap = nullptr;
+	SDL_Texture* background = nullptr;///<
+	SDL_Texture* tiledmap = nullptr;///<
 
-	SDL_Rect m_sourceRectangle; //background
-	//SDL_Rect m_destinationRectangle; 
-
-	SDL_Rect rectangleBack{ 0,0,320,480 }; //background
+	SDL_Rect m_sourceRectangle;///< Rectangle null pour crop
+	 
+	SDL_Rect rectangleBack{ 0,0,320,480 };///< background
 
 	SDL_Rect rectangle11{ 100,104,70,105 };
 	SDL_Rect rectangle12{ 175,104,70,105 };
@@ -39,28 +41,47 @@ protected:
 	SDL_Rect rectangle32{ 257,410,27,50 };
 	SDL_Rect rectangle33{ 290,410,27,50 };
 
-	Uint8 a = 255; //pour les couleurs 
+	Uint8 a = 255;///< Pour les couleurs 
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="chiffre"></param>
+	/// <returns></returns>
 	int calcul_pos_tile(int chiffre);
 
 public: 
 
+	/// <summary>
+	/// 
+	/// </summary>
 	SDL_Event events; //evenement clavier sourit etc
 	
 	bool isOpen = true;
 
+	/// <summary>
+	/// 
+	/// </summary>
 	controle_affichage();
 
+	/// <summary>
+	/// 
+	/// </summary>
 	void chargement_Textures();
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="sys"></param>
+	/// <param name="dia"></param>
+	/// <param name="bpm"></param>
 	void affichage(int sys, int dia, int bpm);
-
+	
+	///
+	///
+	/// 
 	~controle_affichage();
-
-
-
-
 
 };
 
-#endif _controleAffichage_
+#endif //_controleAffichage_

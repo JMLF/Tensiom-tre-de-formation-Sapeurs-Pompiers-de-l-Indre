@@ -6,10 +6,10 @@
 #ifndef _TCP_SERVER_
 #define _TCP_SERVER_
 
-//include linux, ne compile poas sous winows
+//include linux
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h> //pour la fonction bzero mais cette fonction est deprecated doncutiliser plutot memeset
+#include <string.h> //pour la fonction bzero mais cette fonction est deprecated donc utiliser plutot memeset
 #include <unistd.h> //linux
 #include <sys/types.h> 
 #include <sys/socket.h> //linux
@@ -17,27 +17,48 @@
 #include <string>
 #include <iostream> //cin et cout 
 
+
+/// <summary>
+/// 
+/// </summary>
 class TCP_SERVER
 {
 protected: 
 
-    int sockfd, newsockfd, portno;
-    socklen_t clilen;
-    char buffer[256];
-    struct sockaddr_in serv_addr, cli_addr;
-    int n;
+    int sockfd, newsockfd, portno;///<
+    socklen_t clilen;///<
+    char buffer[256]; ///< Stocke les données reçu
+    struct sockaddr_in serv_addr, cli_addr;///<
+    int n;///< pas un chiffre magique 
 
 public: 
 	
-	TCP_SERVER();
+    /// <summary>
+    /// 
+    /// </summary>
+    TCP_SERVER();
 
-   void INIT();
+    /// <summary>
+    /// 
+    /// </summary>
+    void INIT();
 
-   std::string READ();
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    std::string READ();
 
-   void WRITE(std::string message);
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="message"></param>
+    void WRITE(std::string message);
 
-   void CLOSE();
+    /// <summary>
+    /// 
+    /// </summary>
+    void CLOSE();
 
 };
 
