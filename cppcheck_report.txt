@@ -28,13 +28,13 @@ TCP_SERVER::TCP_SERVER()
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:51:36: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
 void TCP_SERVER::WRITE(std::string message)
                                    ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:44:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:51:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
 int controle_affichage::calcul_pos_tile(int chiffre)
                         ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:44:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:51:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:127:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
@@ -5812,22 +5812,22 @@ test Marius/lv_sim_vscode_sdl/main/src/Source.c:1010:19: style: Variable 'obj' i
 test Marius/lv_sim_vscode_sdl/main/src/Source.c:1020:19: style: Variable 'btn' is assigned a value that is never used. [unreadVariable]
     lv_obj_t* btn = lv_event_get_target(e);
                   ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:10:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:14:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
 class controle_affichage
 ^
 TF_Tensiomètre/SDL class/controle_affichage.h:8:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
 class controle_affichage
 ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:14:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
 class controle_affichage
 ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:10:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:14:1: error: The one definition rule is violated, different classes/structs have the same name 'controle_affichage' [ctuOneDefinitionRuleViolation]
 class controle_affichage
 ^
 TF_Tensiomètre/Test_Tensiometre/Test_Tensiometre/controle_affichage.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
 class controle_affichage
 ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:10:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:14:1: note: The one definition rule is violated, different classes/structs have the same name 'controle_affichage'
 class controle_affichage
 ^
 TF_Tensiomètre/Serveur/ServeurTCPWindows/CFonctionServer.cpp:134:0: style: The function 'FermeturWinSock' is never used. [unusedFunction]
