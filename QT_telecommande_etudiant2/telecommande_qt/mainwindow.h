@@ -18,7 +18,22 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
+private:
+    Ui::MainWindow *ui;
+    QString code_pin;
+    QTimer *timer_co_serv;
+    QTimer *timer_verif_co;
+    QTimer *timer_progressBar;
+    char compteur_deco = 0;
+    int x_ecran = 480;
+    int y_ecran = 800;
+     ClientTCP Client;
+     enum class enumConstante { sys = 0, dia, pul};
+
 private slots:
+
+    void addzero(enumConstante constante, int size);
 
     void updateProgressBar();
 
@@ -80,16 +95,6 @@ private slots:
 
     void on_btn_confirm_security_clicked();
 
-private:
-    Ui::MainWindow *ui;
-    QString code_pin;
-    QTimer *timer_co_serv;
-    QTimer *timer_verif_co;
-    QTimer *timer_progressBar;
-    char compteur_deco = 0;
-    int x_ecran = 480;
-    int y_ecran = 800;
-     ClientTCP Client;
 
 };
 #endif // MAINWINDOW_H

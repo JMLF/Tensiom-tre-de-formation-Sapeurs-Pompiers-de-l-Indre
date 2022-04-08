@@ -70,7 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
 
      //Met l'IP et le port du tensiomètre/serveur
     //Client.setIP("192.168.4.2");
-     Client.setIP("10.187.52.36");
+     Client.setIP("10.187.52.46");
     Client.setPort(12345);
 
     //Pour pouvoir stocker le code pin du fichier .txt dans une variable
@@ -148,6 +148,28 @@ void MainWindow::addNumber(QString number){
         ui->line_edit_pin->setText(ui->line_edit_pin->text() + number);
 }
 
+void MainWindow::addzero(enumConstante constante, int size){
+
+    switch (constante) {
+    case  enumConstante::sys:
+        for(int i = size; i < 3; i++){
+        ui->lbl_num_sys->setText("0" + ui->lbl_num_sys->text());
+        }
+        break;
+    case  enumConstante::dia:
+        for(int i = size; i < 3; i++){
+        ui->lbl_num_dia->setText("0" + ui->lbl_num_dia->text());
+        }
+        break;
+    case  enumConstante::pul:
+        for(int i = size; i < 3; i++){
+        ui->lbl_num_pul->setText("0" + ui->lbl_num_pul->text());
+        }
+        break;
+    default:
+        break;
+    }
+}
 void MainWindow::on_btn_0_clicked()
 {
     addNumber("0");
@@ -259,6 +281,16 @@ void MainWindow::on_btn_ok_clicked()
     ui->line_edit_value->setText(ui->lbl_num_sys->text());
     ui->lbl_telec_sys->show();
     }
+
+    //Pour être cohérent au niveau du protocole de dialogue
+    //Exemple : envoie 005 au lieu de 5
+    if(ui->lbl_num_sys->text().size() != 3)
+        addzero(enumConstante::sys, ui->lbl_num_sys->text().size());
+    if(ui->lbl_num_dia->text().size() != 3)
+        addzero(enumConstante::dia, ui->lbl_num_dia->text().size());
+    if(ui->lbl_num_pul->text().size() != 3)
+        addzero(enumConstante::pul, ui->lbl_num_pul->text().size());
+
     ui->gBox_telec->hide();
     ui->gBox_recap->show();
     ui->gBox_recap->setGeometry(0,0,x_ecran,y_ecran);
@@ -381,7 +413,7 @@ void MainWindow::on_btn_confirm_clicked()
     QString nouveau_pin = ui->line_edit_pin->text();
 
         QFile fichier_pin("pin.txt");
-        int new_pin = nouveau_pin.toInt()^525; //Fait un OU exclusif pour encoder le nouveau PIN
+        int new_pin = nouveau_pin.toInt()^0x1A4; //Fait un OU exclusif pour encoder le nouveau PIN
 
         if (fichier_pin.open(QIODevice::WriteOnly| QIODevice::Text))
         {
@@ -468,8 +500,9 @@ void MainWindow::on_btn_confirm_security_clicked()
 {
     QString PIN = getCodePin();
     int PIN_enter = ui->line_edit_pin_security->text().toInt();
-    int PIN1A4 = PIN.toInt()^525; //De nouveau un OU exclusif '^' pour décoder le code PIN
-
+    int PIN1A4 = PIN.toInt()^0x1A4; //De nouveau un OU exclusif '^' pour décoder le code PIN
+    qDebug() << PIN1A4;
+    qDebug() << PIN_enter;
     if(PIN1A4 == PIN_enter){
         ui->gBox_security->hide();
         ui->gBox_waiting->show();
