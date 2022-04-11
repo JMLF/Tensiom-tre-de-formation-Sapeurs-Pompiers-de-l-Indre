@@ -9,8 +9,6 @@
 #include <gpiod.h>
 #include <unistd.h>
 
-//ajouter sdl image
-
 int main(int argc, char* argv[])
 {
 
@@ -37,7 +35,7 @@ int main(int argc, char* argv[])
 	*/
 
 		
-
+	
 	
 		
 
