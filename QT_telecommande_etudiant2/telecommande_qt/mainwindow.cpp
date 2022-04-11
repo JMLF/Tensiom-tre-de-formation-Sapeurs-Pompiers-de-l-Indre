@@ -453,9 +453,9 @@ void MainWindow::on_btn_error_clicked()
          ui->lbl_answer_trame->show();
         try {
             Client.send_trame(trame_char);
-             ui->lbl_answer_trame->setText("Succes envoie E (error) !");
+             ui->lbl_answer_trame->setText("Erreur envoyee!");
         }  catch (...) {
-            ui->lbl_answer_trame->setText("Erreur envoie E (error)...");
+            ui->lbl_answer_trame->setText("Erreur non envoyee...");
         }
 }
 
