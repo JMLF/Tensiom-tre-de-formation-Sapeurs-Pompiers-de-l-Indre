@@ -10,10 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QLabel* label;
-    label = new QLabel();
-    label->setText("oyui");
-    label->show();
+
      /*std::vector<QString> liste_ip;
      std::string IP_tensio = "";
      std::string IP;
