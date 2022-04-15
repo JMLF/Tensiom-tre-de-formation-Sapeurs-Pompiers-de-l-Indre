@@ -3,12 +3,54 @@
 #include <fstream>
 #include <filesystem>
 #include <QFile>
+#include <vector>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QLabel* label;
+    label = new QLabel();
+    label->setText("oyui");
+    label->show();
+     /*std::vector<QString> liste_ip;
+     std::string IP_tensio = "";
+     std::string IP;
+    const char* commande = "arp -a";
+    char buffer[1024];
+    FILE* pipe = _popen(commande, "r");
+    while (fgets(buffer, sizeof buffer, pipe) != NULL) {
+            liste_ip.push_back(buffer);
+    }
+    _pclose(pipe);
+
+    for(int i = 0; i < liste_ip.size(); i++){
+        IP_tensio = liste_ip.at(i).toStdString();
+        IP_tensio = IP_tensio.substr(IP_tensio.find('('),IP_tensio.find(')'));
+    }
+
+   QFile fichier_liste("listeIP.txt");
+
+   if (fichier_liste.open(QIODevice::ReadOnly| QIODevice::Text))
+   {
+       QTextStream in(&fichier_liste);
+       while (!in.atEnd()) {
+           liste_ip.push_back(in.readLine());
+       }
+       fichier_liste.close();
+   }
+
+    for(int i = 0; i < liste_ip.size(); i++){
+
+        IP_tensio = liste_ip.at(i).toStdString();
+
+        size_t paranthese_open = IP_tensio.substr(IP_tensio.find('(') + 1,IP_tensio.size()).size();
+        size_t paranthese_close = IP_tensio.substr(IP_tensio.find(')'),IP_tensio.size()).size();
+        IP_tensio = IP_tensio.substr(IP_tensio.find('(') + 1,paranthese_open - paranthese_close);
+        ui->lbl_ip->setText(QString::fromStdString(IP_tensio));
+    }
+*/
 
     //Definition de l'intervalle de valeurs pour les barres de progression
     ui->progressBar_waiting->setMinimum(0);
