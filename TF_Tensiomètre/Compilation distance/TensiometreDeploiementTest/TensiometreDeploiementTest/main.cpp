@@ -35,11 +35,6 @@ int main(int argc, char* argv[])
 	*/
 
 		
-	
-	
-		
-
-		
 		TCP_SERVER server;
 		controle_affichage sdl;
 
@@ -59,12 +54,21 @@ int main(int argc, char* argv[])
 			
 			reception = server.READ(); //bloquant
 			
-			if (reception.length() < 2) //dans le cas ou on recoit "E"
-				sdl.affichage(999, 999, 999);
-			
-			constante1 = stoi(reception.substr(0, 3));
-			constante2 = stoi(reception.substr(4, 3));
-			constante3 = stoi(reception.substr(8, 3));
+			if (reception.length() > 2) 
+			{
+
+				constante1 = stoi(reception.substr(0, 3));
+				constante2 = stoi(reception.substr(4, 3));
+				constante3 = stoi(reception.substr(8, 3));
+
+			} //dans le cas ou on ne recoit pas "E"
+			else
+			{
+				constante1 = 999;
+				constante2 = 999;
+				constante3 = 999;
+
+			}
 
 			SDL_Delay(10); //delay pas utile 
 		}
