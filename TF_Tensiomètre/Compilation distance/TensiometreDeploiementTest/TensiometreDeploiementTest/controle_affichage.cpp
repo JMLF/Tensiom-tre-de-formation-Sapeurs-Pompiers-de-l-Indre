@@ -10,7 +10,6 @@ int controle_affichage::calcul_pos_tile(int chiffre)
 			start = start + 116;
 		}
 
-
 	return start;
 };
 
@@ -54,35 +53,12 @@ void controle_affichage::chargement_Textures()
 
 void controle_affichage::affichage(int sys, int dia, int bpm)
 {
-	
-	//m_destinationRectangle.x = m_sourceRectangle.x = 0; //comprend pas pourquoi ça s'affiche pas correctement sans ça 
-	//m_destinationRectangle.y = m_sourceRectangle.y = 0;
-	//m_destinationRectangle.w = m_sourceRectangle.w = 450;
-	//m_destinationRectangle.h = m_sourceRectangle.h = 532;
-	
-
-	 
 
 	SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a);
 
 	SDL_RenderClear(renderer);
 
 	SDL_RenderCopy(renderer, background, NULL, &rectangleBack);
-	//SDL_RenderCopy(renderer, background, &m_sourceRectangle, &m_destinationRectangle);
-
-	
-	SDL_RenderDrawRect(renderer, &rectangle11); // utiliser la fonction https://wiki.libsdl.org/SDL_RenderDrawRects
-	SDL_RenderDrawRect(renderer, &rectangle12);
-	SDL_RenderDrawRect(renderer, &rectangle13);
-
-	SDL_RenderDrawRect(renderer, &rectangle21);
-	SDL_RenderDrawRect(renderer, &rectangle22);
-	SDL_RenderDrawRect(renderer, &rectangle23);
-
-	SDL_RenderDrawRect(renderer, &rectangle31);
-	SDL_RenderDrawRect(renderer, &rectangle32);
-	SDL_RenderDrawRect(renderer, &rectangle33);
-	
 
 	SDL_Rect src2{ 2, 0, 118, 178 }; //on crop dans l'image chargé en texture / ce qu'il faut modifier pour afficher des chiffres differents // =0 ici
 	
@@ -300,8 +276,10 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 
 controle_affichage::~controle_affichage()
 {
+
 	SDL_DestroyRenderer(renderer); SDL_DestroyWindow(window);
 	SDL_Quit();
+
 };
 
 
