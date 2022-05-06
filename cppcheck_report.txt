@@ -28,108 +28,108 @@ TCP_SERVER::TCP_SERVER()
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:58:36: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
 void TCP_SERVER::WRITE(std::string message)
                                    ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:51:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:52:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
 int controle_affichage::calcul_pos_tile(int chiffre)
                         ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:51:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:52:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
  int calcul_pos_tile(int chiffre);
      ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:103:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:120:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:100:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:117:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:103:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:120:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:119:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:136:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:114:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:131:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:119:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:136:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:126:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:143:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:121:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:138:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:126:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:143:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:171:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:188:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:168:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:185:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:171:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:188:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:187:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:204:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:182:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:199:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:187:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:204:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:194:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:211:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:189:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:206:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:194:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:211:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:239:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:256:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:236:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:253:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:239:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:256:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:255:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:272:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:250:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:267:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:255:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:272:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:262:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:279:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:257:8: note: src2 is assigned
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:274:8: note: src2 is assigned
   src2 = { 2, 0, 118, 178 }; //on remet a zero
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:262:8: note: src2 is overwritten
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:279:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:68:9: style: Local variable 'value' shadows outer variable [shadowVariable]
-   auto value = line5.get_value();
-        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:58:8: note: Shadowed declaration
-  auto value = line5.get_value(); // declaration de value + on lit la valeur de line5
-       ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:68:9: note: Shadow variable
-   auto value = line5.get_value();
-        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:58:14: style: Variable 'value' is assigned a value that is never used. [unreadVariable]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:60:14: style: Variable 'value' is assigned a value that is never used. [unreadVariable]
   auto value = line5.get_value(); // declaration de value + on lit la valeur de line5
              ^
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:62:0: style: Variable 'constante1' is assigned a value that is never used. [unreadVariable]
+  int constante1(0); //sys
+^
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:63:0: style: Variable 'constante2' is assigned a value that is never used. [unreadVariable]
+  int constante2(0); //dia
+^
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:64:0: style: Variable 'constante3' is assigned a value that is never used. [unreadVariable]
+  int constante3(0); //bpm
+^
 TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
@@ -7078,76 +7078,76 @@ Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lvgl/src/misc/lv_timer.c:215:0:
 Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lv_drivers/win32drv/win32drv.c:146:0: style: The function 'lv_win32_init' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:212:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:174:0: style: The function 'on_btn_0_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:217:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:179:0: style: The function 'on_btn_1_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:223:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:185:0: style: The function 'on_btn_2_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:229:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:191:0: style: The function 'on_btn_3_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:235:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:197:0: style: The function 'on_btn_4_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:241:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:203:0: style: The function 'on_btn_5_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:247:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:209:0: style: The function 'on_btn_6_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:253:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:215:0: style: The function 'on_btn_7_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:259:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:221:0: style: The function 'on_btn_8_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:265:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:227:0: style: The function 'on_btn_9_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:381:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:343:0: style: The function 'on_btn_back_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:471:0: style: The function 'on_btn_cancel_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:433:0: style: The function 'on_btn_cancel_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:450:0: style: The function 'on_btn_confirm_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:412:0: style: The function 'on_btn_confirm_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:538:0: style: The function 'on_btn_confirm_security_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:500:0: style: The function 'on_btn_confirm_security_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:271:0: style: The function 'on_btn_delete_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:233:0: style: The function 'on_btn_delete_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:480:0: style: The function 'on_btn_error_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:442:0: style: The function 'on_btn_error_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:352:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:314:0: style: The function 'on_btn_next_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:302:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:264:0: style: The function 'on_btn_ok_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:520:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:482:0: style: The function 'on_btn_restart_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:513:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:475:0: style: The function 'on_btn_return_2_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:341:0: style: The function 'on_btn_return_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:303:0: style: The function 'on_btn_return_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:412:0: style: The function 'on_btn_send_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:374:0: style: The function 'on_btn_send_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:504:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:466:0: style: The function 'on_btn_start_clicked' is never used. [unusedFunction]
 
 ^
-QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:442:0: style: The function 'on_btn_tool_clicked' is never used. [unusedFunction]
+QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:404:0: style: The function 'on_btn_tool_clicked' is never used. [unusedFunction]
 
 ^
 Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lv_drivers/display/R61581.c:129:0: style: The function 'r61581_fill' is never used. [unusedFunction]
