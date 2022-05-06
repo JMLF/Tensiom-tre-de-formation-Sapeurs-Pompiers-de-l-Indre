@@ -11,44 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-     /*std::vector<QString> liste_ip;
-     std::string IP_tensio = "";
-     std::string IP;
-    const char* commande = "arp -a";
-    char buffer[1024];
-    FILE* pipe = _popen(commande, "r");
-    while (fgets(buffer, sizeof buffer, pipe) != NULL) {
-            liste_ip.push_back(buffer);
-    }
-    _pclose(pipe);
-
-    for(int i = 0; i < liste_ip.size(); i++){
-        IP_tensio = liste_ip.at(i).toStdString();
-        IP_tensio = IP_tensio.substr(IP_tensio.find('('),IP_tensio.find(')'));
-    }
-
-   QFile fichier_liste("listeIP.txt");
-
-   if (fichier_liste.open(QIODevice::ReadOnly| QIODevice::Text))
-   {
-       QTextStream in(&fichier_liste);
-       while (!in.atEnd()) {
-           liste_ip.push_back(in.readLine());
-       }
-       fichier_liste.close();
-   }
-
-    for(int i = 0; i < liste_ip.size(); i++){
-
-        IP_tensio = liste_ip.at(i).toStdString();
-
-        size_t paranthese_open = IP_tensio.substr(IP_tensio.find('(') + 1,IP_tensio.size()).size();
-        size_t paranthese_close = IP_tensio.substr(IP_tensio.find(')'),IP_tensio.size()).size();
-        IP_tensio = IP_tensio.substr(IP_tensio.find('(') + 1,paranthese_open - paranthese_close);
-        ui->lbl_ip->setText(QString::fromStdString(IP_tensio));
-    }
-*/
-
     //Definition de l'intervalle de valeurs pour les barres de progression
     ui->progressBar_waiting->setMinimum(0);
     ui->progressBar_waiting->setMaximum(100);
@@ -108,8 +70,8 @@ MainWindow::MainWindow(QWidget *parent)
      ui->gBox_keyboard->setGeometry(0,380,480,420);
 
      //Met l'IP et le port du tensiomètre/serveur
-    //Client.setIP("192.168.4.2");
-     Client.setIP("10.187.52.46");
+    Client.setIP("192.168.4.2");
+     //Client.setIP("10.187.52.46");
     Client.setPort(12345);
 
     //Pour pouvoir stocker le code pin du fichier .txt dans une variable
@@ -540,8 +502,7 @@ void MainWindow::on_btn_confirm_security_clicked()
     QString PIN = getCodePin();
     int PIN_enter = ui->line_edit_pin_security->text().toInt();
     int PIN1A4 = PIN.toInt()^0x1A4; //De nouveau un OU exclusif '^' pour décoder le code PIN
-    qDebug() << PIN1A4;
-    qDebug() << PIN_enter;
+
     if(PIN1A4 == PIN_enter){
         ui->gBox_security->hide();
         ui->gBox_waiting->show();
