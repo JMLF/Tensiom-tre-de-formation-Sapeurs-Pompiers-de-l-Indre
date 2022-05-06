@@ -50,29 +50,45 @@ int main(int argc, char* argv[])
 		
 
 		TCP_SERVER server;
+
 		controle_affichage sdl;
 
 		sdl.chargement_Textures();
+
 		server.INIT(); //bloquant
 		
 		auto value = line5.get_value(); // declaration de value + on lit la valeur de line5
 
-		int constante1(0);
-		int constante2(0);
-		int constante3(0);
-		std::string reception;
+		int constante1(0); //sys
+		int constante2(0); //dia
+		int constante3(0); //bpm
+
+		std::string reception; //string de la reception tcp
+
+		reception = server.READ(); //bloquant
+
+		int waiter(0); 
+		
+		while (waiter == 0)
+		{
+			value = line5.get_value();
+			if (value == 0) 
+			{
+				line12.set_value(1);
+				for (int i = 0; i < 15; i++)
+				{
+					sdl.affichage(i*4, i*5, i*3);
+					sleep(1);
+				}
+				sleep(2);
+				line22.set_value(1);
+				waiter = 1;
+			}
+		}
 		
 		while (sdl.isOpen == true)
 		{
 			
-			auto value = line5.get_value();
-
-			sdl.affichage(constante1, constante2, constante3);
-			
-			reception = server.READ(); //bloquant
-
-			line12.set_value(1);
-			line22.set_value(1);
 			
 			if (reception.length() > 2) 
 			{
@@ -89,6 +105,8 @@ int main(int argc, char* argv[])
 				constante3 = 999;
 
 			}
+			sdl.affichage(constante1, constante2, constante3);
+			reception = server.READ(); //bloquant
 
 			SDL_Delay(10); //delay pas utile 
 		}
@@ -98,7 +116,7 @@ int main(int argc, char* argv[])
 		line22.release();
 		line5.release();
 
-		sdl.~controle_affichage();
+		sdl.~controle_affichage(); //ferme les sockets
 
 		return 0;
 	
