@@ -46,8 +46,25 @@ void controle_affichage::chargement_Textures()
 	tiledmap = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
 
+	surface = SDL_LoadBMP("/home/pi/projects/TensiometreDeploiementTest/assets/attenteLogo.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
+	if (surface == nullptr)
+		std::cout << "pas de fichier" << std::endl;
+
+	attenteLogo = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_FreeSurface(surface);
+
 	SDL_QueryTexture(background, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
 	SDL_QueryTexture(tiledmap, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+	SDL_QueryTexture(attenteLogo, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+
+}
+void controle_affichage::waiting_texture()
+{
+	SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a);
+
+	SDL_RenderClear(renderer);
+
+	SDL_RenderCopy(renderer, attenteLogo, NULL, &rectangleBack);
 
 };
 

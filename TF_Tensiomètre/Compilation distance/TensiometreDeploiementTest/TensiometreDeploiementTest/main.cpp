@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
 	auto line5 = chip.get_line(6);
 	auto line12 = chip.get_line(12);
-	auto line22 = chip.get_line(22);
+	auto line22 = chip.get_line(13);
 
 
 	gpiod::line_request lineInput{ "Button",gpiod::line_request::DIRECTION_INPUT,0 };
@@ -65,6 +65,8 @@ int main(int argc, char* argv[])
 
 		std::string reception; //string de la reception tcp
 
+		sdl.waiting_texture();
+
 		reception = server.READ(); //bloquant
 
 		int waiter(0); 
@@ -75,13 +77,15 @@ int main(int argc, char* argv[])
 			if (value == 0) 
 			{
 				line12.set_value(1);
+				line22.set_value(1);
 				for (int i = 0; i < 15; i++)
 				{
 					sdl.affichage(i*4, i*5, i*3);
 					sleep(1);
 				}
+				line12.set_value(0);
 				sleep(2);
-				line22.set_value(1);
+				line22.set_value(0);
 				waiter = 1;
 			}
 		}

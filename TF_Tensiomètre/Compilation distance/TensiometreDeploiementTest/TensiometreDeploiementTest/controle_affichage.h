@@ -23,6 +23,7 @@ protected:
 	SDL_Surface* surface = nullptr; ///<
 
 	SDL_Texture* background = nullptr;///<
+	SDL_Texture* attenteLogo = nullptr;///<
 	SDL_Texture* tiledmap = nullptr;///<
 
 	SDL_Rect m_sourceRectangle;///< Rectangle null pour crop
@@ -68,6 +69,8 @@ public:
 	/// 
 	/// </summary>
 	void chargement_Textures();
+
+	void waiting_texture();
 
 	/// <summary>
 	/// 
