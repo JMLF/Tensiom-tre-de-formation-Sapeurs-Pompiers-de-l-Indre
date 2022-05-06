@@ -65,9 +65,9 @@ int main(int argc, char* argv[])
 
 		std::string reception; //string de la reception tcp
 
-		sdl.waiting_texture();
+		sdl.waiting_texture(); // ???????????????????????????? fonctionne pas 
 
-		reception = server.READ(); //bloquant
+		reception = server.READ(); //bloquant + mettre un texture bien reçu après 
 
 		int waiter(0); 
 		
