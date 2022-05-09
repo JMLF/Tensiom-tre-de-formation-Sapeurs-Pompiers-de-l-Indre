@@ -53,18 +53,20 @@ void controle_affichage::chargement_Textures()
 	attenteLogo = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
 
-	SDL_QueryTexture(background, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
-	SDL_QueryTexture(tiledmap, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
-	SDL_QueryTexture(attenteLogo, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+	//SDL_QueryTexture(background, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+	//SDL_QueryTexture(tiledmap, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
+	//SDL_QueryTexture(attenteLogo, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
 
 }
 void controle_affichage::waiting_texture()
 {
-	SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a);
+	SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a); //declarer a ici 
 
 	SDL_RenderClear(renderer);
 
 	SDL_RenderCopy(renderer, attenteLogo, NULL, &rectangleBack);
+
+	SDL_RenderPresent(renderer); //rend l'image
 
 };
 

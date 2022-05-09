@@ -8,7 +8,8 @@
 *		Ajouter gestion du gpio
 * 
 * 
-* 
+*		faire des boucles while (détacher affichage et gestion du bouton dans un thread  ) ecouter en boucle la ligne gpio du bouton 
+*		dasn le main un while pour recommencer les mesures si besoin + faire une fonction 
 * 
 * 
 * 
@@ -22,6 +23,44 @@
 #include "TCP_SERVER.h"
 #include <gpiod.hpp>
 #include <unistd.h>
+
+
+/* //fonction a passer dans le thread 
+void simuANDaffichage(std::string reception) 
+{
+	
+	int varBoucle(0);
+	while (varBoucle != 0 ^ boolrandom != true)
+	{
+		value = line5.get_value();
+		if (value == 0)
+			varBoucle = 1;
+		usleep(200);
+	}
+
+	line12.set_value(1);
+	line22.set_value(1);
+	for (int i = 0; i < 15; i++)
+	{
+		sdl.affichage(i * 4, i * 5, i * 3);
+		sleep(1);
+	}
+	line12.set_value(0);
+	sleep(2);
+	line22.set_value(0);
+
+
+	constante1 = stoi(reception.substr(0, 3));
+	constante2 = stoi(reception.substr(4, 3));
+	constante3 = stoi(reception.substr(8, 3));
+
+	sdl.affichage(constante1, constante2, constante3);
+
+
+
+}
+*/
+
 
 int main(int argc, char* argv[])
 {
@@ -55,6 +94,8 @@ int main(int argc, char* argv[])
 
 		sdl.chargement_Textures();
 
+		sdl.waiting_texture(); //affichage de la page d'attente 
+		
 		server.INIT(); //bloquant
 		
 		auto value = line5.get_value(); // declaration de value + on lit la valeur de line5
@@ -64,10 +105,21 @@ int main(int argc, char* argv[])
 		int constante3(0); //bpm
 
 		std::string reception; //string de la reception tcp
-
-		sdl.waiting_texture(); // ???????????????????????????? fonctionne pas 
+		std::string erreur;
+		bool erreur = false;
 
 		reception = server.READ(); //bloquant + mettre un texture bien reçu après 
+
+		//erreur = server.READ();
+		//if (erreur == "E")
+		//{
+		//	erreur = true;
+		//}
+
+		//constante1 = 999;
+		//constante2 = 999;
+		//constante3 = 999;
+		//sdl.affichage(constante1, constante2, constante3);
 
 		int waiter(0); 
 		
