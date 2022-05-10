@@ -1,11 +1,15 @@
 #include "TCP_SERVER.h"
 
+
+
+
 TCP_SERVER::TCP_SERVER()
 {
-	//ici faudrait set ip et port 
 
+    //ici faudrait set ip et port 
 
 }
+
 
 void TCP_SERVER::INIT()
 {
@@ -32,8 +36,10 @@ void TCP_SERVER::INIT()
     newsockfd = accept(sockfd,(struct sockaddr*)&cli_addr,&clilen);
     if (newsockfd < 0)
         std::cout << "ERROR on accept" << std::endl;
+
     std::cout << "Une connection est effective" << std::endl;
 }
+
 
 std::string TCP_SERVER::READ()
 {
@@ -48,6 +54,7 @@ std::string TCP_SERVER::READ()
     return buffer;
 }
 
+
 void TCP_SERVER::WRITE(std::string message)
 {
     //remplacer i got your message par le string
@@ -55,6 +62,7 @@ void TCP_SERVER::WRITE(std::string message)
     if (n < 0) 
         std::cout << "ERROR writing to socket" << std::endl;
 }
+
 
 void TCP_SERVER::CLOSE()
 {

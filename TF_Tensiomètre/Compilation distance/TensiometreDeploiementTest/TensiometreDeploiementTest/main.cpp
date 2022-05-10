@@ -1,80 +1,170 @@
-//build line: g++ -Wall -o "%e" "%f" "controle_affichage.h" "controle_affichage.cpp" "TCP_SERVER.h" "TCP_SERVER.cpp" -lSDL2 -lgpiod
-//toute gestion d'erreur a refaire
+/************************************************************************************************************************************************
+*	Notes:
+*		
+*		build line: g++ -Wall main.cpp controle_affichage.cpp TCP_SERVER.cpp -o main -lgpiod -lSDL2
+*
+*		Toute gestion d'erreur a refaire
+* 
+*		Ajouter gestion du gpio
+* 
+* 
+*		faire des boucles while (détacher affichage et gestion du bouton dans un thread  ) ecouter en boucle la ligne gpio du bouton 
+*		dasn le main un while pour recommencer les mesures si besoin + faire une fonction + redemander a dartois 
+* 
+*		passer les variable et objet par ref ()std standars ref const) dans le thread / ou alors variable global 
+* 
+*************************************************************************************************************************************************/
+
 
 //include linux
 #include "controle_affichage.h"
 #include <iostream> //pas utile sauf pour le debug
 #include <string>
 #include "TCP_SERVER.h"
-#include <gpiod.h>
+#include <gpiod.hpp>
 #include <unistd.h>
+#include <thread>
+
+
+
+//declaration des objets et variable en global -------------------
+
+controle_affichage sdl;
+gpiod::chip chip;
+
+int constante1(0); //sys
+int constante2(0); //dia
+int constante3(0); //bpm
+
+bool erreur = false;
+
+gpiod::line line5;
+gpiod::line line12;
+gpiod::line line22;
+
+int value;
+
+// ---------------------------------------------------------------
+
+
+
+//fonction a passer dans le thread 
+void simuANDaffichage(std::string reception) 
+{
+	
+	int varBoucle(0);
+
+	std::cout << "dans le thread" << std::endl;
+	
+	while (varBoucle != 0 || erreur != true)
+	{
+		value = line5.get_value();
+		
+		if (value == 0) {
+			varBoucle = 1;
+			std::cout << "bouton clique" << std::endl;
+		}
+
+		usleep(200);
+		 
+	}
+
+	line12.set_value(1);
+	line22.set_value(1);
+	for (int i = 0; i < 15; i++)
+	{
+		sdl.affichage(i * 4, i * 5, i * 3);
+		sleep(1);
+	}
+	line12.set_value(0);
+	sleep(2);
+	line22.set_value(0);
+
+
+	constante1 = stoi(reception.substr(0, 3));
+	constante2 = stoi(reception.substr(4, 3));
+	constante3 = stoi(reception.substr(8, 3));
+
+	sdl.affichage(constante1, constante2, constante3);
+
+
+}
+
+
 
 int main(int argc, char* argv[])
 {
-
-	/*
-		struct  gpiod_chip* gpiochip;
-		struct  gpiod_line* sortie12;
-		struct  gpiod_line* sortie22;
-		struct gpiod_line* entree5;
-
-		
-		gpiochip = gpiod_chip_open("/dev/gpiochip0");
-
-		
-		sortie12 = gpiod_chip_get_line(gpiochip, 12); //line 12
-		sortie22 = gpiod_chip_get_line(gpiochip, 22); //line22
-		entree5 = gpiod_chip_get_line(gpiochip, 5); //line 5
 	
+//-------------- gpiod class / declaration et réservation des lines
 
-		gpiod_line_request_output(sortie12, "sortie12", 0); //line,nom,0=normal/1=inversée
-		gpiod_line_request_output(sortie22, "sortie22", 0);
+
+	chip.open("gpiochip0");
+
+	line5 = chip.get_line(6);
+	line12 = chip.get_line(12);
+	line22 = chip.get_line(13);
+
+
+	gpiod::line_request lineInput{ "Button",gpiod::line_request::DIRECTION_INPUT,0 };
+	gpiod::line_request lineOutput{ "Button",gpiod::line_request::DIRECTION_OUTPUT,0 };
+
+
+	line5.request(lineInput, 0);
+	line12.request(lineOutput, 0);
+	line22.request(lineOutput, 0);
+
+//---------------
 
 		
-		gpiod_line_request_input(entree5, "entree5");
-	*/
 
-		
-	
-	
-		
-
-		
 		TCP_SERVER server;
-		controle_affichage sdl;
+
+		//controle_affichage sdl;
 
 		sdl.chargement_Textures();
+
+		sdl.waiting_texture(); //affichage de la page d'attente 
+		
 		server.INIT(); //bloquant
+
+		std::string reception; //string de la reception tcp
+		std::string erreur;
 		
-		int constante1(0);
-		int constante2(0);
-		int constante3(0);
-		std::string reception;
+
 		
-		while (sdl.isOpen == true)
-		{
-			
-			
-			sdl.affichage(constante1, constante2, constante3);
-			
-			reception = server.READ(); //bloquant
-			
-			if (reception.length() < 2) //dans le cas ou on recoit "E"
-				sdl.affichage(999, 999, 999);
+
+		reception = server.READ(); //bloquant
 			
 			constante1 = stoi(reception.substr(0, 3));
 			constante2 = stoi(reception.substr(4, 3));
 			constante3 = stoi(reception.substr(8, 3));
 
-			SDL_Delay(10); //delay pas utile 
-		}
-		
-		//gpiod_line_release(sortie12);
-		//gpiod_line_release(sortie22);
-		//gpiod_line_release(entree5);
+		std::thread bouton(simuANDaffichage, reception);
+		bouton.detach();
 
-		//gpiod_chip_close(gpiochip);
-		sdl.~controle_affichage();
+		erreur = server.READ(); //bloquant 
+			
+			if (erreur == "E")
+			{
+				erreur = true;
+			
+				constante1 = 999;
+				constante2 = 999;
+				constante3 = 999;    
+				
+				sdl.affichage(constante1, constante2, constante3);
+			}
+
+			
+
+		sleep(15);
+
+		line12.release();
+		line22.release();
+		line5.release();
+
+		sdl.~controle_affichage(); //ferme les sockets
+
 		return 0;
 	
 }

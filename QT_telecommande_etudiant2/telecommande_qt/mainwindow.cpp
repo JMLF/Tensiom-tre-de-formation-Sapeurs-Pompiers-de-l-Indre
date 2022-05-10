@@ -3,6 +3,7 @@
 #include <fstream>
 #include <filesystem>
 #include <QFile>
+#include <vector>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -65,6 +66,9 @@ MainWindow::MainWindow(QWidget *parent)
     //Client.setIP("192.168.4.2");
      //Client.setIP("10.187.52.46");
      Client.setIP("192.168.1.10");
+
+    Client.setIP("192.168.4.2");
+     //Client.setIP("10.187.52.46");
     Client.setPort(12345);
 
     //Pour pouvoir stocker le code pin du fichier .txt dans une variable
@@ -412,10 +416,14 @@ void MainWindow::on_btn_error_clicked()
         try {
              qDebug() << "err oui";
             Client.send_trame(trame_char);
-             ui->lbl_answer_trame->setText("Succes envoie E (error) !");
+             ui->lbl_answer_trame->setText("Erreur envoyee!");
         }  catch (...) {
+
              qDebug() << "err non";
             ui->lbl_answer_trame->setText("Erreur envoie E (error)...");
+
+            ui->lbl_answer_trame->setText("Erreur non envoyee...");
+
         }
 }
 
@@ -449,8 +457,7 @@ void MainWindow::on_btn_confirm_security_clicked()
     QString PIN = getCodePin();
     int PIN_enter = ui->line_edit_pin_security->text().toInt();
     int PIN1A4 = PIN.toInt()^0x1A4; //De nouveau un OU exclusif '^' pour décoder le code PIN
-    qDebug() << PIN1A4;
-    qDebug() << PIN_enter;
+
     if(PIN1A4 == PIN_enter){
         ui->gBox_security->hide();
         ui->gBox_telec->show();
