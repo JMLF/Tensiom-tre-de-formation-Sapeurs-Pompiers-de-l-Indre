@@ -14,7 +14,7 @@ this->IP="";
 
 void ClientTCP::Connexion_server(){
         socket.abort();
-        socket.connectToHost(IP,port);
+        socket.connectToHost(IP,port,QIODevice::WriteOnly);
 }
 
 void ClientTCP::close_connexion(){
@@ -23,8 +23,8 @@ void ClientTCP::close_connexion(){
 
 void ClientTCP::send_trame(const char * trame){
 
-        socket.write(trame);
-        if(socket.state() == QAbstractSocket::UnconnectedState){
+      socket.write(trame);
+        if(  socket.state() != QAbstractSocket::ConnectedState){
         throw -3;
         }
 }

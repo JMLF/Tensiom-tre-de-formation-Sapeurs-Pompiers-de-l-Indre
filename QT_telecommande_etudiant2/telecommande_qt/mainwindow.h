@@ -33,7 +33,7 @@ private:
 
 private slots:
 
-    void addzero(enumConstante constante, int size);
+    void addzero(MainWindow::enumConstante constante, int size);
 
     void updateProgressBar();
 
@@ -86,8 +86,6 @@ private slots:
     void on_btn_cancel_clicked();
 
     void on_btn_error_clicked();
-
-    void on_btn_start_clicked();
 
     void on_btn_return_2_clicked();
 

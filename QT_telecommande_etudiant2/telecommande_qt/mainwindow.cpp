@@ -15,10 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->progressBar_waiting->setMaximum(100);
     ui->progressBar_waiting->setValue(0);
 
-    ui->progressBar_co_lost->setMinimum(0);
-    ui->progressBar_co_lost->setMaximum(100);
-    ui->progressBar_co_lost->setValue(0);
-
     //création de 3 timer auxquels on associra des méthodes...
     timer_co_serv = new QTimer(this);
     timer_verif_co = new QTimer(this);
@@ -51,7 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->gBox_recap->hide();
     ui->gBox_send->hide();
     ui->gBox_settings->hide();
-    ui->gBox_pop_up->hide();
+
 
      //Pour saisir la Systole en premier
      ui->lbl_telec_sys->setGeometry(200,140,100,100);
@@ -61,16 +57,14 @@ MainWindow::MainWindow(QWidget *parent)
      ui->lbl_answer_trame->hide();
      ui->lbl_pin_security->hide();
 
-     ui->btn_start->setGeometry(180,350,150,90);
-     ui->btn_start->hide();
-
      ui->gBox_waiting->setGeometry(0,0,x_ecran,y_ecran);
      ui->gBox_security->setGeometry(0,0,x_ecran,y_ecran);
      ui->gBox_keyboard->setGeometry(0,380,480,420);
 
      //Met l'IP et le port du tensiomètre/serveur
     //Client.setIP("192.168.4.2");
-     Client.setIP("10.187.52.46");
+     //Client.setIP("10.187.52.46");
+     Client.setIP("192.168.1.10");
     Client.setPort(12345);
 
     //Pour pouvoir stocker le code pin du fichier .txt dans une variable
@@ -98,23 +92,15 @@ MainWindow::~MainWindow()
 void MainWindow::test_co(){
     //première connexion
 if(Client.socket.state() == QAbstractSocket::ConnectedState){ //regarde l'état de la socket
-    ui->gBox_pop_up->hide();
-    ui->lbl_waiting->hide();
-    ui->progressBar_waiting->hide();
-    ui->btn_start->show();
     timer_co_serv->disconnect();//Arret du timer de connexion au serveur
-    timer_progressBar->disconnect();//Arret du timer pour la progressbar_waiting
      qDebug() << "Connecté";
      compteur_deco++; //Pour savoir si ça c'est connecté au moins 1 fois
      if(ui->gBox_telec->isVisible() == true)
          ui->gBox_keyboard->show();
 }
 //déconnexion en cours d'utilisation
-if((Client.socket.state() == QAbstractSocket::UnconnectedState) && (compteur_deco != 0)){ 
+if((Client.socket.state() == QAbstractSocket::UnconnectedState) && (compteur_deco != 0)){
     connect(timer_co_serv,SIGNAL(timeout()),this,SLOT(co_serv())); //relance du timer de connexion au serveur
-    connect(timer_progressBar,SIGNAL(timeout()),this,SLOT(updateProgressBar())); //lancement du timer toute les 50 ms pour la progressbar_co_lost
-    ui->gBox_pop_up->setGeometry(0,0,480,800);
-    ui->gBox_pop_up->show();
     ui->gBox_keyboard->hide();
     qDebug() << "Déconnecté";
 }
@@ -372,31 +358,7 @@ void MainWindow::on_btn_back_clicked()
 
 void MainWindow::on_btn_send_clicked()
 {
-    ui->gBox_recap->hide();
-    ui->gBox_send->show();
-    ui->gBox_send->setGeometry(0,0,x_ecran,y_ecran);
-
-    QString trame;
-    const char * trame_char = "";
-
-    trame = ui->lbl_num_sys->text() + ":" + ui->lbl_num_dia->text() + ":" + ui->lbl_num_pul->text(); //Protocole de dialogue :  valeur_sys:valeur_dia:valeur_pul
-    std::string trame_string = trame.toStdString(); //convertit QString en string
-    trame_char = trame_string.c_str(); //convertit string en const char (le format qui convient pour être envoyé)
-
-    try{ //try catch à la place des booléens pour la gestion d'erreurs
-    Client.send_trame(trame_char);
-    ui->lbl_answer_server->setText("Succes !");
-     ui->btn_return_2->hide();
-     ui->btn_restart->setGeometry(180,590,130,70);
-     ui->btn_error->show();
-     ui->lbl_counter->show();
-    }
-    catch(...){
-        ui->lbl_answer_server->setText("Erreur...");
-        ui->lbl_counter->hide();
-        ui->btn_error->hide();
-
-    }
+  timer_progressBar->start(100);
 }
 
 
@@ -445,31 +407,17 @@ void MainWindow::on_btn_error_clicked()
 
     ui->lbl_counter->setText(QString::number(compteur));
 
-       QString trame;
-       trame = "E";
-        const char * trame_char = "";
-        std::string trame_string = trame.toStdString();
-        trame_char = trame_string.c_str();
+        const char * trame_char = "E";
          ui->lbl_answer_trame->show();
         try {
+             qDebug() << "err oui";
             Client.send_trame(trame_char);
              ui->lbl_answer_trame->setText("Succes envoie E (error) !");
         }  catch (...) {
+             qDebug() << "err non";
             ui->lbl_answer_trame->setText("Erreur envoie E (error)...");
         }
 }
-
-
-
-
-void MainWindow::on_btn_start_clicked()
-{
-    ui->gBox_waiting->hide();
-    ui->gBox_telec->show();
-    ui->gBox_keyboard->show();
-
-}
-
 
 void MainWindow::on_btn_return_2_clicked()
 {
@@ -487,9 +435,9 @@ void MainWindow::on_btn_restart_clicked()
     ui->lbl_num_pul->setText("0");
     ui->lbl_counter->setText("0");
     ui->gBox_telec->show();
+    ui->gBox_recap->hide();
     ui->gBox_send->hide();
     ui->btn_return_2->show();
-    //ui->btn_restart->setGeometry(180,590,130,70);
      ui->gBox_keyboard->show();
      ui->lbl_answer_server->show();
      ui->lbl_answer_trame->hide();
@@ -505,9 +453,7 @@ void MainWindow::on_btn_confirm_security_clicked()
     qDebug() << PIN_enter;
     if(PIN1A4 == PIN_enter){
         ui->gBox_security->hide();
-        ui->gBox_waiting->show();
-        ui->gBox_keyboard->hide();
-        timer_progressBar->start(50); //lancement du timer toute les 50 ms pour la progressbar_waiting
+        ui->gBox_telec->show();
     }
     else{
         ui->lbl_pin_security->show();
@@ -516,17 +462,46 @@ void MainWindow::on_btn_confirm_security_clicked()
 }
 
 void MainWindow::updateProgressBar(){
+qDebug() << "progress";
+    if(Client.socket.state() == QAbstractSocket::ConnectedState){
+        qDebug() << "a";
+        ui->gBox_waiting->hide();
+        ui->gBox_send->show();
+        ui->gBox_send->setGeometry(0,0,x_ecran,y_ecran);
 
-    //Si c'est la barre de progression de la page d'attente est visible
-    if(ui->progressBar_waiting->isVisible() == true){
-    ui->progressBar_waiting->setValue(ui->progressBar_waiting->value() + 1);
-    if(ui->progressBar_waiting->value() == 100)
-        ui->progressBar_waiting->setValue(0);
+        QString trame;
+        const char * trame_char = "";
+
+        trame = ui->lbl_num_sys->text() + ":" + ui->lbl_num_dia->text() + ":" + ui->lbl_num_pul->text(); //Protocole de dialogue :  valeur_sys:valeur_dia:valeur_pul
+        std::string trame_string = trame.toStdString(); //convertit QString en string
+        trame_char = trame_string.c_str(); //convertit string en const char (le format qui convient pour être envoyé)
+
+        try{ //try catch à la place des booléens pour la gestion d'erreurs
+            qDebug() << "b";
+        Client.send_trame(trame_char);
+        ui->lbl_answer_server->setText("Succes !");
+         ui->btn_return_2->hide();
+         ui->btn_restart->setGeometry(180,590,130,70);
+         ui->btn_error->show();
+         ui->lbl_counter->show();
+        }
+        catch(...){
+            ui->lbl_answer_server->setText("Erreur...");
+            ui->lbl_counter->hide();
+            ui->btn_error->hide();
+qDebug() << "c";
+
+        }
+        timer_progressBar->disconnect();
     }
-    //...ou celle de la perte de connexion
-    else{
-        ui->progressBar_co_lost->setValue(ui->progressBar_co_lost->value() + 1);
-        if(ui->progressBar_co_lost->value() == 100)
-            ui->progressBar_co_lost->setValue(0);
+    else
+    {
+        qDebug() << "d";
+        ui->gBox_waiting->show();
+        ui->progressBar_waiting->setValue(ui->progressBar_waiting->value() + 1);
+        if(ui->progressBar_waiting->value() == 100)
+            ui->progressBar_waiting->setValue(0);
     }
+
+
 }

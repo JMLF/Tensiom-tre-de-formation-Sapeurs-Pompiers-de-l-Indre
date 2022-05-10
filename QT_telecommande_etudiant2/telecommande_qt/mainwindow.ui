@@ -197,27 +197,6 @@
       <string>SYS</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_close">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>80</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>28</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(234, 234, 234);</string>
-     </property>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QGroupBox" name="gBox_recap">
     <property name="geometry">
@@ -741,27 +720,6 @@
       <string>Attente d'un tensiomètre</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_start">
-     <property name="geometry">
-      <rect>
-       <x>180</x>
-       <y>680</y>
-       <width>150</width>
-       <height>90</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(85, 170, 255);</string>
-     </property>
-     <property name="text">
-      <string>COMMENCER</string>
-     </property>
-    </widget>
     <widget class="QProgressBar" name="progressBar_waiting">
      <property name="geometry">
       <rect>
@@ -870,59 +828,6 @@
      </property>
      <property name="text">
       <string>PIN </string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="gBox_pop_up">
-    <property name="geometry">
-     <rect>
-      <x>980</x>
-      <y>810</y>
-      <width>480</width>
-      <height>800</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(245, 245, 245);</string>
-    </property>
-    <property name="title">
-     <string>Déconnexion</string>
-    </property>
-    <widget class="QLabel" name="lbl_pop_up">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>370</y>
-       <width>281</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: qconicalgradient(cx:0, cy:0,angle:0 ,stop:0 rgba(0, 0, 0, 0));</string>
-     </property>
-     <property name="text">
-      <string>Connexion tensiomètre perdue</string>
-     </property>
-    </widget>
-    <widget class="QProgressBar" name="progressBar_co_lost">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>330</y>
-       <width>291</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="value">
-      <number>24</number>
-     </property>
-     <property name="textVisible">
-      <bool>false</bool>
      </property>
     </widget>
    </widget>
@@ -1187,22 +1092,5 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>btn_close</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>59</x>
-     <y>81</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1479</x>
-     <y>1011</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
