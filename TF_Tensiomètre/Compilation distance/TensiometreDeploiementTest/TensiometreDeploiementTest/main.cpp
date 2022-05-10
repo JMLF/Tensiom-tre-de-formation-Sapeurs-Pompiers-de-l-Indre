@@ -9,9 +9,9 @@
 * 
 * 
 *		faire des boucles while (détacher affichage et gestion du bouton dans un thread  ) ecouter en boucle la ligne gpio du bouton 
-*		dasn le main un while pour recommencer les mesures si besoin + faire une fonction 
+*		dasn le main un while pour recommencer les mesures si besoin + faire une fonction + redemander a dartois 
 * 
-* 
+*		passer les variable et objet par ref ()std standars ref const) dans le thread / ou alors variable global 
 * 
 *************************************************************************************************************************************************/
 
@@ -23,14 +23,37 @@
 #include "TCP_SERVER.h"
 #include <gpiod.hpp>
 #include <unistd.h>
+#include <thread>
 
 
-/* //fonction a passer dans le thread 
+
+//declaration des objets et variable en global -------------------
+
+controle_affichage sdl;
+gpiod::chip chip;
+
+int constante1(0); //sys
+int constante2(0); //dia
+int constante3(0); //bpm
+
+bool erreur = false;
+
+gpiod::line line5;
+gpiod::line line12;
+gpiod::line line22;
+
+int value;
+
+// ---------------------------------------------------------------
+
+
+
+//fonction a passer dans le thread 
 void simuANDaffichage(std::string reception) 
 {
 	
 	int varBoucle(0);
-	while (varBoucle != 0 ^ boolrandom != true)
+	while (varBoucle != 0 || erreur != true)
 	{
 		value = line5.get_value();
 		if (value == 0)
@@ -57,9 +80,8 @@ void simuANDaffichage(std::string reception)
 	sdl.affichage(constante1, constante2, constante3);
 
 
-
 }
-*/
+
 
 
 int main(int argc, char* argv[])
@@ -67,13 +89,12 @@ int main(int argc, char* argv[])
 	
 //-------------- gpiod class / declaration et réservation des lines
 
-	gpiod::chip chip;
 
 	chip.open("gpiochip0");
 
-	auto line5 = chip.get_line(6);
-	auto line12 = chip.get_line(12);
-	auto line22 = chip.get_line(13);
+	line5 = chip.get_line(6);
+	line12 = chip.get_line(12);
+	line22 = chip.get_line(13);
 
 
 	gpiod::line_request lineInput{ "Button",gpiod::line_request::DIRECTION_INPUT,0 };
@@ -90,7 +111,7 @@ int main(int argc, char* argv[])
 
 		TCP_SERVER server;
 
-		controle_affichage sdl;
+		//controle_affichage sdl;
 
 		sdl.chargement_Textures();
 
@@ -98,75 +119,29 @@ int main(int argc, char* argv[])
 		
 		server.INIT(); //bloquant
 		
-		auto value = line5.get_value(); // declaration de value + on lit la valeur de line5
-
-		int constante1(0); //sys
-		int constante2(0); //dia
-		int constante3(0); //bpm
+		value = line5.get_value(); // declaration de value + on lit la valeur de line5
 
 		std::string reception; //string de la reception tcp
 		std::string erreur;
-		bool erreur = false;
-
-		reception = server.READ(); //bloquant + mettre un texture bien reçu après 
-
-		//erreur = server.READ();
-		//if (erreur == "E")
-		//{
-		//	erreur = true;
-		//}
-
-		//constante1 = 999;
-		//constante2 = 999;
-		//constante3 = 999;
-		//sdl.affichage(constante1, constante2, constante3);
-
-		int waiter(0); 
 		
-		while (waiter == 0)
+
+		std::thread bouton(simuANDaffichage, reception);
+		bouton.detach();
+
+		reception = server.READ(); //bloquant 
+
+		erreur = server.READ(); //bloquant 
+		if (erreur == "E")
 		{
-			value = line5.get_value();
-			if (value == 0) 
-			{
-				line12.set_value(1);
-				line22.set_value(1);
-				for (int i = 0; i < 15; i++)
-				{
-					sdl.affichage(i*4, i*5, i*3);
-					sleep(1);
-				}
-				line12.set_value(0);
-				sleep(2);
-				line22.set_value(0);
-				waiter = 1;
-			}
+			erreur = true;
 		}
-		
-		while (sdl.isOpen == true)
-		{
-			
-			
-			if (reception.length() > 2) 
-			{
-		
-				constante1 = stoi(reception.substr(0, 3));
-				constante2 = stoi(reception.substr(4, 3));
-				constante3 = stoi(reception.substr(8, 3));
 
-			} //dans le cas ou on ne recoit pas "E"
-			else
-			{
-				constante1 = 999;
-				constante2 = 999;
-				constante3 = 999;
+		constante1 = 999;
+		constante2 = 999;
+		constante3 = 999;
+		sdl.affichage(constante1, constante2, constante3);
 
-			}
-			sdl.affichage(constante1, constante2, constante3);
-			reception = server.READ(); //bloquant
-
-			SDL_Delay(10); //delay pas utile 
-		}
-		
+		sleep(15);
 
 		line12.release();
 		line22.release();
