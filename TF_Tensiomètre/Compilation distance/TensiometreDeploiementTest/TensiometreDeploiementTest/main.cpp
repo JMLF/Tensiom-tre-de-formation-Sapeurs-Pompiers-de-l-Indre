@@ -53,12 +53,20 @@ void simuANDaffichage(std::string reception)
 {
 	
 	int varBoucle(0);
+
+	std::cout << "dans le thread" << std::endl;
+	
 	while (varBoucle != 0 || erreur != true)
 	{
 		value = line5.get_value();
-		if (value == 0)
+		
+		if (value == 0) {
 			varBoucle = 1;
+			std::cout << "bouton clique" << std::endl;
+		}
+
 		usleep(200);
+		 
 	}
 
 	line12.set_value(1);
@@ -118,28 +126,36 @@ int main(int argc, char* argv[])
 		sdl.waiting_texture(); //affichage de la page d'attente 
 		
 		server.INIT(); //bloquant
-		
-		value = line5.get_value(); // declaration de value + on lit la valeur de line5
 
 		std::string reception; //string de la reception tcp
 		std::string erreur;
 		
 
+		
+
+		reception = server.READ(); //bloquant
+			
+			constante1 = stoi(reception.substr(0, 3));
+			constante2 = stoi(reception.substr(4, 3));
+			constante3 = stoi(reception.substr(8, 3));
+
 		std::thread bouton(simuANDaffichage, reception);
 		bouton.detach();
 
-		reception = server.READ(); //bloquant 
-
 		erreur = server.READ(); //bloquant 
-		if (erreur == "E")
-		{
-			erreur = true;
-		}
+			
+			if (erreur == "E")
+			{
+				erreur = true;
+			
+				constante1 = 999;
+				constante2 = 999;
+				constante3 = 999;    
+				
+				sdl.affichage(constante1, constante2, constante3);
+			}
 
-		constante1 = 999;
-		constante2 = 999;
-		constante3 = 999;
-		sdl.affichage(constante1, constante2, constante3);
+			
 
 		sleep(15);
 
