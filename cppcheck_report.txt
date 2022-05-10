@@ -118,24 +118,18 @@ TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeplo
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:281:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:101:14: style: Variable 'value' is assigned a value that is never used. [unreadVariable]
-  auto value = line5.get_value(); // declaration de value + on lit la valeur de line5
-             ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:103:0: style: Variable 'constante1' is assigned a value that is never used. [unreadVariable]
-  int constante1(0); //sys
-^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:104:0: style: Variable 'constante2' is assigned a value that is never used. [unreadVariable]
-  int constante2(0); //dia
-^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:105:0: style: Variable 'constante3' is assigned a value that is never used. [unreadVariable]
-  int constante3(0); //bpm
-^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:109:15: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
-  bool erreur = false;
-              ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:108:15: style: Unused variable: erreur [unusedVariable]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:131:15: style: Local variable 'erreur' shadows outer variable [shadowVariable]
   std::string erreur;
               ^
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:39:6: note: Shadowed declaration
+bool erreur = false;
+     ^
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:131:15: note: Shadow variable
+  std::string erreur;
+              ^
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:149:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
+    erreur = true;
+           ^
 TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
