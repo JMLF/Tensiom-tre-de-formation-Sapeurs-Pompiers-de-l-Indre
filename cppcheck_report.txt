@@ -121,16 +121,19 @@ TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeplo
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:281:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:131:15: style: Local variable 'erreur' shadows outer variable [shadowVariable]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:137:15: style: Local variable 'erreur' shadows outer variable [shadowVariable]
   std::string erreur;
               ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:39:6: note: Shadowed declaration
 bool erreur = false;
      ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:131:15: note: Shadow variable
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:137:15: note: Shadow variable
   std::string erreur;
               ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:149:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:52:35: performance: Function parameter 'reception' should be passed by const reference. [passedByValue]
+void simuANDaffichage(std::string reception)
+                                  ^
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:155:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
     erreur = true;
            ^
 TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
