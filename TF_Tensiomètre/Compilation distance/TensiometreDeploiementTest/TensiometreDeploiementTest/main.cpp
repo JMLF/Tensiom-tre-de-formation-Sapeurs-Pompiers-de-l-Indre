@@ -56,7 +56,7 @@ void simuANDaffichage(std::string reception)
 
 	std::cout << "dans le thread" << std::endl;
 	
-	while (varBoucle != 0 || erreur != true)
+	while (varBoucle == 0 && erreur == false)
 	{
 		value = line5.get_value();
 		
@@ -65,25 +65,31 @@ void simuANDaffichage(std::string reception)
 			std::cout << "bouton clique" << std::endl;
 		}
 
-		usleep(200);
+		usleep(2000);
 		 
 	}
+
+	std::cout << "part 2 thread " << std::endl;
 
 	line12.set_value(1);
 	line22.set_value(1);
 	for (int i = 0; i < 15; i++)
 	{
-		sdl.affichage(i * 4, i * 5, i * 3);
+		sdl.affichage(i * 4, i * 5, i * 3); //faire passser sdl par ref 
+		std::cout << "affichage " << std::endl;
 		sleep(1);
 	}
 	line12.set_value(0);
+
+
+
 	sleep(2);
 	line22.set_value(0);
 
 
-	constante1 = stoi(reception.substr(0, 3));
-	constante2 = stoi(reception.substr(4, 3));
-	constante3 = stoi(reception.substr(8, 3));
+	//constante1 = stoi(reception.substr(0, 3));
+	//constante2 = stoi(reception.substr(4, 3));
+	//constante3 = stoi(reception.substr(8, 3));
 
 	sdl.affichage(constante1, constante2, constante3);
 
@@ -157,7 +163,7 @@ int main(int argc, char* argv[])
 
 			
 
-		sleep(15);
+		sleep(70);
 
 		line12.release();
 		line22.release();
