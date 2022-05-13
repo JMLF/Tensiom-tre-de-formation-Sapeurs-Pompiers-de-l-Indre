@@ -29,7 +29,7 @@
 
 //declaration des objets et variable en global -------------------
 
-controle_affichage sdl;
+controle_affichage* sdl = new controle_affichage();
 gpiod::chip chip;
 
 int constante1(0); //sys
@@ -49,7 +49,7 @@ int value;
 
 
 //fonction a passer dans le thread 
-void simuANDaffichage(std::string reception, controle_affichage sdl) //ne marchonfe toujours pas + segmentation fault 
+void simuANDaffichage(std::string reception, controle_affichage* sdl) //ne marchonfe toujours pas + segmentation fault 
 {
 	
 	int varBoucle(0);
@@ -75,7 +75,7 @@ void simuANDaffichage(std::string reception, controle_affichage sdl) //ne marcho
 	line22.set_value(1);
 	for (int i = 0; i < 15; i++)
 	{
-		sdl.affichage(i * 4, i * 5, i * 3); //faire passser sdl par ref 
+		sdl->affichage(i * 4, i * 5, i * 3); //faire passser sdl par ref 
 		std::cout << "affichage " << std::endl;
 		sleep(1);
 	}
@@ -91,7 +91,7 @@ void simuANDaffichage(std::string reception, controle_affichage sdl) //ne marcho
 	//constante2 = stoi(reception.substr(4, 3));
 	//constante3 = stoi(reception.substr(8, 3));
 
-	sdl.affichage(constante1, constante2, constante3);
+	sdl->affichage(constante1, constante2, constante3);
 
 
 }
@@ -127,9 +127,9 @@ int main(int argc, char* argv[])
 
 		//controle_affichage sdl;
 
-		sdl.chargement_Textures();
+		sdl->chargement_Textures();
 
-		sdl.waiting_texture(); //affichage de la page d'attente 
+		sdl->waiting_texture(); //affichage de la page d'attente 
 		
 		server.INIT(); //bloquant
 
@@ -145,7 +145,7 @@ int main(int argc, char* argv[])
 			constante2 = stoi(reception.substr(4, 3));
 			constante3 = stoi(reception.substr(8, 3));
 
-		std::thread bouton(simuANDaffichage, reception, std::cref(sdl));
+		std::thread bouton(simuANDaffichage, reception, sdl);
 		bouton.detach();
 
 		erreur = server.READ(); //bloquant 
@@ -158,7 +158,7 @@ int main(int argc, char* argv[])
 				constante2 = 999;
 				constante3 = 999;    
 				
-				sdl.affichage(constante1, constante2, constante3);
+				sdl->affichage(constante1, constante2, constante3);
 			}
 
 			
@@ -169,7 +169,8 @@ int main(int argc, char* argv[])
 		line22.release();
 		line5.release();
 
-		sdl.~controle_affichage(); //ferme les sockets
+		//sdl.~controle_affichage(); //ferme les sockets
+		delete sdl;
 
 		return 0;
 	
