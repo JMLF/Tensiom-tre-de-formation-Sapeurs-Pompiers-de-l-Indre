@@ -12,7 +12,7 @@
 *		dasn le main un while pour recommencer les mesures si besoin + faire une fonction + redemander a dartois 
 * 
 *		passer les variable et objet par ref ()std standars ref const) dans le thread / ou alors variable global 
-* 
+*	std::cref const ref pour les objets complexe 
 *************************************************************************************************************************************************/
 
 
@@ -49,7 +49,7 @@ int value;
 
 
 //fonction a passer dans le thread 
-void simuANDaffichage(std::string reception) 
+void simuANDaffichage(std::string reception, controle_affichage sdl) //ne marchonfe toujours pas + segmentation fault 
 {
 	
 	int varBoucle(0);
@@ -145,7 +145,7 @@ int main(int argc, char* argv[])
 			constante2 = stoi(reception.substr(4, 3));
 			constante3 = stoi(reception.substr(8, 3));
 
-		std::thread bouton(simuANDaffichage, reception);
+		std::thread bouton(simuANDaffichage, reception, std::cref(sdl));
 		bouton.detach();
 
 		erreur = server.READ(); //bloquant 
