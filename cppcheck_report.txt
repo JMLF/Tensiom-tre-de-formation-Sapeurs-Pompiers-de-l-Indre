@@ -131,7 +131,7 @@ TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeplo
   std::string erreur;
               ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:52:35: performance: Function parameter 'reception' should be passed by const reference. [passedByValue]
-void simuANDaffichage(std::string reception)
+void simuANDaffichage(std::string reception, controle_affichage sdl) //ne marchonfe toujours pas + segmentation fault
                                   ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:155:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
     erreur = true;
