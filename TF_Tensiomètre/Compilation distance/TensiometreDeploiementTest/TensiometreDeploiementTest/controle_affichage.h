@@ -54,14 +54,14 @@ protected:
 public: 
 
 	/// <summary>
-	/// 
+	/// Variable SDL_Event
 	/// </summary>
 	SDL_Event events; //evenement clavier sourit etc
 	
 	bool isOpen = true;
 
 	/// <summary>
-	/// 
+	/// Constructeur (par défaut) de la classe 
 	/// </summary>
 	controle_affichage();
 
@@ -70,6 +70,9 @@ public:
 	/// </summary>
 	void chargement_Textures();
 
+	/// <summary>
+	/// 
+	/// </summary>
 	void waiting_texture();
 
 	/// <summary>
