@@ -136,6 +136,9 @@ void simuANDaffichage(std::string reception, controle_affichage* sdl) //ne march
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:155:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
     erreur = true;
            ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/main.cpp:10:6: style: The scope of the variable 'value' can be reduced. [variableScope]
+ int value;
+     ^
 TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
