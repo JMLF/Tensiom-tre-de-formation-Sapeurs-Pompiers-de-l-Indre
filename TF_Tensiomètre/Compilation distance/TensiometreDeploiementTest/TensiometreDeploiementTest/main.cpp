@@ -5,9 +5,6 @@
 *
 *		Toute gestion d'erreur a refaire
 * 
-*		Ajouter gestion du gpio
-* 
-* 
 *		faire des boucles while (détacher affichage et gestion du bouton dans un thread  ) ecouter en boucle la ligne gpio du bouton 
 *		dasn le main un while pour recommencer les mesures si besoin + faire une fonction + redemander a dartois 
 * 
@@ -30,7 +27,7 @@
 //declaration des objets et variable en global -------------------
 
 controle_affichage* sdl = new controle_affichage();
-gpiod::chip chip;
+gpiod::chip chip; //controleur gpio
 
 int constante1(0); //sys
 int constante2(0); //dia
@@ -38,7 +35,7 @@ int constante3(0); //bpm
 
 bool erreur = false;
 
-gpiod::line line5;
+gpiod::line line5; //ligne gpio
 gpiod::line line12;
 gpiod::line line22;
 
@@ -104,18 +101,18 @@ int main(int argc, char* argv[])
 //-------------- gpiod class / declaration et réservation des lines
 
 
-	chip.open("gpiochip0");
+	chip.open("gpiochip0"); //ouverture de la ligne gpio
 
-	line5 = chip.get_line(6);
+	line5 = chip.get_line(6); //on assigne la variable à l'id d'une ligne gpio
 	line12 = chip.get_line(12);
 	line22 = chip.get_line(13);
 
 
-	gpiod::line_request lineInput{ "Button",gpiod::line_request::DIRECTION_INPUT,0 };
-	gpiod::line_request lineOutput{ "Button",gpiod::line_request::DIRECTION_OUTPUT,0 };
+	gpiod::line_request lineInput{ "Button",gpiod::line_request::DIRECTION_INPUT,0 }; //on demande les lignes gpio en entrées
+	gpiod::line_request lineOutput{ "Button",gpiod::line_request::DIRECTION_OUTPUT,0 }; //on demandes les lignes gpio en sortie
 
 
-	line5.request(lineInput, 0);
+	line5.request(lineInput, 0); //on assigne un sens à chaque lignes gpio (entrée ou sortie)
 	line12.request(lineOutput, 0);
 	line22.request(lineOutput, 0);
 
