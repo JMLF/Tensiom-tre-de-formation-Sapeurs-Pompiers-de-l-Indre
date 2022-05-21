@@ -121,19 +121,19 @@ TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeplo
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:281:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:137:15: style: Local variable 'erreur' shadows outer variable [shadowVariable]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:134:15: style: Local variable 'erreur' shadows outer variable [shadowVariable]
   std::string erreur;
               ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:39:6: note: Shadowed declaration
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:36:6: note: Shadowed declaration
 bool erreur = false;
      ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:137:15: note: Shadow variable
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:134:15: note: Shadow variable
   std::string erreur;
               ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:52:35: performance: Function parameter 'reception' should be passed by const reference. [passedByValue]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:49:35: performance: Function parameter 'reception' should be passed by const reference. [passedByValue]
 void simuANDaffichage(std::string reception, controle_affichage* sdl) //ne marchonfe toujours pas + segmentation fault
                                   ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:155:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:152:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
     erreur = true;
            ^
 TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/main.cpp:10:6: style: The scope of the variable 'value' can be reduced. [variableScope]
