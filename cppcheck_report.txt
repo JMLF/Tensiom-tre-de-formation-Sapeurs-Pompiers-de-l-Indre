@@ -136,9 +136,96 @@ void simuANDaffichage(std::string reception, controle_affichage* sdl) //ne march
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:152:12: style: Variable 'erreur' is assigned a value that is never used. [unreadVariable]
     erreur = true;
            ^
-TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/main.cpp:10:6: style: The scope of the variable 'value' can be reduced. [variableScope]
- int value;
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.h:52:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ int calcul_pos_tile(int chiffre);
      ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:4:25: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+int controle_affichage::calcul_pos_tile(int chiffre)
+                        ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.h:52:6: note: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace).
+ int calcul_pos_tile(int chiffre);
+     ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:122:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:119:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:122:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:138:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:133:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:138:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:145:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:140:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:145:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:190:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:187:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:190:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:206:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:201:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:206:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:213:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:208:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:213:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:258:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:255:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:258:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:274:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:269:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:274:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:281:8: style: Variable 'src2' is reassigned a value before the old one has been used. [redundantAssignment]
+  src2 = { tilePos, 0, 118, 178 };
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:276:8: note: src2 is assigned
+  src2 = { 2, 0, 118, 178 }; //on remet a zero
+       ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:281:8: note: src2 is overwritten
+  src2 = { tilePos, 0, 118, 178 };
+       ^
 TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
