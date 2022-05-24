@@ -13,22 +13,22 @@ QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:10:7: warning: Class 'M
 QT_telecommande_etudiant2/telecommande_qt/mainwindow.cpp:414:22: style: The scope of the variable 'trame_char' can be reduced. [variableScope]
         const char * trame_char = "E";
                      ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:6:13: warning: Member variable 'TCP_SERVER::sockfd' is not initialized in the constructor. [uninitMemberVar]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:4:13: warning: Member variable 'TCP_SERVER::sockfd' is not initialized in the constructor. [uninitMemberVar]
 TCP_SERVER::TCP_SERVER()
             ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:6:13: warning: Member variable 'TCP_SERVER::newsockfd' is not initialized in the constructor. [uninitMemberVar]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:4:13: warning: Member variable 'TCP_SERVER::newsockfd' is not initialized in the constructor. [uninitMemberVar]
 TCP_SERVER::TCP_SERVER()
             ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:6:13: warning: Member variable 'TCP_SERVER::portno' is not initialized in the constructor. [uninitMemberVar]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:4:13: warning: Member variable 'TCP_SERVER::portno' is not initialized in the constructor. [uninitMemberVar]
 TCP_SERVER::TCP_SERVER()
             ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:6:13: warning: Member variable 'TCP_SERVER::buffer' is not initialized in the constructor. [uninitMemberVar]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:4:13: warning: Member variable 'TCP_SERVER::buffer' is not initialized in the constructor. [uninitMemberVar]
 TCP_SERVER::TCP_SERVER()
             ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:6:13: warning: Member variable 'TCP_SERVER::n' is not initialized in the constructor. [uninitMemberVar]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:4:13: warning: Member variable 'TCP_SERVER::n' is not initialized in the constructor. [uninitMemberVar]
 TCP_SERVER::TCP_SERVER()
             ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:58:36: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:56:36: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
 void TCP_SERVER::WRITE(std::string message)
                                    ^
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.h:52:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
@@ -5971,7 +5971,7 @@ Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lv_drivers/display/GC9A01.c:446
 Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lv_drivers/display/GC9A01.c:494:0: style: The function 'GC9A01_setRotation' is never used. [unusedFunction]
 
 ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:58:0: style: The function 'WRITE' is never used. [unusedFunction]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/TCP_SERVER.cpp:56:0: style: The function 'WRITE' is never used. [unusedFunction]
 
 ^
 Telecommande etudiant 1/Marius/lv_sim_vscode_sdl/lvgl/src/misc/lv_area.c:82:0: style: The function '_lv_area_set_pos' is never used. [unusedFunction]
