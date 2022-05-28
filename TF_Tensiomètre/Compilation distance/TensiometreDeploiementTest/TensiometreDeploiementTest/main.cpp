@@ -121,22 +121,59 @@ int main(int argc, char* argv[])
 		
 
 		TCP_SERVER server;
+		try
+		{
+			//controle_affichage sdl;
+		}
+		catch (std::string err)
+		{
+			std::cerr << "Problème lors de l'init de la classe d'affichage lors de la création de l'objet " + err << std::endl;
+		}
+		
 
-		//controle_affichage sdl;
-
-		sdl->chargement_Textures();
+		try
+		{
+			sdl->chargement_Textures();
+		}
+		catch (std::string err)
+		{
+			std::cerr << "La classe en charge de l'affichage ne trouve pas les fichiers background fullchiffre et attentelogo" << std::endl;
+		}
+		
 
 		sdl->waiting_texture(); //affichage de la page d'attente 
 		
-		server.INIT(); //bloquant
+		try
+		{
+			server.INIT(); //bloquant
+		}
+		catch (std::string err)
+		{
+			std::cerr << "Error on " + err << std::endl;
+			if (err == "binding")
+			{
+				std::cerr << "Le port est deja utiliser, vous pouvez soit en changer soit essayer de redemarrer l'appareil" << std::endl;
+			}
+			sleep(10);
+			return 0;
+		}
+
+		
 
 		std::string reception; //string de la reception tcp
 		std::string erreur;
 		
 
 		
-
-		reception = server.READ(); //bloquant
+		try
+		{
+			reception = server.READ(); //bloquant
+		}
+		catch (std::string err)
+		{
+			std::cerr << err << std::endl; 
+		}
+		
 			
 			constante1 = stoi(reception.substr(0, 3));
 			constante2 = stoi(reception.substr(4, 3));
