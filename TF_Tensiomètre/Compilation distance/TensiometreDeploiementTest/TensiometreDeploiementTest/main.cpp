@@ -206,8 +206,7 @@ int main(int argc, char* argv[])
 		//sdl.~controle_affichage(); //ferme les sockets
 		delete sdl;
 
-		return 0;
-	
+		return 0;	
 }
 
 */
@@ -215,7 +214,7 @@ int main(int argc, char* argv[])
 int main(int argc, char* argv[])
 {
 
-	//-------------- gpiod class / declaration et réservation des lines
+//-------------- gpiod class / declaration et réservation des lines
 
 	gpiod::chip chip;
 
@@ -234,7 +233,7 @@ int main(int argc, char* argv[])
 	line12.request(lineOutput, 0);
 	line22.request(lineOutput, 0);
 
-	//---------------
+//---------------
 
 
 
@@ -244,7 +243,7 @@ int main(int argc, char* argv[])
 
 	sdl.chargement_Textures();
 
-	sdl.waiting_texture(); // ???????????????????????????? fonctionne pas 
+	sdl.waiting_texture(controle_affichage::version::attente); // ???????????????????????????? fonctionne pas 
 	
 	server.INIT(); //bloquant
 
@@ -254,13 +253,15 @@ int main(int argc, char* argv[])
 	int constante2(0); //dia
 	int constante3(0); //bpm
 
-	sdl.connecte_texture(); //en faite vaut mieux utiliser le wainting texture avec un parametre qui change l'affichage suivant l'étape 
+	sdl.waiting_texture(controle_affichage::version::connecte);
 
 	std::string reception; //string de la reception tcp
 
 	
 
 	reception = server.READ(); //bloquant + mettre un texture bien reçu après 
+
+	sdl.waiting_texture(controle_affichage::version::lancement);
 
 	int waiter(0);
 
@@ -316,5 +317,4 @@ int main(int argc, char* argv[])
 	sdl.~controle_affichage(); //ferme les sockets
 
 	return 0;
-
 }

@@ -23,8 +23,6 @@ controle_affichage::controle_affichage()
 		throw("renderer");	
 };
 
-
-
 void controle_affichage::chargement_Textures()
 {
 	surface = SDL_LoadBMP("/home/pi/projects/TensiometreDeploiementTest/assets/background.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
@@ -54,13 +52,20 @@ void controle_affichage::chargement_Textures()
 
 	connectelogo = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
+
+	surface = SDL_LoadBMP("/home/pi/projects/TensiometreDeploiementTest/assets/lancmentMesure.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
+	if (surface == nullptr)
+		throw ("erreurFichier");
+
+	lancementLogo = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_FreeSurface(surface);
 }
 
-void controle_affichage::waiting_texture(version)
+void controle_affichage::waiting_texture(controle_affichage::version vers)
 {
-
-	switch (version)
+	switch (vers) ////////////////////// ???????????????????????????????
 	{
+	
 	case controle_affichage::version::attente:
 
 		SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a); //declarer a ici 
@@ -87,21 +92,23 @@ void controle_affichage::waiting_texture(version)
 
 	case controle_affichage::version::lancement:
 
+		SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a); //declarer a ici 
+
+		SDL_RenderClear(renderer);
+
+		SDL_RenderCopy(renderer, lancementLogo, NULL, &rectangleBack);
+
+		SDL_RenderPresent(renderer); //rend l'image
+
 		break;
-
-
 
 	default:
 		break;
 	}	
-
 };
-
-
 
 void controle_affichage::affichage(int sys, int dia, int bpm)
 {
-
 	SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a);
 
 	SDL_RenderClear(renderer);
@@ -176,7 +183,6 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 		src2 = { 2, 0, 118, 178 }; //on remet a zero
 
 		break;
-
 	}
 
 	a = 0; 
@@ -244,7 +250,6 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 		src2 = { 2, 0, 118, 178 }; //on remet a zero
 
 		break;
-
 	}
 
 	a = 0;
@@ -312,22 +317,17 @@ void controle_affichage::affichage(int sys, int dia, int bpm)
 		src2 = { 2, 0, 118, 178 }; //on remet a zero
 
 		break;
-
 	}
 
 	a = 0;
 
 	SDL_RenderPresent(renderer); //rend l'image
-
-
 };
 
 controle_affichage::~controle_affichage()
 {
-
 	SDL_DestroyRenderer(renderer); SDL_DestroyWindow(window);
 	SDL_Quit();
-
 };
 
 
