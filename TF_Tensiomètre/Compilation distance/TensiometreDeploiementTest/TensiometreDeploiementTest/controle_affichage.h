@@ -25,6 +25,7 @@ protected:
 	SDL_Texture* background = nullptr;///<
 	SDL_Texture* attenteLogo = nullptr;///<
 	SDL_Texture* tiledmap = nullptr;///<
+	SDL_Texture* connectelogo = nullptr;///<
 
 	SDL_Rect m_sourceRectangle;///< Rectangle null pour crop
 	 
@@ -51,6 +52,8 @@ protected:
 	/// <returns></returns>
 	int calcul_pos_tile(int chiffre);
 
+	enum class version {attente,connecte,lancement};
+
 public: 
 
 	/// <summary>
@@ -73,7 +76,7 @@ public:
 	/// <summary>
 	/// 
 	/// </summary>
-	void waiting_texture();
+	void waiting_texture(version);
 
 	/// <summary>
 	/// 

@@ -1,6 +1,5 @@
 #include "controle_affichage.h"
 
-
 int controle_affichage::calcul_pos_tile(int chiffre)
 {
 	int start = 2;
@@ -21,16 +20,13 @@ controle_affichage::controle_affichage()
 	
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED); //ajouter flag d'acceleration materielle 
 	if (renderer == nullptr)
-		throw("renderer")
-	
+		throw("renderer");	
 };
 
 
 
 void controle_affichage::chargement_Textures()
 {
-	
-
 	surface = SDL_LoadBMP("/home/pi/projects/TensiometreDeploiementTest/assets/background.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
 	if (surface == nullptr)
 		throw ("erreurFichier");
@@ -52,18 +48,56 @@ void controle_affichage::chargement_Textures()
 	attenteLogo = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
 
+	surface = SDL_LoadBMP("/home/pi/projects/TensiometreDeploiementTest/assets/Logoconnecte.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
+	if (surface == nullptr)
+		throw ("erreurFichier");
+
+	connectelogo = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_FreeSurface(surface);
 }
-void controle_affichage::waiting_texture()
+
+void controle_affichage::waiting_texture(version)
 {
-	SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a); //declarer a ici 
 
-	SDL_RenderClear(renderer);
+	switch (version)
+	{
+	case controle_affichage::version::attente:
 
-	SDL_RenderCopy(renderer, attenteLogo, NULL, &rectangleBack);
+		SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a); //declarer a ici 
 
-	SDL_RenderPresent(renderer); //rend l'image
+		SDL_RenderClear(renderer);
+
+		SDL_RenderCopy(renderer, attenteLogo, NULL, &rectangleBack);
+
+		SDL_RenderPresent(renderer); //rend l'image
+
+		break;
+
+	case controle_affichage::version::connecte:
+
+		SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a); //declarer a ici 
+
+		SDL_RenderClear(renderer);
+
+		SDL_RenderCopy(renderer, connectelogo, NULL, &rectangleBack);
+
+		SDL_RenderPresent(renderer); //rend l'image
+
+		break;
+
+	case controle_affichage::version::lancement:
+
+		break;
+
+
+
+	default:
+		break;
+	}	
 
 };
+
+
 
 void controle_affichage::affichage(int sys, int dia, int bpm)
 {
