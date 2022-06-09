@@ -65,7 +65,7 @@ void simuANDaffichage(std::string reception, controle_affichage* sdl) //ne march
 		usleep(2000);
 		 
 	}
-
+	   
 	std::cout << "part 2 thread " << std::endl;
 
 	line12.set_value(1);
@@ -211,19 +211,44 @@ int main(int argc, char* argv[])
 
 */
 
+TCP_SERVER server;
+
+gpiod::chip chip;
+
+
+
+
+
+
+void ecouteBTN(gpiod::line line) 
+{
+	int a(0);
+	
+	while (a == 0)
+	{
+		int value = line.get_value();
+
+		if (value == 0) {
+			std::cout << "bouton clique" << std::endl;
+			server.shutdow();
+			a = 1;
+		}
+		usleep(2000);
+	}
+
+
+}
+
+
 int main(int argc, char* argv[])
 {
 
 //-------------- gpiod class / declaration et réservation des lines
-
-	gpiod::chip chip;
-
 	chip.open("gpiochip0");
-
-	auto line5 = chip.get_line(6);
+	
 	auto line12 = chip.get_line(12);
 	auto line22 = chip.get_line(13);
-
+	auto line5 = chip.get_line(6);
 
 	gpiod::line_request lineInput{ "Button",gpiod::line_request::DIRECTION_INPUT,0 };
 	gpiod::line_request lineOutput{ "Button",gpiod::line_request::DIRECTION_OUTPUT,0 };
@@ -235,15 +260,15 @@ int main(int argc, char* argv[])
 
 //---------------
 
+	//faire une boucle while true qui remonte jusqua une accept pour refaire socket de dialogue ---------------------------------------------
 
-
-	TCP_SERVER server;
+	
 
 	controle_affichage sdl;
 
 	sdl.chargement_Textures();
 
-	sdl.waiting_texture(controle_affichage::version::attente); // ???????????????????????????? fonctionne pas 
+	sdl.waiting_texture(controle_affichage::version::attente); 
 	
 	server.INIT(); //bloquant
 
@@ -256,20 +281,26 @@ int main(int argc, char* argv[])
 	sdl.waiting_texture(controle_affichage::version::connecte);
 
 	std::string reception; //string de la reception tcp
+	std::string err;
 
-	
+	std::thread bouton(ecouteBTN, line5);
 
 	reception = server.READ(); //bloquant + mettre un texture bien reçu après 
-
+	
+	bouton.detach();
+	
 	sdl.waiting_texture(controle_affichage::version::lancement);
-
-	int waiter(0);
-
-	while (waiter == 0)
+	
+	err = server.READ();
+	if (err == "E")
 	{
-		value = line5.get_value();
-		if (value == 0)
-		{
+		std::cout << "erreur" << std::endl;
+		sleep(5);
+	}
+	
+	
+
+	//boucle qui gonfle le brassard
 			line12.set_value(1);
 			line22.set_value(1);
 			for (int i = 0; i < 15; i++)
@@ -280,14 +311,10 @@ int main(int argc, char* argv[])
 			line12.set_value(0);
 			sleep(2);
 			line22.set_value(0);
-			waiter = 1;
-		}
-	}
+			
+	//faut revoir ce qui y a dessous 	
 
-	while (sdl.isOpen == true)
-	{
-
-
+	
 		if (reception.length() > 2)
 		{
 
@@ -304,10 +331,10 @@ int main(int argc, char* argv[])
 
 		}
 		sdl.affichage(constante1, constante2, constante3);
-		reception = server.READ(); //bloquant
+		
 
 		SDL_Delay(10); //delay pas utile 
-	}
+		sleep(20);
 
 
 	line12.release();

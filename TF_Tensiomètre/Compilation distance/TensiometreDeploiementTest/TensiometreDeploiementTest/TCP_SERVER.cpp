@@ -68,3 +68,11 @@ void TCP_SERVER::CLOSE()
 
     close(sockfd);
 }
+
+
+int TCP_SERVER::shutdow()
+{
+    int err(0);
+    err = shutdown(newsockfd, 2);
+    return err;
+}

@@ -60,6 +60,7 @@ public:
     /// </summary>
     void CLOSE();
 
+    int shutdow();
 };
 
 #endif //_TCP_SERVER_
