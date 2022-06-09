@@ -211,13 +211,11 @@ int main(int argc, char* argv[])
 
 */
 
+//declaration global de ce qu'on utilise dans le thread 
+
 TCP_SERVER server;
 
 gpiod::chip chip;
-
-
-
-
 
 
 void ecouteBTN(gpiod::line line) 
@@ -334,8 +332,9 @@ int main(int argc, char* argv[])
 		
 
 		SDL_Delay(10); //delay pas utile 
-		sleep(20);
+		sleep(30);
 
+//remoter jusqu'au accept pour refaire une cycle complet  
 
 	line12.release();
 	line22.release();
