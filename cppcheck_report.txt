@@ -121,18 +121,9 @@ TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeplo
 TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/controle_affichage.cpp:315:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:250:13: style: Variable 'value' is assigned a value that is never used. [unreadVariable]
+TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:275:13: style: Variable 'value' is assigned a value that is never used. [unreadVariable]
  auto value = line5.get_value(); // declaration de value + on lit la valeur de line5
             ^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:252:0: style: Variable 'constante1' is assigned a value that is never used. [unreadVariable]
- int constante1(0); //sys
-^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:253:0: style: Variable 'constante2' is assigned a value that is never used. [unreadVariable]
- int constante2(0); //dia
-^
-TF_Tensiomètre/Compilation distance/TensiometreDeploiementTest/TensiometreDeploiementTest/main.cpp:254:0: style: Variable 'constante3' is assigned a value that is never used. [unreadVariable]
- int constante3(0); //bpm
-^
 TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.h:52:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
