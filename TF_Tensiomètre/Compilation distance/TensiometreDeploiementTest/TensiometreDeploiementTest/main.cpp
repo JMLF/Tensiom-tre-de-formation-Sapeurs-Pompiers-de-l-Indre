@@ -292,7 +292,7 @@ int main(int argc, char* argv[])
 	err = server.READ();
 	if (err == "E")
 	{
-		std::cout << "erreur" << std::endl;
+		std::cout << "erreur" << std::endl; //bliter une image ici
 		sleep(5);
 	}
 	

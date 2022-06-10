@@ -59,11 +59,20 @@ void controle_affichage::chargement_Textures()
 
 	lancementLogo = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
+
+	surface = SDL_LoadBMP("/home/pi/projects/TensiometreDeploiementTest/assets/erreur.bmp"); //on charge l'image dans la surface (a ne faire qu'une fois l'ors de l'init
+	if (surface == nullptr)
+		throw ("erreurFichier");
+
+	erreurLogo = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_FreeSurface(surface);
+
+
 }
 
 void controle_affichage::waiting_texture(controle_affichage::version vers)
 {
-	switch (vers) ////////////////////// ???????????????????????????????
+	switch (vers) //ajouter si y 'a l'erreur 
 	{
 	
 	case controle_affichage::version::attente:

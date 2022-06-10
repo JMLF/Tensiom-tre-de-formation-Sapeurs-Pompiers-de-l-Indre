@@ -27,6 +27,7 @@ protected:
 	SDL_Texture* tiledmap = nullptr;///<
 	SDL_Texture* connectelogo = nullptr;///<
 	SDL_Texture* lancementLogo = nullptr;///<
+	SDL_Texture* erreurLogo = nullptr;///<
 
 	SDL_Rect m_sourceRectangle;///< Rectangle null pour crop
 	 
