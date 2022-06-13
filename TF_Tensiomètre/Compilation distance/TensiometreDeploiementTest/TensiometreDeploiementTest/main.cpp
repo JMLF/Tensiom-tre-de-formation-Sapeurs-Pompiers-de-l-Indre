@@ -13,6 +13,7 @@
 *************************************************************************************************************************************************/
 
 
+
 //include linux
 #include "controle_affichage.h"
 #include <iostream> //pas utile sauf pour le debug
@@ -293,6 +294,7 @@ int main(int argc, char* argv[])
 	if (err == "E")
 	{
 		std::cout << "erreur" << std::endl; //bliter une image ici
+		sdl.waiting_texture(controle_affichage::version::erreur);
 		sleep(5);
 	}
 	

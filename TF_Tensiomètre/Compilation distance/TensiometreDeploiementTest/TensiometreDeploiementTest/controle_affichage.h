@@ -58,7 +58,7 @@ protected:
 
 public: 
 	
-	enum class version {attente,connecte,lancement};
+	enum class version {attente,connecte,lancement,erreur};
 	
 	/// <summary>
 	/// Variable SDL_Event

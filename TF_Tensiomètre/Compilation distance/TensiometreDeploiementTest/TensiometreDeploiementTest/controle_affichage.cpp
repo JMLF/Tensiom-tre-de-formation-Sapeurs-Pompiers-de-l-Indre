@@ -110,6 +110,18 @@ void controle_affichage::waiting_texture(controle_affichage::version vers)
 		SDL_RenderPresent(renderer); //rend l'image
 
 		break;
+	
+	case controle_affichage::version::erreur:
+		
+		SDL_GetRenderDrawColor(renderer, 0, &a, 0, &a); //declarer a ici 
+
+		SDL_RenderClear(renderer);
+
+		SDL_RenderCopy(renderer, erreurLogo, NULL, &rectangleBack);
+
+		SDL_RenderPresent(renderer); //rend l'image
+		
+		break;
 
 	default:
 		break;
