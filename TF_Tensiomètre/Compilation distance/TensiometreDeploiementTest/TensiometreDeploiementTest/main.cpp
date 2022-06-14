@@ -296,6 +296,7 @@ int main(int argc, char* argv[])
 		std::cout << "erreur" << std::endl; //bliter une image ici
 		sdl.waiting_texture(controle_affichage::version::erreur);
 		sleep(5);
+		sdl.waiting_texture(controle_affichage::version::lancement);
 	}
 	
 	

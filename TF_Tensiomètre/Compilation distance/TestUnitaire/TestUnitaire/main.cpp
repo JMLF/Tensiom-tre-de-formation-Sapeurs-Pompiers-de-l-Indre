@@ -1,7 +1,8 @@
-﻿//Test de la classe SDL
+﻿//3 tests unitaires 
 
 #include "controle_affichage.h"
-#include <unistd.h> //????
+#include <unistd.h> 
+
 
 int main(void)
 {
@@ -16,7 +17,6 @@ int main(void)
 		SDL.affichage(i, i, i); //on affiche i en guise de variables sys dia bpm
 		sleep(1);
 	}
-
 
 	
 	return 0;
