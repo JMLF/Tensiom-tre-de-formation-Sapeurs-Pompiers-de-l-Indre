@@ -232,6 +232,9 @@ TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichag
 TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/controle_affichage.cpp:281:8: note: src2 is overwritten
   src2 = { tilePos, 0, 118, 178 };
        ^
+TF_Tensiomètre/Compilation distance/TestUnitaire/TestUnitaire/main.cpp:54:6: style: The scope of the variable 'value' can be reduced. [variableScope]
+ int value;
+     ^
 TF_Tensiomètre/SDL class/controle_affichage.h:40:6: performance:inconclusive: Technically the member function 'controle_affichage::calcul_pos_tile' can be static (but you may consider moving to unnamed namespace). [functionStatic]
  int calcul_pos_tile(int chiffre);
      ^
