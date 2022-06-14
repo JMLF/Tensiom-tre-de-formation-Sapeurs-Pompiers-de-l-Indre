@@ -1,18 +1,18 @@
 ﻿//3 tests unitaires 
 
-/*
+
 #include "controle_affichage.h"
 #include <unistd.h> 
 
-
+/*
 int main(void)
 {
 	controle_affichage SDL; //on crée un objet de notre classe 
 
 	SDL.chargement_Textures(); //on charge les textures (cette méthode gère seul ses erreurs)
 
-	SDL.waiting_texture(); //on lance la page d'attente 
-	sleep(5);
+	 
+	sleep(1);
 	for (int i = 0; i < 999; i++) //on crée une boucle de 999 itérations
 	{
 		SDL.affichage(i, i, i); //on affiche i en guise de variables sys dia bpm
@@ -36,12 +36,12 @@ int main(void)
 	std::string message = server.READ();
 	std::cout << message << std::endl;
 	
-	
+	sleep(7);
 	return 0;
 }
 */
 
-/*
+
 #include <iostream>
 #include <gpiod.hpp>
 #include <unistd.h>
@@ -53,7 +53,7 @@ int main(void)
 
 	int value;
 
-	chip = gpiod::chip_open("gpiochip0");
+	chip.open("gpiochip0");
 	line6 = chip.get_line(6);
 	
 	gpiod::line_request lineInput{ "ButonTest",gpiod::line_request::DIRECTION_INPUT,0 };
@@ -66,4 +66,3 @@ int main(void)
 		sleep(1);
 	}
 }
-*/
