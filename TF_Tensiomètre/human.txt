@@ -1,0 +1,8 @@
+- Application finale avec SDL2 dans CompilationDistance/TensiometreDeploiementTest
+- Test affichage,communication TCP, gpio dans CompilationDistance/TestUnitaire
+
+Utiliser compilation à distance VS avec SDL2;gpiodcxx;pthread en dépendance de lien.
+Ne pas oublier d'ajouter les assets dans le meme repertoire.  
+
+Sinon (pas certains de celle la)
+build line: g++ -Wall main.cpp controle_affichage.cpp TCP_SERVER.cpp -o main -lgpiod -lSDL2 -lpthread
